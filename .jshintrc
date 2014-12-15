@@ -2,7 +2,10 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "APMPlayer",
+    "SoundManager",
+    "APMPlayerFactory"    
   ],
   "browser": true,
   "boss": true,
@@ -28,11 +31,5 @@
   "white": false,
   "eqnull": true,
   "esnext": true,
-  "unused": true,
-   "globals": {
-        "APMPlayer": true,
-        "$": true,
-        "SoundManager": true
-    }
-}
+  "unused": true
 }
