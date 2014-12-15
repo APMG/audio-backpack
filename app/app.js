@@ -18,8 +18,7 @@ var App = Ember.Application.extend({
         window.soundManager = soundManager;
         var settings = {
             preferFlash: true,
-            //this will
-            swf: 'http://common.publicradio.org/media_player/1.4.0/script/lib/swf/soundmanager2.swf'
+            swf: '/assets/swf/soundmanager2.swf'
         };
         var APMPlayer = APMPlayerFactory.getPlayer();
         window.APMPlayer = APMPlayer;

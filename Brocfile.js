@@ -18,11 +18,25 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import('bower_components/soundmanager/script/soundmanager2-nodebug.js');
-app.import('bower_components/soundmanager/swf/soundmanager2.swf', { destDir: 'swf' });
+app.import('bower_components/soundmanager/swf/soundmanager2.swf');
 
 
 
 app.import('bower_components/APMPlayer-Internal/script/apmplayer-all.min.js');
 //app.import('bower_components/moment/moment.js');
 
-module.exports = app.toTree();
+// Remove this line:
+// module.exports = app.toTree()
+
+var pickFiles = require('broccoli-static-compiler');
+
+// Copy only the relevant files. For example the WOFF-files and stylesheets for a webfont:
+var extraAssets = pickFiles('bower_components/soundmanager/swf', {
+   srcDir: '/',
+   files: ['**/*.swf'],
+   destDir: '/assets/swf'
+});
+
+// Providing additional trees to the `toTree` method will result in those
+// trees being merged in the final output.
+module.exports = app.toTree(extraAssets);
