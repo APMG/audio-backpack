@@ -1,0 +1,8 @@
+		<h2>{{title}}</h2>
+		<ul>
+		{{#each audio in model.audio}}
+			<li>{{audio.title}}<br /><code>{{audio.url}}</code> <br /></li>
+		{{else}}
+			<li>No audio yet</li>
+		{{/each}}
+		</ul>

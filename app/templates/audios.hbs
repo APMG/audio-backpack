@@ -1,0 +1,9 @@
+<h2>List of audio</h2>
+
+{{input type="search" value=searchTerm placeholder="Filter audio"}}<br />
+
+<ul>
+{{#each audio in filteredAudio}}
+	<li>{{#link-to 'audio' audio}}{{audio.title}}{{/link-to}} </li>
+{{/each}}
+</ul>

@@ -1,0 +1,25 @@
+<h2>{{title}}</h2>
+<button {{action 'play'}}>play</button>
+
+<dl>
+	<dt>Duration</dt>
+	<dd><p>{{duration}}</p></dd>
+
+	<dt>Description</dt>
+	<dd><p>{{description}}</p></dd>
+
+	<dt>Notes</dt>
+	<dd><p>{{notes}}</p></dd>
+
+	<dt>APM Audio</dt>
+	<dd>{{apm_audio}}</dd>
+</dl>
+
+
+{{view "select" content=lists
+	optionValuePath="content.id"
+	optionLabelPath="content.title"
+	prompt="Add to list"
+	value=selectedList
+}}
+&nbsp; {{message}}
