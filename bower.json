@@ -1,10 +1,10 @@
 {
   "name": "favorites-cli",
   "dependencies": {
+    "ember-data": "beta",
+    "ember": "~1.9.x",
+    "jquery": "~2.1.1",
     "handlebars": "2.0.0",
-    "jquery": "^1.11.1",
-    "ember": "1.9.0",
-    "ember-data": "1.0.0-beta.12",
     "ember-resolver": "~0.1.10",
     "loader.js": "stefanpenner/loader.js#1.0.1",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.3",
@@ -16,6 +16,7 @@
     "APMPlayer-Internal": "git@gitlab.mpr.org:js-libraries/apmplayer.git#1.4.*"
   },
   "resolutions": {
-    "handlebars": "2.0.0"
+    "handlebars": "2.0.0",
+    "ember-data": "~1.0.0-beta.7"
   }
 }
