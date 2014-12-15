@@ -28,5 +28,11 @@
   "white": false,
   "eqnull": true,
   "esnext": true,
-  "unused": true
+  "unused": true,
+   "globals": {
+        "APMPlayer": true,
+        "$": true,
+        "SoundManager": true
+    }
+}
 }
