@@ -2,6 +2,10 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'object-src': "'self' common.publicradio.org",
+    },
+
     modulePrefix: 'favorites-cli',
     environment: environment,
     baseURL: '/',
