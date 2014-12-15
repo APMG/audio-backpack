@@ -5,5 +5,6 @@ import DS from "ember-data";
     description: DS.attr(),
     notes: DS.attr(),
     duration: DS.attr(),
-    apm_audio: DS.attr()
+    apm_audio: DS.attr(),
+    pub_date: DS.attr('date'),
 });
