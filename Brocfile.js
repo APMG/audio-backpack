@@ -17,16 +17,15 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Local storage adapter
+app.import('bower_components/ember-localstorage-adapter/localstorage_adapter.js');
+
+
+// Bring in SoundManager and the APMplayer
 app.import('bower_components/soundmanager/script/soundmanager2-nodebug.js');
 app.import('bower_components/soundmanager/swf/soundmanager2.swf');
-
-
-
 app.import('bower_components/APMPlayer-Internal/script/apmplayer-all.min.js');
-//app.import('bower_components/moment/moment.js');
 
-// Remove this line:
-// module.exports = app.toTree()
 
 var pickFiles = require('broccoli-static-compiler');
 
