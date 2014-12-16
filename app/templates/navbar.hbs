@@ -1,5 +1,10 @@
 <nav>
 	{{#link-to 'lists'}}Lists{{/link-to}}  &middot;
 	{{#link-to 'audios'}}All audios{{/link-to}} &middot; 
-	{{#link-to 'about'}}About{{/link-to}}
+	{{#link-to 'about'}}About{{/link-to}} &middot;
+	{{#if session.isAuthenticated}}
+	  <a {{ action 'invalidateSession' }}>Logout</a>
+	{{else}}
+	  {{#link-to 'login'}}Login{{/link-to}}
+	{{/if}}
 </nav>

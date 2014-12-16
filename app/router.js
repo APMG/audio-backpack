@@ -15,6 +15,9 @@ Router.map(function() {
     this.resource('audio', { path: '/audios/:audio_id' });
     this.resource('lists');
     this.resource('list', {path: '/lists/:list_id'});
+
+    this.resource('login');
+
 });
 
 export default Router;
