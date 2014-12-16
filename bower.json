@@ -13,7 +13,7 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "APMPlayer-Internal": "git@gitlab.mpr.org:js-libraries/apmplayer.git#1.4.*",
+    "APMPlayer-Internal": "git@gitlab.mpr.org:js-libraries/apmplayer.git#master",
     "soundmanager": "*"
   },
   "resolutions": {

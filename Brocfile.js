@@ -20,11 +20,23 @@ var app = new EmberApp();
 // Local storage adapter
 app.import('bower_components/ember-localstorage-adapter/localstorage_adapter.js');
 
-
 // Bring in SoundManager and the APMplayer
 app.import('bower_components/soundmanager/script/soundmanager2-nodebug.js');
 app.import('bower_components/soundmanager/swf/soundmanager2.swf');
-app.import('bower_components/APMPlayer-Internal/script/apmplayer-all.min.js');
+
+// Reqs for APMPlayer
+//jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.slider.js
+app.import('bower_components/jquery-ui/ui/core.js');
+app.import('bower_components/jquery-ui/ui/widget.js');
+app.import('bower_components/jquery-ui/ui/mouse.js');
+app.import('bower_components/jquery-ui/ui/slider.js');
+
+//The Un-minified versions of APMPlayer
+//app.import('bower_components/APMPlayer-Internal/script/apmplayer-all.min.js');
+app.import('bower_components/APMPlayer-Internal/script/src/apmplayer_ui.jquery.js');
+app.import('bower_components/APMPlayer-Internal/script/src/apmplayer.js');
+app.import('bower_components/APMPlayer-Internal/script/src/custom_schemes.js');
+app.import('bower_components/APMPlayer-Internal/script/src/apmplayer_init.js');
 
 
 var pickFiles = require('broccoli-static-compiler');
