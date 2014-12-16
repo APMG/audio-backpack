@@ -15,11 +15,14 @@
 	<dd>{{apm_audio}}</dd>
 </dl>
 
-
-{{view "select" content=lists
-	optionValuePath="content.id"
-	optionLabelPath="content.title"
-	prompt="Add to list"
-	value=selectedList
-}}
-&nbsp; {{message}}
+{{#if session.isAuthenticated}}
+	{{view "select" content=lists
+		optionValuePath="content.id"
+		optionLabelPath="content.title"
+		prompt="Add to list"
+		value=selectedList
+	}}
+	&nbsp; {{message}}
+{{else}}
+	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
+{{/if}}
