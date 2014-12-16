@@ -58,7 +58,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+      ENV.baseURL = '/jheideman/playlist/';
+      ENV.torii.providers['github-oauth2'] = { apiKey: 'cb68b8d24fc892188ebd' }; 
   }
 
   return ENV;
