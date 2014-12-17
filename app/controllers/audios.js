@@ -1,7 +1,25 @@
 import Ember from "ember";
+import pagedArray from 'ember-cli-pagination/computed/paged-array';
 
 export default Ember.ArrayController.extend({
     searchTerm: '',  //keep track of what is in the search input field
+
+    // setup our query params
+    queryParams: ["page", "perPage"],
+
+    // set default values, can cause problems if left out
+    // if value matches default, it won't display in the URL
+    page: 1,
+    perPage: 10,
+
+    // can be called anything, I've called it pagedContent
+    // remember to iterate over pagedContent in your template
+    pagedContent: pagedArray('content', {pageBinding: "page", perPageBinding: "perPage"}),
+
+    // binding the property on the paged array 
+    // to a property on the controller
+    totalPagesBinding: "pagedContent.totalPages",
+
 
     filteredAudio: function() {   //the property that willl always contain our list of audio
         return this.model;

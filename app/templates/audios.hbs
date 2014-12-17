@@ -3,7 +3,9 @@
 {{input type="search" value=searchTerm placeholder="Filter audio"}}<br />
 
 <ul>
-{{#each audio in filteredAudio}}
+{{#each audio in pagedContent}}
 	<li>{{#link-to 'audio' audio}}{{audio.title}}{{/link-to}} </li>
 {{/each}}
+
+{{page-numbers content=pagedContent}}
 </ul>
