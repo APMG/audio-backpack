@@ -21,9 +21,8 @@ export default Ember.ArrayController.extend({
     totalPagesBinding: "pagedContent.totalPages",
 
 
-    filteredAudio: function() {   //the property that willl always contain our list of audio
-        return this.model;
-    }.property('filteredAudio'),
+    filteredAudio: false,
+    
     /**
      * Deals with changing the results list when the seachTerm changes
      * Uses the model.filter class to filter the results on the three fields we care about
@@ -40,7 +39,7 @@ export default Ember.ArrayController.extend({
             });
             this.set('filteredAudio',results);
        } else {
-            this.set('filteredAudio',this.model);
+            this.set('filteredAudio',false);
        }
     }.observes("searchTerm")
 });
