@@ -30,11 +30,13 @@ module.exports = function(environment) {
     torii: {
       providers: {
         'github-oauth2': {
-            apiKey:      'b39e086b398797a7c306' //,
+            apiKey:      'b39e086b398797a7c306',
+            scope: 'email,user:email' //,
             //redirectUri: 
           },
       }
-    }
+    },
+    session: 'session:withCurrentUser'
   };
 
   if (environment === 'development') {
