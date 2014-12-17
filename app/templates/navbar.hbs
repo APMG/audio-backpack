@@ -1,14 +1,45 @@
-<nav>
 
-	{{#if session.isAuthenticated}}
-	 {{#link-to 'lists'}}Lists{{/link-to}}  &middot;
-	{{/if}}
 
-	{{#link-to 'audios'}}All audios{{/link-to}} &middot; 
-	{{#link-to 'about'}}About{{/link-to}} &middot;
-	{{#if session.isAuthenticated}}
-	  <a {{ action 'invalidateSession' }}>Logout</a>
-	{{else}}
-	  {{#link-to 'login'}}Log in{{/link-to}}
-	{{/if}}
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Classical Music Backpack</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'audios'}}Audio Clips{{/link-to}}</li>
+        <li>{{#link-to 'about'}}About{{/link-to}}</li>
+
+      </ul>
+      
+
+
+      <ul class="nav navbar-nav navbar-right">
+      	{{#if session.isAuthenticated}}
+	 		<li>{{#link-to 'lists'}}Manage my playlists{{/link-to}}</li>
+		{{/if}}
+
+		{{#if session.isAuthenticated}}
+			<li class="navbar-link"><a href="">Hello, Person!</a></li>
+
+
+	 		<li><a {{ action 'invalidateSession' }}>Log out</a></li>
+		{{else}}
+			<li>{{#link-to 'login'}}Log in{{/link-to}}</li>
+			<li><a href="#">Sign up</a></li>
+		{{/if}}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
+

@@ -38,6 +38,21 @@ app.import('bower_components/APMPlayer-Internal/script/src/apmplayer.js');
 app.import('bower_components/APMPlayer-Internal/script/src/custom_schemes.js');
 app.import('bower_components/APMPlayer-Internal/script/src/apmplayer_init.js');
 
+// Make it look nicer with bootstap
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+
+app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', { destDir: 'assets' });
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot', { destDir: 'fonts' });
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', { destDir: 'fonts' });
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg', { destDir: 'fonts' });
+app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', { destDir: 'fonts' });
+
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+
+
+
+
+
 
 var pickFiles = require('broccoli-static-compiler');
 
