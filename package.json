@@ -31,6 +31,7 @@
     "ember-cli-pagination": "^0.6.3",
     "ember-cli-qunit": "0.1.2",
     "ember-cli-simple-auth": "^0.7.2",
+    "ember-cli-simple-auth-oauth2": "^0.7.2",
     "ember-cli-simple-auth-torii": "^0.7.2",
     "ember-data": "1.0.0-beta.12",
     "ember-export-application-global": "^1.0.0",

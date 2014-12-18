@@ -1,4 +1,10 @@
-<p>
-	Login with <a {{ action 'authenticateWithGithub' }} 
-		style="cursor: pointer; text-decoration: underline;"> Github</a> 
-</p>
+
+
+<br /><br />
+<form {{action 'authenticate' on='submit'}}>
+  <p><label for="identification">Login</label>
+    {{input value=identification placeholder='Enter Login'}}</p>
+  <p><label for="password">Password</label>
+    {{input value=password placeholder='Enter Password' type='password'}}</p>
+  <p><button type="submit">Login</button></p>
+</form>
