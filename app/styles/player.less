@@ -1,0 +1,24 @@
+/**
+ * This element exists so that the player, which is pegged at the bottom of the screen, can space itself out and not inadverntly overlap contnet we care about. 
+ */
+#apm_player_container_spacer{
+	content: '';
+	height: 100px;
+	width: 100%;
+	//background-color: red;
+}
+
+#apm_player_container{
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	border-top: 1px solid #e7e7e7;
+	background: #f5f5f5;
+	width: 100%;
+	margin: 0 -50%;
+	position: fixed;
+	left: 50%;
+	bottom: 0%;
+	height: 120px;
+	padding: 20px;
+	z-index: 1200;
+	//color: #e7e7e7;
+}
