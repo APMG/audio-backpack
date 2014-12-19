@@ -1,7 +1,7 @@
-# Favorites-cli
+# MPR Music Education
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is an application for managing playlists of classical music for educational purposes. It is built using [Ember](http://www.emherjs.com) and [Ember-Cli](http://www.ember-cli.com/) along with several other dependicies, as defined in `bower.json` and `package.json`. This app also depends on the [MPR-User](https://gitlab.mpr.org/swag/mpr-user) rails app for handling oAuth. 
+
 
 ## Prerequisites
 
@@ -9,6 +9,8 @@ You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+
+You may need to install [watchman](https://facebook.github.io/watchman/) for ember-cli to work properly. 
 
 ## Installation
 
