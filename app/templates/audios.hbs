@@ -6,11 +6,11 @@
 
 {{#if filteredAudio}}
 	{{#each audio in filteredAudio}}
-		<li>{{#link-to 'audio' audio}}{{audio.title}}{{/link-to}} </li>
+		{{partial 'short-audio' audio}}
 	{{/each}}
 {{ else }}
 	{{#each audio in pagedContent}}
-		<li>{{#link-to 'audio' audio}}{{audio.title}}{{/link-to}} </li>
+		{{render 'short-audio' audio}}
 	{{/each}}
 {{/if}}
 
