@@ -16,6 +16,8 @@ export default Ember.ArrayController.extend({
     // remember to iterate over pagedContent in your template
     pagedContent: pagedArray('content', {pageBinding: "page", perPageBinding: "perPage"}),
 
+    showPaging: true,  //flag we use to determine whether or not to show pagination
+
     // binding the property on the paged array 
     // to a property on the controller
     totalPagesBinding: "pagedContent.totalPages",
@@ -38,8 +40,11 @@ export default Ember.ArrayController.extend({
                     audio.get('notes').toLowerCase().indexOf(term) !== -1;
             });
             this.set('filteredAudio',results);
+            this.set('showPaging',false);
        } else {
             this.set('filteredAudio',false);
+            this.set('showPaging',true);
+
        }
     }.observes("searchTerm")
 });

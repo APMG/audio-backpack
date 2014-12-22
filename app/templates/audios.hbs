@@ -14,9 +14,10 @@
 	{{/each}}
 {{/if}}
 
-{{#if pagedContent}}
-	{{page-numbers content=pagedContent}}
+{{#if showPaging}}
+	{{#if pagedContent}}
+		{{page-numbers content=pagedContent}}
+	{{/if}}
 {{/if}}
-
 
 </ul>
