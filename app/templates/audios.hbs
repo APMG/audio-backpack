@@ -6,7 +6,7 @@
 
 {{#if filteredAudio}}
 	{{#each audio in filteredAudio}}
-		{{partial 'short-audio' audio}}
+		{{render 'short-audio' audio}}
 	{{/each}}
 {{ else }}
 	{{#each audio in pagedContent}}
