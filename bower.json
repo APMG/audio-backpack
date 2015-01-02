@@ -1,5 +1,5 @@
 {
-  "name": "favorites-cli",
+  "name": "mpr-music-education",
   "dependencies": {
     "ember-data": "beta",
     "ember": "~1.9.x",

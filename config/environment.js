@@ -11,7 +11,7 @@ module.exports = function(environment) {
       'media-src': "'self' *" //common.publicradio.org ondemand.publicradio.org
     },
 
-    modulePrefix: 'favorites-cli',
+    modulePrefix: 'mpr-music-education',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -27,21 +27,14 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    // torii: {
-    //   providers: {
-    //     'github-oauth2': {
-    //         apiKey:      'b39e086b398797a7c306',
-    //         scope: 'email,user:email' //,
-    //         //redirectUri: 
-    //       },
-    //   }
-    // },
-    session: 'session:withCurrentUser',
+     session: 'session:withCurrentUser',
 
     "simple-auth": {
       crossOriginWhitelist: ['http://localhost:3000'],
       serverTokenEndpoint: 'http://localhost:3000/oauth/token',
-      authorizer: 'simple-auth-authorizer:oauth2-bearer'
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      session: 'session:withCurrentUser'
+
     },
 
     'simple-auth-oauth2':  {
@@ -70,10 +63,6 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  // if (environment === 'production') {
-  //     ENV.baseURL = '/jheideman/playlist/';
-  //     ENV.torii.providers['github-oauth2'] = { apiKey: 'cb68b8d24fc892188ebd' }; 
-  // }
 
   return ENV;
 };

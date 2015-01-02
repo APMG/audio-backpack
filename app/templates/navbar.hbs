@@ -30,7 +30,7 @@
 		{{/if}}
 
 		{{#if session.isAuthenticated}}
-			<li class="navbar-link"><a href="">Hello, Person!</a></li>
+			<li class="navbar-link"><a href="">Hello, {{session.currentUser.user_id}}!</a></li>
 
 
 	 		<li><a {{ action 'invalidateSession' }}>Log out</a></li>
