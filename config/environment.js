@@ -6,7 +6,7 @@ module.exports = function(environment) {
       'object-src': "'self' common.publicradio.org",
       'script-src': "script-src 'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 common.publicradio.org api.publicradio.org api.mpr.org",
       'img-src': "'self' common.publicradio.org",
-      'style-src': "'self' 'unsafe-inline' common.publicradio.org",
+      'style-src': "'self' 'unsafe-inline' common.publicradio.org fast.fonts.net",
       'connect-src': "'self' *",
       'media-src': "'self' *" //common.publicradio.org ondemand.publicradio.org
     },

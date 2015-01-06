@@ -1,13 +1,20 @@
-html, body {
-  margin: 20px;
-}
+//Include bootstrap directly from bower, rather than calling it via brocfile
+@import "bower_components/bootstrap/less/bootstrap.less";
 
-.clickable{
-	cursor: pointer;
-}
+@import 'definitions';
+
+@font-family-base:     "Futura", sans-serif;
+@font-size-base: 		16px;
 
 //@import url("http://common.publicradio.org/media_player/1.4.0/skin/apmplayer_base.css");
 @import url("http://common.publicradio.org/media_player/1.4.0/skin/jquery-ui-slider.custom.css");
-
-
 @import 'player';
+
+
+@import 'base';
+
+@media (min-width: 768px){
+	@import 'medium';
+}
+
+
