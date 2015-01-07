@@ -4,13 +4,13 @@
 
 <ul class='item-list'>
 
-{{#if filteredAudio}}
-	{{#each audio in filteredAudio}}
-		{{render 'short-audio' audio}}
+{{#if filteredClips}}
+	{{#each clip in filteredClips}}
+		{{render 'short-clip' clip}}
 	{{/each}}
 {{ else }}
-	{{#each audio in pagedContent}}
-		{{render 'short-audio' audio}}
+	{{#each clip in pagedContent}}
+		{{render 'short-clip' clip}}
 	{{/each}}
 {{/if}}
 

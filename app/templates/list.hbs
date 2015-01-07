@@ -1,8 +1,8 @@
 		<h2>{{title}}</h2>
 		<ul>
-		{{#each audio in model.audio}}
-			<li>{{audio.title}}<br /><code>{{audio.url}}</code> <br /></li>
+		{{#each clip in model.clip}}
+			<li>{{clip.title}}<br /><code>{{clip.url}}</code> <br /></li>
 		{{else}}
-			<li>No audio yet</li>
+			<li>No audio clips yet.</li>
 		{{/each}}
 		</ul>

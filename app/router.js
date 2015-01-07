@@ -10,9 +10,8 @@ Router.reopen({
 });
 
 Router.map(function() {
-    this.resource('about');
-    this.resource('audios');
-    this.resource('audio', { path: '/audios/:audio_id' });
+    this.resource('clips');
+    this.resource('clip', { path: '/clips/:clip_id' });
     this.resource('lists');
     this.resource('list', {path: '/lists/:list_id'});
 

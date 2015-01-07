@@ -13,7 +13,7 @@ export default Ember.Route.extend({
                 var item = data[buid];
                 item.id = buid;
                 item.pub_date = new Date(item.pub_date);
-                store.push('audio',item).save();
+                store.push('clip',item).save();
             }
         });
     }

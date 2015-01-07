@@ -23,7 +23,7 @@ export default Ember.ArrayController.extend({
     totalPagesBinding: "pagedContent.totalPages",
 
 
-    filteredAudio: false,
+    filteredClips: false,
     
     /**
      * Deals with changing the results list when the seachTerm changes
@@ -34,15 +34,15 @@ export default Ember.ArrayController.extend({
 
         if (term.length > 2) {
             var results;
-            results = this.model.filter(function(audio) {
-                return audio.get('title').toLowerCase().indexOf(term) !== -1 ||
-                    audio.get('description').toLowerCase().indexOf(term) !== -1 ||
-                    audio.get('notes').toLowerCase().indexOf(term) !== -1;
+            results = this.model.filter(function(clip) {
+                return clip.get('title').toLowerCase().indexOf(term) !== -1 ||
+                    clip.get('description').toLowerCase().indexOf(term) !== -1 ||
+                    clip.get('notes').toLowerCase().indexOf(term) !== -1;
             });
-            this.set('filteredAudio',results);
+            this.set('filteredClips',results);
             this.set('showPaging',false);
        } else {
-            this.set('filteredAudio',false);
+            this.set('filteredClips',false);
             this.set('showPaging',true);
 
        }

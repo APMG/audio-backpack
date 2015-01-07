@@ -4,8 +4,8 @@ import Ember from "ember";
 export default Ember.ArrayController.extend({
     sortProperties: ['pub_date'],
     sortAscending: false,
-    latestAudio: function(){
+    latestClips: function(){
         return this.get('arrangedContent').splice(0,4);
-    }.property('latestAudio')
+    }.property('latestClips')
    
 });
