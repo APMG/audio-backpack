@@ -7,10 +7,10 @@ export default Ember.ArrayController.extend({
             var title = this.get('newTitle');
             if (!title.trim()) { return; }
             //create our list
-            var list = this.store.createRecord('playlist', {
+            var playlist = this.store.createRecord('playlist', {
                 title: title,
             });
-            list.save();
+            playlist.save();
             this.set('newTitle', '');
         }
     }

@@ -13,7 +13,7 @@ Router.map(function() {
     this.resource('clips');
     this.resource('clip', { path: '/clips/:clip_id' });
     this.resource('playlists');
-    this.resource('playlist', {path: '/playlists/:list_id'});
+    this.resource('playlist', {path: '/playlists/:playlist_id'});
 
     this.resource('login');
 

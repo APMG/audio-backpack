@@ -23,8 +23,8 @@ export default Ember.ObjectController.extend({
     },
   
     lists: function(){
-        return this.model.store.find('list');
-    }.property('lists'),
+        return this.model.store.find('playlist');
+    }.property('playlists'),
 
     onSelectedListChange:function(val){
         //do nothing if we've got an invalid value
@@ -36,9 +36,9 @@ export default Ember.ObjectController.extend({
         var aud = this.model;
         var context = this;
         //find our list, then when we have it via a promise, add the audio to it
-        this.store.find('list', val.selectedList).then(function(list){
-            list.get('clip').addObject(aud);
-            list.save();
+        this.store.find('playlist', val.selectedList).then(function(playlist){
+            playlist.get('clip').addObject(aud);
+            playlist.save();
             context.set('message','saved!');
 
             //clear out the run success message

@@ -1,7 +1,10 @@
 		<h2>{{title}}</h2>
-		<ul>
+
+		{{clipCount}} items, {{totalDuration}}
+		
+		<ul class='item-list'>
 		{{#each clip in model.clip}}
-			<li>{{clip.title}}<br /><code>{{clip.url}}</code> <br /></li>
+			{{render 'short-clip' clip}}
 		{{else}}
 			<li>No audio clips yet.</li>
 		{{/each}}
