@@ -1,9 +1,14 @@
-<li>
-	{{#link-to 'audio' audio}}
-	<h2>{{audio.title}}</h2>
-	{{/link-to}}
-	
-	<a {{action 'play'}} class='play clickable'>{{fa-icon "play"}} {{audio.prettyDuration}}</a>
-	{{ago pub_date}}
+<li class='item'>
+	<a {{action 'play'}} class='item-icon play clickable'>
 
+	</a>
+
+	<div class='item-info'>
+		<h2>{{audio.title}}</h2>
+		<span class='duration'>{{audio.prettyDuration}}</span><br />
+
+		
+		<a href="#" class="sub-action">+ Add to playlist</a>
+		{{#link-to 'audio' audio class="sub-action"}} Details &rarr; {{/link-to}}
+	</div>
 </li>
