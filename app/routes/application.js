@@ -12,6 +12,7 @@ export default Ember.Route.extend({
             for (var buid in data) {
                 var item = data[buid];
                 item.id = buid;
+                item.pub_date = new Date(item.pub_date);
                 store.push('audio',item).save();
             }
         });
