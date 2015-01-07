@@ -8,12 +8,12 @@ export default Ember.Route.extend({
     beforeModel: function(){
         console.log('running before model');
         var store = this.store;
-        return Ember.$.getJSON( this.get('router.rootURL') + 'audio.json').then(function(data) {
-            data.forEach(function(item){
-                item.id = item.buid;  //make the ID the buid
-                delete item.buid; //remove the buid so ember doesnt warn us
+        return Ember.$.getJSON( this.get('router.rootURL') + 'audio2.json').then(function(data) {
+            for (var buid in data) {
+                var item = data[buid];
+                item.id = buid;
                 store.push('audio',item).save();
-            });
+            }
         });
     }
 });
