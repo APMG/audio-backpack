@@ -3,7 +3,7 @@
     <ul class="nav nav-pills">
         <li class='home-link'>{{#link-to 'index' class='navbar-brand'}}<img src='/img/audiobackpack.svg' alt='audio backpack' />{{/link-to}}</li>
 
-        <li><a href="#">Playlists</a></li>
+        <li>{{#link-to 'playlists'}}Playlists{{/link-to}}</li>
         <li>{{#link-to 'clips'}}Clips{{/link-to}}</li>
         {{#if session.isAuthenticated}}     
         <li role="presentation" class="dropdown">
@@ -11,7 +11,7 @@
             Hello, Person! <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-                <li>{{#link-to 'lists'}}Manage playlists{{/link-to}}</li>
+                <li>{{#link-to 'playlists'}}Manage playlists{{/link-to}}</li>
                 <li><a {{ action 'invalidateSession' }}>Sign out</a></li>
             </ul>
         </li>

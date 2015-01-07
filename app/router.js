@@ -12,8 +12,8 @@ Router.reopen({
 Router.map(function() {
     this.resource('clips');
     this.resource('clip', { path: '/clips/:clip_id' });
-    this.resource('lists');
-    this.resource('list', {path: '/lists/:list_id'});
+    this.resource('playlists');
+    this.resource('playlist', {path: '/playlists/:list_id'});
 
     this.resource('login');
 

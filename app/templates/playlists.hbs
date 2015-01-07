@@ -1,0 +1,20 @@
+	<h2>Playlists</h2>
+
+	<p>Presently, this shows all playlists, created by you, only on your computer.</p>
+
+	{{input type="text" id="new-list" placeholder="Create new list"
+		value=newTitle action="createList"}}
+
+	  <ul class='item-list'>
+	  {{#each playlist in model}}
+	  	<li class='item'>	
+	  		{{#link-to 'playlist' playlist class='item-icon clickable'}}  &nbsp; {{/link-to}}
+
+	  		<div class='item-info'>
+				<h2>{{playlist.title}}</h2>
+				<span class='author'>by <a href=''>Null Voider</a></span><br />
+				17 items, 12 minutes
+			</div>
+		</li>
+	  {{/each}}
+	  </ul>
