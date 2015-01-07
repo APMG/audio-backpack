@@ -39,5 +39,8 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "torii": "^0.2.2"
+  },
+  "dependencies": {
+    "ember-moment": "^1.0.0"
   }
 }

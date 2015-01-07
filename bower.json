@@ -16,7 +16,8 @@
     "APMPlayer-Internal": "git@gitlab.mpr.org:js-libraries/apmplayer.git#master",
     "soundmanager": "*",
     "ember-simple-auth": "0.7.2",
-    "bootstrap": "~3.3.1"
+    "bootstrap": "~3.3.1",
+    "ember-cli-moment-shim": "~0.0.2"
   },
   "resolutions": {
     "handlebars": "2.0.0",
