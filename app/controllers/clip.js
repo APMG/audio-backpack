@@ -37,7 +37,7 @@ export default Ember.ObjectController.extend({
         var context = this;
         //find our list, then when we have it via a promise, add the audio to it
         this.store.find('playlist', val.selectedList).then(function(playlist){
-            playlist.get('clip').addObject(aud);
+            playlist.get('clips').addObject(aud);
             playlist.save();
             context.set('message','saved!');
 

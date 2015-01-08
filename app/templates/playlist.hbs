@@ -3,7 +3,7 @@
 		{{clipCount}} items, {{totalDuration}}
 		
 		<ul class='item-list'>
-		{{#each clip in model.clip}}
+		{{#each clip in model.clips}}
 			{{render 'short-clip' clip}}
 		{{else}}
 			<li>No audio clips yet.</li>
