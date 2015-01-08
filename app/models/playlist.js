@@ -2,9 +2,9 @@ import DS from "ember-data";
 
  export default DS.Model.extend({
     title: DS.attr(),
+    description: DS.attr(),
+    owner: DS.belongsTo('user'),
     clips: DS.hasMany('clip', {inverse: null, async: true}),
-
-
 
     clipCount: function(){
 		var clips = this.get('clips');
