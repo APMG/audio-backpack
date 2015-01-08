@@ -8,7 +8,7 @@
         {{#if session.isAuthenticated}}     
         <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-            Hello, Person! <span class="caret"></span>
+            Hello, {{session.user.first_name}}! <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li>{{#link-to 'playlists'}}Manage playlists{{/link-to}}</li>

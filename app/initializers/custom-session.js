@@ -18,33 +18,8 @@ var SessionWithCurrentUser = Session.extend({
         } else {
             console.log('sadly empty');
         }
-    }.property('account_id')
+    }.property('user_id')
 
-
- //  currentUser: function() {
- //    console.log('i be runnin');
- //    // "this" should be the session, which will contain the token and token info
- //    console.log("this", this, this.get("access_token"));
-
- //    //var url = 'http://localhost:3000/api/v1/me.json?access_token=' + this.get("access_token");
-    
- //    var url = 'http://localhost/me.php';
-
- //    console.log(url);
-
- //    Ember.$.getJSON( url ).then(function(data) {
- //        console.log(data);
- //    });
-
-
- //    var userId = this.get('user_id');
- //    if (!Ember.isEmpty(userId)) {
- //        console.log('i am not empty!');
- //        return this.container.lookup('store:main').find('account', userId);
- //    } else {
- //        console.log('i be empty!');
- //    }
- //  }.property('user_id')
 });
 
 // lets us customize the session to contain more information
