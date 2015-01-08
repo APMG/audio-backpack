@@ -18,9 +18,9 @@ import DS from "ember-data";
 		for (var key in rel){
 			if (rel.hasOwnProperty(key)){
 				var clip = rel[key];
-				totalDur += clip.get('duration')
+				totalDur += clip.get('duration');
 			}
-		};
+		}
 		return totalDur;
 	}.property('clips@each.duration')
 
