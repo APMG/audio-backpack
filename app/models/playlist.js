@@ -13,26 +13,16 @@ import DS from "ember-data";
 
 
 	totalDuration: function(){	
-		var rel = this.get('clips.content');
-		console.log(rel); //.filterBy("clip")
-
-		
-		// var clips = this.get('clips');
-		// /*
-		// This is 8 kinds of dirty, but it is what it is. Hmm. 
-		//  */
-		// for (var clip in clips.content.currentState){
-		// 	console.log(clips.content.currentState[clip]);
-		// }
-
-		// // for (var myClip in clips){
-
-		// // 	console.log(item);
-		// // }
-
-
-		//return "1001ms";
-	}.property('clips@each')
+		var rel = this.get('clips.content').filterBy('duration');
+		var totalDur = 0;
+		for (var key in rel){
+			if (rel.hasOwnProperty(key)){
+				var clip = rel[key];
+				totalDur += clip.get('duration')
+			}
+		};
+		return totalDur;
+	}.property('clips@each.duration')
 
 
 });
