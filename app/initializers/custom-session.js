@@ -11,34 +11,48 @@ import Ember from 'ember';
 // OR, easier, need to make it so that the intial auth token comes back with the user_id 
 
 var SessionWithCurrentUser = Session.extend({
-  currentUser: function() {
-    console.log('i be runnin');
-    // "this" should be the session, which will contain the token and token info
-    console.log("this", this, this.get("access_token"));
-
-    var url = 'http://localhost:3000/api/v1/me.json?access_token=' + this.get("access_token");
-    console.log(url);
-
-    Ember.$.getJSON( url ).then(function(data) {
-        console.log(data);
-    });
+    user: function() {
+        var userId = this.get('user_id');
+        if (!Ember.isEmpty(userId)) {
+            return this.container.lookup('store:main').find('user', userId);
+        } else {
+            console.log('sadly empty');
+        }
+    }.property('account_id')
 
 
-    var userId = this.get('user_id');
-    if (!Ember.isEmpty(userId)) {
-        console.log('i am not empty!');
-        return this.container.lookup('store:main').find('account', userId);
-    } else {
-        console.log('i be empty!');
-    }
-  }.property('user_id')
+ //  currentUser: function() {
+ //    console.log('i be runnin');
+ //    // "this" should be the session, which will contain the token and token info
+ //    console.log("this", this, this.get("access_token"));
+
+ //    //var url = 'http://localhost:3000/api/v1/me.json?access_token=' + this.get("access_token");
+    
+ //    var url = 'http://localhost/me.php';
+
+ //    console.log(url);
+
+ //    Ember.$.getJSON( url ).then(function(data) {
+ //        console.log(data);
+ //    });
+
+
+ //    var userId = this.get('user_id');
+ //    if (!Ember.isEmpty(userId)) {
+ //        console.log('i am not empty!');
+ //        return this.container.lookup('store:main').find('account', userId);
+ //    } else {
+ //        console.log('i be empty!');
+ //    }
+ //  }.property('user_id')
 });
 
 // lets us customize the session to contain more information
 export default {
   name: 'session:custom',
   initialize: function(container) {
-    console.log('i be all init');
+    console.log('session init run');
+
     container.register('session:withCurrentUser', SessionWithCurrentUser);
 
   }
