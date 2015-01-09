@@ -40,7 +40,9 @@ module.exports = function(environment) {
     'simple-auth-oauth2':  {
       serverTokenEndpoint: 'http://localhost:3000/oauth/token',
       serverUserDataEndpoint: 'http://localhost:3000/api/v1/me.json'
-    }
+    },
+
+    "localStorageNamespace": "mpr-music-education",
 
   };
 

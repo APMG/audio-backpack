@@ -1,5 +1,6 @@
 import Ember from "ember";
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import ENV from '../config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
     /**
@@ -9,6 +10,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         this._super(transition); //need to call the partent class method before doing our own logic
         var store = this.store;
         return Ember.$.getJSON( this.get('router.rootURL') + 'audio.json').then(function(data) {
+
+            //Wipe out the local storage for this before starting import
+            //ensures that our clip data is always fresh
+            localStorage.removeItem(ENV.localStorageNamespace);
+
             for (var buid in data) {
                 var item = data[buid];
                 //convert duration from clock (e.g. 00:00:32) to milliseconds (e.g. 32000)
