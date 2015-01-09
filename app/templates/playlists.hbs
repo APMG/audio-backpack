@@ -1,21 +1,12 @@
-	<h2>All playlists</h2>
+<h2>All playlists</h2>
 
-	<p>Presently, this shows all playlists, created by you, only on your computer.</p>
+<p>Presently, this shows all playlists, created by you, only on your computer.</p>
 
-	{{input type="text" id="new-list" placeholder="Create new list"
-		value=newTitle action="createList"}}
+{{input type="text" id="new-list" placeholder="Create new list"
+    value=newTitle action="createList"}}
 
-	  <ul class='item-list'>
-	  {{#each playlist in model}}
-	  	<li class='item'>	
-	  		{{#link-to 'playlist' playlist class='item-icon clickable'}}  &nbsp; {{/link-to}}
-
-	  		{{! needs to be made into component }}
-	  		<div class='item-info'>
-				<h3>{{playlist.title}}</h3>
-				<span class='author'>by {{#link-to 'user' playlist.user}}{{playlist.user.first_name}} {{playlist.user.last_name}}{{/link-to}}</span><br />
-				{{playlist.clipCount}} clips, {{pretty-duration playlist.totalDuration}}
-			</div>
-		</li>
-	  {{/each}}
-	  </ul>
+<ul class='item-list'>
+{{#each playlist in model}}
+    {{short-playlist playlist=playlist}}
+{{/each}}
+</ul>

@@ -1,23 +1,29 @@
-<h2>List of audio</h2>
+
 
 {{input type="search" value=searchTerm placeholder="Filter audio"}}<br />
+
+{{#if filteredClips}}
+    <h2>Filtered audio clips</h2>
+{{ else }}
+    <h2>Browse audio clips</h2>
+{{/if}}
 
 <ul class='item-list'>
 
 {{#if filteredClips}}
-	{{#each clip in filteredClips}}
-		{{render 'short-clip' clip}}
-	{{/each}}
+    {{#each clip in filteredClips}}
+        {{short-clip clip=clip}}
+    {{/each}}
 {{ else }}
-	{{#each clip in pagedContent}}
-		{{render 'short-clip' clip}}
-	{{/each}}
+    {{#each clip in pagedContent}}
+        {{short-clip clip=clip}}
+    {{/each}}
 {{/if}}
 
 {{#if showPaging}}
-	{{#if pagedContent}}
-		{{page-numbers content=pagedContent}}
-	{{/if}}
+    {{#if pagedContent}}
+        {{page-numbers content=pagedContent}}
+    {{/if}}
 {{/if}}
 
 </ul>
