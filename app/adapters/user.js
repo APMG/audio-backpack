@@ -1,7 +1,13 @@
 import DS from "ember-data";
 import Ember from 'ember';
 
-//import ENV from '../config/environment';
+/**
+ * This is largely verbatim from the default RESTAdapter class. 
+ * We are just modifiying the buildURL method to include ".json" at the end
+ * of urls so that it works correctly with our API urls
+ * We definitely need to not hard-code the host url at some point, or we 
+ * need to use the environment flags and figure it out here 
+ */
 
 export default DS.RESTAdapter.reopen({
     host: 'http://localhost:3000',
@@ -27,7 +33,5 @@ export default DS.RESTAdapter.reopen({
 
         return url+'.json';
     },
-    // if (ENV.environment === 'development') {
-    // // ...
-    // }
+
 });

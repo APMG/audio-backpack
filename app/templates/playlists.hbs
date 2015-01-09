@@ -1,4 +1,4 @@
-	<h2>Playlists</h2>
+	<h2>All playlists</h2>
 
 	<p>Presently, this shows all playlists, created by you, only on your computer.</p>
 
@@ -12,7 +12,7 @@
 
 	  		<div class='item-info'>
 				<h2>{{playlist.title}}</h2>
-				<span class='author'>by <a href=''>Null Voider</a></span><br />
+				<span class='author'>by {{#link-to 'user' playlist.user}}{{playlist.user.first_name}} {{playlist.user.last_name}}{{/link-to}}</span><br />
 				{{playlist.clipCount}} clips, {{pretty-duration playlist.totalDuration}}
 			</div>
 		</li>

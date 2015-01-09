@@ -1,0 +1,24 @@
+    <h2>Hello, {{model.full_name}}</h2>
+
+    <img src="https://www.gravatar.com/avatar/.jpg?s=80" alt="user icon" />
+
+
+    {{model.gravatar}}
+
+
+    <p>These are your playlists!</p>
+
+      <h2>Your playlists</h2>
+      <ul class='item-list'>
+      {{#each playlist in playlists}}
+          <li class='item'>    
+              {{#link-to 'playlist' playlist class='item-icon clickable'}}  &nbsp; {{/link-to}}
+
+              <div class='item-info'>
+                <h2>{{playlist.title}}</h2>
+                <span class='author'>by <a href=''>Null Voider</a></span><br />
+                {{playlist.clipCount}} clips, {{pretty-duration playlist.totalDuration}}
+            </div>
+        </li>
+      {{/each}}
+      </ul>
