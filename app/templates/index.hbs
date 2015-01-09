@@ -1,11 +1,15 @@
-<h2>Featured Playlists</h2>
+<section>
+    <h2>Featured Playlists</h2>
+    <br />
 
+    your first name: {{session.user.first_name}}
 
-	your first name: {{session.user.first_name}}
+    your user id: {{session.user.id}}
 
-	your user id: {{session.user.id}}
+</section>
 
+<section>
+    <h2>Latest Clips</h2>
 
-<h2>Latest Clips</h2>
-
-{{render 'latest-clips' latestClips}}
+    {{render 'latest-clips' latestClips}}
+</section>
