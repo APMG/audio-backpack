@@ -1,0 +1,18 @@
+    <h2>Hello, {{session.user.first_name}}</h2>
+
+    <p>These are your playlists!</p>
+
+  
+      <ul class='item-list'>
+      {{#each playlist in playlist}}
+          <li class='item'>    
+              {{#link-to 'playlist' playlist class='item-icon clickable'}}  &nbsp; {{/link-to}}
+
+              <div class='item-info'>
+                <h2>{{playlist.title}}</h2>
+                <span class='author'>by <a href=''>Null Voider</a></span><br />
+                {{playlist.clipCount}} clips, {{pretty-duration playlist.totalDuration}}
+            </div>
+        </li>
+      {{/each}}
+      </ul>
