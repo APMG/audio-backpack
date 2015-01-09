@@ -1,7 +1,33 @@
+h1{
+	font-weight: bold;
+	font-size: 1.5em;
+}
+h2{
+	background-color: @light-blue;
+	color: @med-blue;
+	font-weight: bold;
+	font-size: 1.3em;
+	display: inline-block;
+	padding: 10px;
+	position: relative;
+
+	&:after{
+		content: '';
+		width: 0;
+		height: 0;
+		border-right: 0.95em solid transparent;
+		right: -0.90em;
+		position: absolute;
+		top: 0.1em;
+		position: absolute;
+		border-top: 0.95em solid @med-blue;
+		border-bottom: 0.95em solid @med-blue;
+	}
+}
+
 .clickable{
 	cursor: pointer;
 }
-
 
 .container{
 	max-width: 800px;
@@ -17,7 +43,7 @@
 	margin: 1em 0;
 }
 .item{
-	h2{
+	h3{
 		font-size: 1em;
 		font-weight: bold;
 		margin: 0;
