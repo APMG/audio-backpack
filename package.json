@@ -18,7 +18,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bower": "^1.3.12",
     "broccoli-asset-rev": "^1.0.0",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-static-compiler": "^0.2.1",
@@ -42,6 +41,7 @@
     "torii": "^0.2.2"
   },
   "dependencies": {
+    "bower": "^1.3.12",
     "ember-moment": "^1.0.0"
   }
 }
