@@ -3,6 +3,8 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
     
     playlists: function(){
+        // TODO: Presently this does not correctly filter to the user in the route/url
+        // That should be fixed
         return this.model.store.find('playlist');
     }.property('playlists'),
 
