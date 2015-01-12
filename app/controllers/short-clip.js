@@ -3,11 +3,12 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
     selectedList: null,
     actions: {
-        play: function(){
-            console.log(this.model.get('apm_audio'));
+         play: function(model){
+            //console.log(thing, thing.get('apm_audio'));
+            console.log(model.get('apm_audio'));
             var playable = APMPlayerFactory.getPlayable({
-                title: this.model.get('title'),
-                identifier: this.model.get('apm_audio'),
+                title: model.get('title'),
+                identifier: model.get('apm_audio'),
                 type: 'audio'
             });
             console.log(playable);
@@ -17,8 +18,7 @@ export default Ember.ObjectController.extend({
             Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', playable.identifier);
 
 
-        }
+        } 
     },
-
    
 });

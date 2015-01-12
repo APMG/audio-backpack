@@ -2,6 +2,9 @@ import Ember from "ember";
 import pagedArray from 'ember-cli-pagination/computed/paged-array';
 
 export default Ember.ArrayController.extend({
+
+    //needs: ['application'],
+
     searchTerm: '',  //keep track of what is in the search input field
 
     // setup our query params
@@ -46,5 +49,18 @@ export default Ember.ArrayController.extend({
             this.set('showPaging',true);
 
        }
-    }.observes("searchTerm")
+    }.observes("searchTerm"),
+
+    // actions: {
+    //     openModal: function(someArg){
+    //         console.log('recieved from component into controller', someArg);
+    //         console.log(this);
+    //        // this.sendAction('openModal');
+
+    //         // return this.render('clip', {
+    //         //     into: 'application',
+    //         //     outlet: 'modal'
+    //         // });
+    //     }
+    // }
 });

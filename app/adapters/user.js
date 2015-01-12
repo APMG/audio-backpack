@@ -13,7 +13,7 @@ export default DS.RESTAdapter.reopen({
     host: 'http://localhost:3000',
     namespace: 'api/v1',
 
-    buildURL: function(type, id, record) {
+    buildURL: function(type, id) { //, record
         var get = Ember.get;
         var url = [],
             host = get(this, 'host'),

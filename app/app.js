@@ -6,6 +6,7 @@ import Resolver from 'ember/resolver';
 import loadInitializers from 'ember/load-initializers';
 import config from './config/environment';
 
+
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
 var App = Ember.Application.extend({
@@ -18,7 +19,7 @@ var App = Ember.Application.extend({
         window.soundManager = soundManager;
         var settings = {
             preferFlash: true,
-            swf: '/assets/swf/soundmanager2.swf'
+            swf: config.baseURL+'assets/swf/soundmanager2.swf'
         };
         var APMPlayer = APMPlayerFactory.getPlayer();
         window.APMPlayer = APMPlayer;
