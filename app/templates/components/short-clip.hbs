@@ -1,5 +1,5 @@
 <li class='item'>
-    <a {{action 'play'}} class='item-icon play clickable'>
+    <a {{action 'play' clip}} class='item-icon play clickable'>
 
     </a>
 
@@ -8,7 +8,7 @@
         <span class='duration'>{{pretty-duration clip.duration}}</span><br />
 
         
-        <a href="#" class="sub-action">+ Add to playlist</a>
+        <a class="sub-action" {{action 'openModal' 'modal' clip}}>+ Add to playlist</a>
         {{#link-to 'clip' clip class="sub-action"}} Details &rarr; {{/link-to}}
     </div>
 </li>
