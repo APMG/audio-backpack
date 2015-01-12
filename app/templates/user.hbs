@@ -1,8 +1,15 @@
-{{gravatar-image hash=model.gravatar size='200'}}  <h1>{{model.full_name}}</h1>
 
-<h2>{{ownerApos}} Playlists</h2>
-<ul class='item-list'>
-{{#each playlist in playlists}}
-    {{short-playlist playlist=playlist}}
-{{/each}}
-</ul>
+<section class='user-header'>
+    {{gravatar-image hash=model.gravatar size='200' class=''}}  
+    <h1>{{model.full_name}}</h1>
+</section>
+
+<section>
+    <h2>{{ownerApos}} Playlists</h2>
+
+    <ul class='item-list'>
+    {{#each playlist in playlists}}
+        {{short-playlist playlist=playlist}}
+    {{/each}}
+    </ul>
+</section>

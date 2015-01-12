@@ -25,6 +25,10 @@ h2{
 	}
 }
 
+section{
+	.clearfix();
+}
+
 .clickable{
 	cursor: pointer;
 }
@@ -37,6 +41,9 @@ h2{
 @import "base_nav";
 
 
+/**
+ * LIST FORMATS
+ */
 .item-list{
 	padding: 0;
 	list-style-type: none;
@@ -69,3 +76,23 @@ h2{
 	width: 100%;
 	padding-left: 85px;
 }
+
+
+/**
+ * USER PAGE
+ * e.g. /user/2
+ */
+.user-header{
+	img{
+		border-radius: 50%;
+		border: 2px solid @light-blue;
+		float: left;
+		max-width: 100px;
+		height: auto;
+		margin: 0 1em 1em 0;
+	}
+	h1{
+		margin-top: 1.4em;
+	}
+}
+
