@@ -28,6 +28,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       actions: {
         openModal: function(modalName, model) {
             console.log('open modal from app called');
+            console.log(modalName);
+
             this.controllerFor(modalName).set('model', model);
             return this.render(modalName, {
                 into: 'application',
@@ -36,6 +38,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         },
 
         closeModal: function() {
+            console.log('close recieved!');
             return this.disconnectOutlet({
                 outlet: 'modal',
                 parentView: 'application'
