@@ -52,7 +52,16 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    //ENV.baseURL = '/music_education/';
   }
+
+  //Since "development" is the name ember-cli likes for local development,
+  //we're gonna use something else on the server
+  if (environment === 'server-development'){
+      ENV.baseURL = '/music_education/';
+  }
+
 
   if (environment === 'test') {
     // Testem prefers this...
