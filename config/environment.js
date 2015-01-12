@@ -58,7 +58,7 @@ module.exports = function(environment) {
 
   //Since "development" is the name ember-cli likes for local development,
   //we're gonna use something else on the server
-  if (environment === 'server-development'){
+  if (environment === 'server-development' || environment === 'stage'){
       ENV.baseURL = '/music_education/';
   }
 
