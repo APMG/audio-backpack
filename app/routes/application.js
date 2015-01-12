@@ -9,7 +9,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     beforeModel: function(transition){
         this._super(transition); //need to call the partent class method before doing our own logic
         var store = this.store;
-        return Ember.$.getJSON( this.get('router.rootURL') + 'audio.json').then(function(data) {
+        return Ember.$.getJSON( ENV.baseURL + 'audio.json').then(function(data) {
 
             //Wipe out the local storage for this before starting import
             //ensures that our clip data is always fresh
