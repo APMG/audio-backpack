@@ -15,7 +15,7 @@
         <span class='duration'>{{pretty-duration clip.duration}}</span><br />
 
 
-        <a class="sub-action" {{action 'openModal' 'modal' clip}}>+ Add to playlist</a>
+        <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modal' clip}}>+ Add to playlist</a>
         {{#link-to 'clip' clip class="sub-action"}} Details &rarr; {{/link-to}}
     </div>
 </li>
