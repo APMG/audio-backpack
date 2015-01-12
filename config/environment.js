@@ -60,6 +60,16 @@ module.exports = function(environment) {
   //we're gonna use something else on the server
   if (environment === 'server-development' || environment === 'stage'){
       ENV.baseURL = '/music_education/';
+
+      ENV["simple-auth"] = {
+        crossOriginWhitelist: ['https://accounts.devel.publicradio.org'],
+        serverTokenEndpoint: 'https://accounts.devel.publicradio.org/oauth/token',
+      };
+      ENV['simple-auth-oauth2'] =  {
+        serverTokenEndpoint: 'https://accounts.devel.publicradio.org/oauth/token',
+        serverUserDataEndpoint: 'https://accounts.devel.publicradio.org/api/v1/me.json'
+      };
+
   }
 
 
