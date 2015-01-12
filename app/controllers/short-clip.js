@@ -1,9 +1,9 @@
 import Ember from "ember";
 
-export default Ember.Component.extend({
+export default Ember.ObjectController.extend({
     selectedList: null,
     actions: {
-        play: function(model){
+         play: function(model){
             //console.log(thing, thing.get('apm_audio'));
             console.log(model.get('apm_audio'));
             var playable = APMPlayerFactory.getPlayable({
@@ -18,21 +18,7 @@ export default Ember.Component.extend({
             Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', playable.identifier);
 
 
-        },
-        openModal: function(modalName, model) {
-
-            console.log(modalName, model);
-
-            //Hmm
-            console.log(  this.controllerFor(modalName) ) ;
-
-            // this.controllerFor(modalName).set('model', model);
-            // return this.render(modalName, {
-            //     into: 'application',
-            //     outlet: 'modal'
-            // });
-        },
+        } 
     },
-
    
 });

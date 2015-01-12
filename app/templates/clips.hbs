@@ -12,11 +12,11 @@
 
 {{#if filteredClips}}
     {{#each clip in filteredClips}}
-        {{short-clip clip=clip}}
+        {{render 'short-clip' clip}}
     {{/each}}
 {{ else }}
     {{#each clip in pagedContent}}
-        {{short-clip clip=clip}}
+        {{render 'short-clip' clip}}
     {{/each}}
 {{/if}}
 

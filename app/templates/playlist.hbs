@@ -4,7 +4,7 @@
 		
 		<ul class='item-list'>
 		{{#each clip in model.clips}}
-			{{short-clip clip=clip}}
+	        {{render 'short-clip' clip}}
 		{{else}}
 			<li>No audio clips yet.</li>
 		{{/each}}
