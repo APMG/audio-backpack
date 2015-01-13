@@ -4,7 +4,6 @@ import ENV from '../config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
 
-    rootURL: ENV.baseURL,
 
     /**
      * Do initial data load from json file into store, which should be backed by localstorage
@@ -39,13 +38,18 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
                 outlet: 'modal'
             });
         },
-
+        
         closeModal: function() {
             console.log('close recieved!');
             return this.disconnectOutlet({
                 outlet: 'modal',
                 parentView: 'application'
             });
+        },
+        
+        //Makes sure we reload to correct URL after logout
+        sessionInvalidationSucceeded: function() {
+            window.location.replace(ENV.baseURL);
         }
     }
 });
