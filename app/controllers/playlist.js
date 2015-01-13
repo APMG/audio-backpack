@@ -3,13 +3,13 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
 
     clipCount: function(){
-        var clips = this.model.get('clips');
+        var clips = this.get('clips');
         return clips.get('length');
-    }.property('clipCount'),
+    }.property('model.clips.@each'),
 
 
     totalDuration: function(){    
-        var rel = this.model.get('clips').filterBy('duration');
+        var rel = this.get('clips').filterBy('duration');
         // console.log(rel);
         var totalDur = 0;
         for (var key in rel){
@@ -19,5 +19,5 @@ export default Ember.ObjectController.extend({
             }
         }
         return totalDur;
-    }.property('clips@each.duration')
+    }.property('model.clips.@each.duration')
 });

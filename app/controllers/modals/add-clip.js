@@ -1,12 +1,13 @@
 import Ember from "ember";
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
     selectedList: null,
     
     playlists: function(){
 
         var userID = this.get('session.user.id');
-        var myPlaylists = this.model.store.find('playlist',{user:userID});
+        
+        return this.model.store.find('playlist',{user:userID});
 
         //console.log(myPlaylists);
 
@@ -15,12 +16,12 @@ export default Ember.ObjectController.extend({
         //     console.log('woo',playlist.id);
         //     playlist.has_clip = 'YES';
         // });
-        return myPlaylists;
+        //return myPlaylists;
 
 
 
 
-    }.property('playlists'),
+    }.property(), //
 
     clip: function(){
         return this.model;
@@ -38,4 +39,6 @@ export default Ember.ObjectController.extend({
 
         }
     }
+
+
 });
