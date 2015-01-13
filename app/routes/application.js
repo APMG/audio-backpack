@@ -3,6 +3,9 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import ENV from '../config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
+
+    rootURL: ENV.baseURL,
+
     /**
      * Do initial data load from json file into store, which should be backed by localstorage
      */
