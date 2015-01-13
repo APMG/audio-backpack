@@ -13,8 +13,6 @@ export default Base.extend({
 
     authenticate: function(options) {
 
-        console.log('custom authenticator called!');
-
         var userDataEndpoint = ENV['simple-auth-oauth2']['serverUserDataEndpoint'];
 
         var _this = this;
@@ -35,7 +33,7 @@ export default Base.extend({
                         if (!Ember.isEmpty(userResp.id)){
                             response.user_id = userResp.id;
                         }
-                        console.log(response);
+                        //console.log(response);
                         Ember.run(function() {
                             var expiresAt = _this.absolutizeExpirationTime(response.expires_in);
 

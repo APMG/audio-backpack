@@ -71,11 +71,6 @@ module.exports = function(environment) {
       ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
       ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
       ENV['accountsHostBase'] = accountsHostBase;
-
-      ENV.APP.LOG_ACTIVE_GENERATION = true;
-
-      ENV.APP.LOG_VIEW_LOOKUPS = true;
-
   }
 
 

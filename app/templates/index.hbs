@@ -2,13 +2,7 @@
     <h2>Featured Playlists</h2>
     <br />
 
-    session: {{session}}<br />
-
-    session user: {{session.user}}<br />
-
-    your first name: {{session.user.first_name}}
-
-    your user id: {{session.user.id}}
+    <p>Sorry{{#if session.user.first_name}}, {{session.user.first_name}}{{/if}}, we don't have any featured playlists yet. </p>
 
 </section>
 
