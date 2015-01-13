@@ -64,21 +64,12 @@ module.exports = function(environment) {
   //Since "development" is the name ember-cli likes for local development,
   //we're gonna use something else on the server
   if (environment === 'server-development' || environment === 'stage'){
-
       accountsHostBase = 'https://accounts.devel.publicradio.org';
-
-
       ENV.baseURL = '/music_education/';
-
-      ENV["simple-auth"] = {
-        crossOriginWhitelist: [accountsHostBase],
-        serverTokenEndpoint: accountsHostBase + '/oauth/token',
-      };
-      ENV['simple-auth-oauth2'] =  {
-        serverTokenEndpoint: accountsHostBase + '/oauth/token',
-        serverUserDataEndpoint: accountsHostBase + '/api/v1/me.json'
-      };
-
+      ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
+      ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
+      ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
+      ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
       ENV['accountsHostBase'] = accountsHostBase;
 
       ENV.APP.LOG_ACTIVE_GENERATION = true;
