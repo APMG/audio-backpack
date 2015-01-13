@@ -1,6 +1,7 @@
 import Ember from "ember";
 
 export default Ember.ArrayController.extend({
+    itemController: "playlist",
     actions: {
         createList: function() {
             //look up user from session

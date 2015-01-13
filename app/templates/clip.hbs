@@ -20,13 +20,7 @@
 </dl>
 
 {{#if session.isAuthenticated}}
-	{{view "select" content=lists
-		optionValuePath="content.id"
-		optionLabelPath="content.title"
-		prompt="Add to list"
-		value=selectedList
-	}}
-	&nbsp; {{message}}
+     <a class="clickable" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model}}>+ Add to playlist</a>   
 {{else}}
 	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
 {{/if}}

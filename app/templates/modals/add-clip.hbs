@@ -1,5 +1,24 @@
-{{#modal-dialog title='Add clip to playlist' ok='add' close='closeModal'}}
+{{#modal-dialog title=clip.title ok='add' close='closeModal'}}
     
-    <p>Lorem ipsum placeholder</p>
+
+    {{#if session.isAuthenticated}}
+
+        <h5>Choose playlist to add this clip to:</h5>
+        <div class="list-group">
+        {{#each playlist in playlists}}
+            <a {{action 'addClip' playlist}} href="#" class='list-group-item'>{{playlist.title}}  
+
+                <span class='badge'>{{playlist.clipCount}} clips</span>
+
+
+                {{!playlist.has_clip}}</a>
+
+
+        {{/each}}
+        </ul>
+        <p><em>Note:</em> Presently there is no feedback to tell you if an item is already in a list or that it has been added to a list.</p>
+    {{else}}
+        <strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
+    {{/if}}
 
 {{/modal-dialog}}

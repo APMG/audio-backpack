@@ -9,7 +9,7 @@
 
     <ul class='item-list'>
     {{#each playlist in playlists}}
-        {{short-playlist playlist=playlist}}
+        {{render 'playlist' playlist}}
     {{/each}}
     </ul>
 </section>

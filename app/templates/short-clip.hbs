@@ -6,16 +6,16 @@
 }}
 
 <li class='item'>
-    <a {{action 'play' clip}} class='item-icon play clickable'>
-
-    </a>
+    <a {{action 'play' clip}} class='item-icon play clickable'> </a>
 
     <div class='item-info'>
-        <h3>{{clip.title}}</h3>
+        <h3>{{#link-to 'clip' clip class="sub-action"}}{{clip.title}}{{/link-to}}</h3>
         <span class='duration'>{{pretty-duration clip.duration}}</span><br />
 
-
+        {{#if session.isAuthenticated}}
         <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip}}>+ Add to playlist</a>
+        {{/if}}
+
         {{#link-to 'clip' clip class="sub-action"}} Details &rarr; {{/link-to}}
     </div>
 </li>

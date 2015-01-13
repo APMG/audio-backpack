@@ -1,11 +1,10 @@
-		<h1>{{title}}</h1>
+<li class='item'>    
+      {{#link-to 'playlist' playlist class='item-icon clickable'}}  &nbsp; {{/link-to}}
+      <div class='item-info'>
 
-		{{clipCount}} clips, {{pretty-duration totalDuration}}
-		
-		<ul class='item-list'>
-		{{#each clip in model.clips}}
-	        {{render 'short-clip' clip}}
-		{{else}}
-			<li>No audio clips yet.</li>
-		{{/each}}
-		</ul>
+
+        <h3>{{title}}</h3>
+        <span class='author'>by {{#link-to 'user' playlist.user}}{{user.first_name}} {{user.last_name}}{{/link-to}}</span><br />
+        {{clipCount}} clips, {{pretty-duration totalDuration}}
+    </div>
+</li>
