@@ -1,6 +1,9 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+
+  var accountsHostBase = 'http://localhost:3000';
+
   var ENV = {
     contentSecurityPolicy: {
       'object-src': "'self' common.publicradio.org",
@@ -27,18 +30,20 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    'accountsHostBase': accountsHostBase,
+
      session: 'session:withCurrentUser',
 
     "simple-auth": {
-      crossOriginWhitelist: ['http://localhost:3000'],
-      serverTokenEndpoint: 'http://localhost:3000/oauth/token',
+      crossOriginWhitelist: [accountsHostBase],
+      serverTokenEndpoint: accountsHostBase + '/oauth/token',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
       session: 'session:withCurrentUser'
 
     },
 
     'simple-auth-oauth2':  {
-      serverTokenEndpoint: 'http://localhost:3000/oauth/token',
+      serverTokenEndpoint: accountsHostBase + '/oauth/token',
       serverUserDataEndpoint: 'http://localhost:3000/api/v1/me.json'
     },
 
@@ -59,16 +64,22 @@ module.exports = function(environment) {
   //Since "development" is the name ember-cli likes for local development,
   //we're gonna use something else on the server
   if (environment === 'server-development' || environment === 'stage'){
+
+      accountsHostBase = 'https://accounts.devel.publicradio.org';
+
+
       ENV.baseURL = '/music_education/';
 
       ENV["simple-auth"] = {
-        crossOriginWhitelist: ['https://accounts.devel.publicradio.org'],
-        serverTokenEndpoint: 'https://accounts.devel.publicradio.org/oauth/token',
+        crossOriginWhitelist: [accountsHostBase],
+        serverTokenEndpoint: accountsHostBase + '/oauth/token',
       };
       ENV['simple-auth-oauth2'] =  {
-        serverTokenEndpoint: 'https://accounts.devel.publicradio.org/oauth/token',
-        serverUserDataEndpoint: 'https://accounts.devel.publicradio.org/api/v1/me.json'
+        serverTokenEndpoint: accountsHostBase + '/oauth/token',
+        serverUserDataEndpoint: accountsHostBase + '/api/v1/me.json'
       };
+
+      ENV['accountsHostBase'] = accountsHostBase;
 
   }
 

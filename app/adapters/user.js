@@ -1,5 +1,6 @@
 import DS from "ember-data";
 import Ember from 'ember';
+import ENV from '../config/environment';
 
 /**
  * This is largely verbatim from the default RESTAdapter class. 
@@ -10,7 +11,7 @@ import Ember from 'ember';
  */
 
 export default DS.RESTAdapter.reopen({
-    host: 'http://localhost:3000',
+    host: ENV.accountsHostBase,
     namespace: 'api/v1',
 
     buildURL: function(type, id) { //, record
