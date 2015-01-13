@@ -12,7 +12,10 @@ import Ember from 'ember';
 
 var SessionWithCurrentUser = Session.extend({
     user: function() {
+        console.log('session user func run');
         var userId = this.get('user_id');
+        console.log('userId:', userId);
+
         if (!Ember.isEmpty(userId)) {
             return this.container.lookup('store:main').find('user', userId);
         } else {
