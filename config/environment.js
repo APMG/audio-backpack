@@ -3,6 +3,8 @@
 module.exports = function(environment) {
 
   var accountsHostBase = 'http://localhost:3000';
+  var playlistMakerHostBase = 'http://localhost:3001';
+
 
   var ENV = {
     contentSecurityPolicy: {
@@ -29,6 +31,8 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    'playlistMakerHostBase' : playlistMakerHostBase,
 
     'accountsHostBase': accountsHostBase,
 

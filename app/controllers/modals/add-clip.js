@@ -8,7 +8,7 @@ export default Ember.ObjectController.extend({
         var userID = this.get('session.user.id');
         var myPlaylists = this.model.store.find('playlist',{user:userID});
 
-        console.log(myPlaylists);
+        //console.log(myPlaylists);
 
         // console.log(myPlaylists);
         // myPlaylists.forEach(function(playlist){

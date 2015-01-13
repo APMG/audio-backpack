@@ -1,5 +1,7 @@
 		<h1>{{model.title}}</h1>
 
+		<p>by {{#link-to 'user' model.user}}{{user.full_name}}{{/link-to}}</p>
+
 		{{clipCount}} clips, {{pretty-duration totalDuration}}
 		
 		<ul class='item-list'>

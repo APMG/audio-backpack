@@ -10,7 +10,7 @@ export default Ember.ObjectController.extend({
 
     totalDuration: function(){    
         var rel = this.model.get('clips').filterBy('duration');
-        console.log(rel);
+        // console.log(rel);
         var totalDur = 0;
         for (var key in rel){
             if (rel.hasOwnProperty(key)){
