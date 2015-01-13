@@ -44,7 +44,7 @@ module.exports = function(environment) {
 
     'simple-auth-oauth2':  {
       serverTokenEndpoint: accountsHostBase + '/oauth/token',
-      serverUserDataEndpoint: 'http://localhost:3000/api/v1/me.json'
+      serverUserDataEndpoint: accountsHostBase + '/api/v1/me.json'
     },
 
     "localStorageNamespace": "mpr-music-education",

@@ -13,6 +13,8 @@ export default Base.extend({
 
     authenticate: function(options) {
 
+        console.log('custom authenticator called!');
+
         var userDataEndpoint = ENV['simple-auth-oauth2']['serverUserDataEndpoint'];
 
         var _this = this;
