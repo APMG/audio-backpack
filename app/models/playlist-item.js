@@ -4,9 +4,10 @@
 import DS from "ember-data";
 
 export default DS.Model.extend({
-    // list: DS.belongsTo('playlist'),
-    // position: DS.attr('number'),
-    // apm_audio: DS.attr('string'),
-    // notes: DS.attr('string'),
-    // type: DS.attr('string',{defaultValue: 'audio'}),
+    playlist: DS.belongsTo('playlist'),
+    position: DS.attr('number'),
+    apm_audio: DS.attr('string'),
+    notes: DS.attr('string'),
+    type: DS.attr('string',{defaultValue: 'audio'}),
+    clip: DS.belongsTo('clip', {inverse: null}),
 });

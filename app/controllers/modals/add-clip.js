@@ -13,8 +13,26 @@ export default Ember.Controller.extend({
         },
         addClip: function(playlist){
             var aud = this.model;
-            playlist.get('clips').addObject(aud);
-            playlist.save();
+                
+            //first, create our playlist item
+            var playlist_item = this.store.createRecord('playlist-item', {
+                playlist: playlist,
+                position: null,
+                apm_audio: aud.get('apm_audio'),
+                notes: '',
+                clip: aud,
+            });
+            //get the playlist we want to add to
+            playlist.get('playlist_items').pushObject(playlist_item);
+            //save them sequentially
+            playlist.save().then(function(){
+               playlist_item.save();
+            },
+            function(err){
+                console.log('something went wrong', err);
+            });
+
+            // Need to do some fancy animation stuff here
 
         }
     }
