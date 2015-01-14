@@ -28,11 +28,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         });
     },
       actions: {
-        openModal: function(modalName, model) {
+        openModal: function(modalName,model,secondaryModel) {
             //console.log('open modal from app called');
-            //console.log(modalName);
 
             this.controllerFor(modalName).set('model', model);
+            this.controllerFor(modalName).set('secondaryModel', secondaryModel);
+
             return this.render(modalName, {
                 into: 'application',
                 outlet: 'modal'

@@ -20,7 +20,7 @@
 </dl>
 
 {{#if session.isAuthenticated}}
-     <a class="clickable" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model}}>+ Add to playlist</a>   
+     <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}>+ Add to playlist</a>
 {{else}}
 	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
 {{/if}}

@@ -1,7 +1,6 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
-    selectedList: null,
     actions: {
         play: function(){
             console.log(this.model.get('apm_audio'));
@@ -21,38 +20,13 @@ export default Ember.ObjectController.extend({
 
         }
     },
-  
+    /**
+     * Gets the list of playlists to pass to the modal component
+     * components dont seem to bind to updates, so this works around that.
+     */
     lists: function(){
-        return this.model.store.find('playlist');
+        var userID = this.get('session.user.id');
+        return this.model.store.find('playlist', {user:userID});
     }.property('playlists'),
 
-    onSelectedListChange:function(val){
-        //do nothing if we've got an invalid value
-        if (val.selectedList === null || val.selectedList === undefined){
-            return;
-        }
-
-        //first, get our audio and put it in aar for use inside a closure
-        var aud = this.model;
-        var context = this;
-        //find our list, then when we have it via a promise, add the audio to it
-        this.store.find('playlist', val.selectedList).then(function(playlist){
-            playlist.get('clips').addObject(aud);
-            playlist.save();
-            context.set('message','saved!');
-
-            //clear out the run success message
-            Ember.run.later(context, function() {
-                context.set('message',null);
-            }, 1000);
-
-        });
-
-        this.set('message','saving...');
-
-        //done!        
-        this.set('selectedList', null);
-
-
-    }.observes('selectedList')  //makes it watch the selectedList
 });

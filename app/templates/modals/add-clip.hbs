@@ -5,7 +5,7 @@
 
         <h5>Choose playlist to add this clip to:</h5>
         <div class="list-group">
-        {{#each playlist in playlists}}
+        {{#each playlist in secondaryModel}}
             <a {{action 'addClip' playlist}} href="#" class='list-group-item'>{{playlist.title}}  
 
                 <span class='badge'>{{playlist.clipCount}} clips</span>
@@ -19,6 +19,5 @@
         <p><em>Note:</em> Presently there is no feedback to tell you if an item is already in a list or that it has been added to a list.</p>
     {{else}}
         <strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
-    {{/if}}
-
+    {{/if}}    
 {{/modal-dialog}}

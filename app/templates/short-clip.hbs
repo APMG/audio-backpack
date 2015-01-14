@@ -13,7 +13,8 @@
         <span class='duration'>{{pretty-duration clip.duration}}</span><br />
 
         {{#if session.isAuthenticated}}
-        <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip}}>+ Add to playlist</a>
+        {{! this is a little wonky, but we have to pass in the clip and lists model so that the modal will have updated/bound access to both}}
+        <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip lists}}>+ Add to playlist</a>
         {{/if}}
 
         {{#link-to 'clip' clip class="sub-action"}} Details &rarr; {{/link-to}}

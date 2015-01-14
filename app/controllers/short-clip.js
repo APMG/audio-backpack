@@ -1,7 +1,6 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
-    selectedList: null,
     actions: {
          play: function(model){
             //console.log(thing, thing.get('apm_audio'));
@@ -11,14 +10,21 @@ export default Ember.ObjectController.extend({
                 identifier: model.get('apm_audio'),
                 type: 'audio'
             });
-            console.log(playable);
+            //console.log(playable);
             //Playlist.add(playable);
 
             Ember.$('#apm_player_container').apmplayer_ui('addPlayable', playable);
             Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', playable.identifier);
-
-
         } 
     },
+    
+    /**
+     * Gets the list of playlists to pass to the modal component
+     * components dont seem to bind to updates, so this works around that.
+     */
+    lists: function(){
+        var userID = this.get('session.user.id');
+        return this.model.store.find('playlist', {user:userID});
+    }.property('playlists'),
    
 });
