@@ -8,6 +8,22 @@ export default Ember.ObjectController.extend({
         return this.model.store.find('playlist');
     }.property('playlists'),
 
+    /**
+     * Tells us if we're looking at the logged in users
+     * @return {Boolean} [description]
+     */
+    isLoggedInUser: function(){
+        if (this.get('session.isAuthenticated')){
+            var loggedInId = this.get('session.user_id');
+            var userId = parseInt(this.get('model.id'), 10);
+            if (loggedInId ===  userId){
+                return true;
+            }
+        }
+        return false;
+       
+    }.property(),
+
     /*
      * cleans out annloying spaces that we do not want there 
      */

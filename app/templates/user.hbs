@@ -4,6 +4,10 @@
     <h1>{{model.full_name}}</h1>
 </section>
 
+{{#if isLoggedInUser}}
+    <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a><br />
+{{/if}}
+
 <section>
     <h2>{{ownerApos}} Playlists</h2>
 
