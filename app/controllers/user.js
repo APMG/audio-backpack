@@ -2,11 +2,11 @@ import Ember from "ember";
 
 export default Ember.ObjectController.extend({
     
-    playlists: function(){
+    lists: function(){
         // TODO: Presently this does not correctly filter to the user in the route/url
         // That should be fixed
-        return this.model.store.find('playlist');
-    }.property('playlists'),
+        return this.model.store.find('list');
+    }.property('lists'),
 
     /**
      * Tells us if we're looking at the logged in users

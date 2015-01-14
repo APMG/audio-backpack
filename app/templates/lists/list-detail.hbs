@@ -8,8 +8,8 @@
 		{{clipCount}} clips, {{pretty-duration totalDuration}}
 		
 		<ul class='item-list'>
-			{{log model.playlist_items}}
-		{{#each item in model.playlist_items}}
+			{{log model.list_items}}
+		{{#each item in model.list_items}}
 			{{item}}
 	        {{!render 'short-clip' item}}
 		{{else}}

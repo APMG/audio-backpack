@@ -1,0 +1,14 @@
+<section class='playlist-index-header'>
+        <h2>All playlists</h2>
+
+         <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>
+</section>
+
+<section>
+    <ul class='item-list'>
+    {{#each list in model}}
+        {{render 'lists/list' list}}
+    {{/each}}
+    </ul>
+
+</section>

@@ -4,7 +4,7 @@
 import DS from "ember-data";
 
 export default DS.Model.extend({
-    playlist: DS.belongsTo('playlist'),
+    list: DS.belongsTo('list'),
     position: DS.attr('number'),
     apm_audio: DS.attr('string'),
     notes: DS.attr('string'),

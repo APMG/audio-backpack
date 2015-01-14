@@ -16,7 +16,7 @@
            <h2>{{ownerApos}} Playlists</h2>
 
       {{#if isLoggedInUser}}
-        <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a>
+        <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>
     {{/if}}
 </section>
 
@@ -24,8 +24,8 @@
 
 <section>
     <ul class='item-list'>
-    {{#each playlist in playlists}}
-        {{render 'playlist' playlist}}
+    {{#each list in lists}}
+        {{render 'list' list}}
     {{/each}}
     </ul>
 </section>

@@ -11,22 +11,22 @@ export default Ember.Controller.extend({
             console.log('sending close!');
             return this.send('closeModal');
         },
-        addClip: function(playlist){
+        addClip: function(list){
             var aud = this.model;
                 
             //first, create our playlist item
-            var playlist_item = this.store.createRecord('playlist-item', {
-                playlist: playlist,
+            var list_item = this.store.createRecord('list-item', {
+                list: list,
                 position: null,
                 apm_audio: aud.get('apm_audio'),
                 notes: '',
                 clip: aud,
             });
             //get the playlist we want to add to
-            playlist.get('playlist_items').pushObject(playlist_item);
+            list.get('list_items').pushObject(list_item);
             //save them sequentially
-            playlist.save().then(function(){
-               playlist_item.save();
+            list.save().then(function(){
+               list_item.save();
             },
             function(err){
                 console.log('something went wrong', err);

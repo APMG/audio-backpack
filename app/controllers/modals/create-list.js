@@ -1,37 +1,39 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
-    playlistTitle: '',
-    playlistDescription: '',
+    listTitle: '',
+    listDescription: '',
 
-    playlist: function(){
+    list: function(){
         return this.model;
-    }.property('playlist'),
+    }.property('list'),
     
     actions: {
         close: function() {
             console.log('sending close!');
             return this.send('closeModal');
         },
-        createPlaylist: function(){
-            console.log('Ok/create recieved', this.playlistTitle, this.playlistDescription);
+        createList: function(){
+            console.log('Ok/create recieved', this.listTitle, this.listDescription);
 
             var user = this.get('session.user');
 
-            var cleanTitle = this.get('playlistTitle');
+            var cleanTitle = this.get('listTitle');
 
             if (!cleanTitle.trim()) { return; }
             //create our list
-            var playlist = this.store.createRecord('playlist', {
+            var list = this.store.createRecord('list', {
                 title: cleanTitle,
-                description: this.playlistDescription,
+                description: this.listDescription,
                 user: user
             });
-            playlist.save();
+            console.log(list);
+
+            list.save();
             
             //clear out values for next use
-            this.set('playlistTitle', '');
-            this.set('playlistDescription', '');
+            this.set('listTitle', '');
+            this.set('listDescription', '');
 
 
             return this.send('closeModal');

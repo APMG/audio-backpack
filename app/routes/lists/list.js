@@ -7,8 +7,11 @@ export default Ember.Route.extend({
   renderTemplate: function() {
       console.log('render that guy');
 
-    var controller = this.controllerFor('playlist');
-    this.render('playlist-detail', {
+    var controller = this.controllerFor('lists.list');
+
+    console.log('where be it at',controller);
+
+    this.render('lists/list-detail', {
       controller: controller
     });
   }

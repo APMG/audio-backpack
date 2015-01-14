@@ -33,7 +33,7 @@ export default DS.LSAdapter.extend({
 
 //         //use 'list' instead of 'playlist'
 //         if (type === 'playlist'){
-//             type = 'list';
+//             type = 'lists';
 //         }
 //         if (type) { url.push(this.pathForType(type)); }
 
@@ -47,8 +47,8 @@ export default DS.LSAdapter.extend({
 //         url = url.join('/');
 //         if (!host && url) { url = '/' + url; }
 
-//         console.log('url', url+'.json')
-
+//         console.log('url', url+'.json');
+//         //return "http://localhost/playlist.php";
 //         return url+'.json';
 //     },
 

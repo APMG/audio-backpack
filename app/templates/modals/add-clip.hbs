@@ -5,13 +5,10 @@
 
         <h5>Choose playlist to add this clip to:</h5>
         <div class="list-group">
-        {{#each playlist in secondaryModel}}
-            <a {{action 'addClip' playlist}} href="#" class='list-group-item'>{{playlist.title}}  
-
-                <span class='badge'>{{playlist.clipCount}} clips</span>
-
-
-                {{!playlist.has_clip}}</a>
+        {{#each list in secondaryModel}}
+            <a {{action 'addClip' list}} href="#" class='list-group-item'>{{list.title}}  
+                <span class='badge'>{{list.clipCount}} clips</span>
+            </a>
 
 
         {{/each}}

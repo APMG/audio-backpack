@@ -24,7 +24,7 @@ export default Ember.ObjectController.extend({
      */
     lists: function(){
         var userID = this.get('session.user.id');
-        return this.model.store.find('playlist', {user:userID});
-    }.property('playlists'),
+        return this.model.store.find('list', {user:userID});
+    }.property('lists'),
    
 });
