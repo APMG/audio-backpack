@@ -1,11 +1,14 @@
-<h2>All playlists</h2>
+<section class='playlist-index-header'>
+        <h2>All playlists</h2>
 
-<p>Presently, this shows all playlists, created by you, only on your computer.</p>
+         <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a>
+</section>
 
-<a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a><br />
+<section>
+    <ul class='item-list'>
+    {{#each playlist in model}}
+        {{render 'playlist' playlist}}
+    {{/each}}
+    </ul>
 
-<ul class='item-list'>
-{{#each playlist in model}}
-    {{render 'playlist' playlist}}
-{{/each}}
-</ul>
+</section>

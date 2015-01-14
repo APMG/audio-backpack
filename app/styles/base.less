@@ -10,6 +10,8 @@ h2{
 	display: inline-block;
 	padding: .4em;
 	position: relative;
+	margin-top: 0.2em;
+	margin-right: 1em;
 
 	&:after{
 		content: '';
@@ -27,6 +29,7 @@ h2{
 
 section{
 	.clearfix();
+	margin-top: 1em;
 }
 
 .clickable{
@@ -37,6 +40,20 @@ section{
 	max-width: 800px;
 	padding: 0 10px;
 }
+
+
+/**
+ * Bootstrap overrides
+ */
+
+.control-label{
+	color: @qb-blue;
+}
+.btn{
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 
 @import "base_nav";
 
@@ -77,12 +94,22 @@ section{
 	padding-left: 85px;
 }
 
+/**
+ * PLAYLISTS INDEX PAGE
+ * e.g. /playlists
+ */
+.playlist-index-header{
+	.btn{
+		float: right;
+	}
+}
 
 /**
  * USER PAGE
  * e.g. /user/2
  */
 .user-header{
+
 	img{
 		border-radius: 50%;
 		border: 2px solid @light-blue;
@@ -93,6 +120,10 @@ section{
 	}
 	h1{
 		margin-top: 1.4em;
+		//display: inline-block;
+	}
+	&.is-logged-in-user{
+		h1{margin-top: 0.4em}
 	}
 }
 

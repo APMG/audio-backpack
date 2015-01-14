@@ -1,16 +1,28 @@
 
-<section class='user-header'>
+<section {{bind-attr class=":user-header isLoggedInUser"}}>
     {{gravatar-image hash=model.gravatar size='200' class=''}}  
     <h1>{{model.full_name}}</h1>
+
+    {{#if isLoggedInUser}}
+        {{#if session.isAuthenticated}}     
+          <a {{ action 'invalidateSession' }} class='btn btn-primary'>Sign out</a>
+        {{/if}}
+    {{/if}}
+  
+
 </section>
 
-{{#if isLoggedInUser}}
-    <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a><br />
-{{/if}}
+<section class='playlist-index-header'>
+           <h2>{{ownerApos}} Playlists</h2>
+
+      {{#if isLoggedInUser}}
+        <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a>
+    {{/if}}
+</section>
+
+
 
 <section>
-    <h2>{{ownerApos}} Playlists</h2>
-
     <ul class='item-list'>
     {{#each playlist in playlists}}
         {{render 'playlist' playlist}}

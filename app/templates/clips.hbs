@@ -1,12 +1,22 @@
 
+<section>
+    <label for='clip-filter' class="control-label ">Search Audio Clips</label>
+    <div class="input-group input-group-lg">
+      {{input type="search" value=searchTerm placeholder="Notation, composer, instrumentation..." class='form-control' id='clip-filter'}}
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">{{fa-icon "search"}}</button>
+      </span>
+    </div>
+</section>
 
-{{input type="search" value=searchTerm placeholder="Filter audio"}}<br />
 
-{{#if filteredClips}}
+<section>
+    {{#if filteredClips}}
     <h2>Filtered audio clips</h2>
 {{ else }}
     <h2>Browse audio clips</h2>
 {{/if}}
+</section>
 
 <ul class='item-list'>
 
