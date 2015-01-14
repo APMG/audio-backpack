@@ -2,8 +2,7 @@
 
 <p>Presently, this shows all playlists, created by you, only on your computer.</p>
 
-{{input type="text" id="new-list" placeholder="Create new list"
-    value=newTitle action="createList"}}
+<a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-playlist'}}>Create new playlist</a><br />
 
 <ul class='item-list'>
 {{#each playlist in model}}

@@ -1,0 +1,19 @@
+{{#modal-dialog title='Create new playlist' ok='createPlaylist' close='closeModal' okText="Create playlist"}}
+    
+    {{#if session.isAuthenticated}}
+        <form>
+          <div class="form-group">
+            <label for="new-playlist-title" class="control-label">Title</label>
+            {{input type="text" id="new-playlist-title" placeholder="My awesome playlist" value=playlistTitle class='form-control'}}
+
+          </div>
+          <div class="form-group">
+            <label for="new-playlist-description" class="control-label">Description</label>
+            {{textarea id="new-playlist-description" value=playlistDescription class='form-control'}}
+          </div>
+        </form>
+        
+    {{else}}
+        <strong>Please {{#link-to 'login'}}log in{{/link-to}} to create playlists.</strong>
+    {{/if}}    
+{{/modal-dialog}}
