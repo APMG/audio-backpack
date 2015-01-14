@@ -1,19 +1,38 @@
 .primary-nav{
-	//font-size: 
 	font-weight: bold;
 	img{
-		width: 300px;
-		float: left;
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+		//float: left;
+		margin: 0 auto;
+	}
+	ul{
+		margin-top: 10px;
+	}
+	.nav-pills{
+		text-align: center;
+	}
+	.nav-pills > li{
+		float: none;
+	}
+
+	li{
+		display: inline;
 	}
 	li > a{
+		display: inline;
 		text-decoration: underline;
+		padding: 6px 6px;
 		&.active{
 			text-decoration: none;
 			color: @headings-color;
 		}
 	}
+
 }
-.nav > li.home-link > a{
-	padding: 4px 0;
-	background-color: transparent;
+
+.navbar-brand{
+	float: none;
+	display: block;
 }
