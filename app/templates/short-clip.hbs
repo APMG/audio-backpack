@@ -9,14 +9,17 @@
     <a {{action 'play' clip}} class='item-icon play clickable'> </a>
 
     <div class='item-info'>
-        <h3>{{#link-to 'clips.clip' clip class="sub-action"}}{{clip.title}}{{/link-to}}</h3>
+        {{#link-to 'clips.clip' clip}}<h3>{{clip.title}}</h3>
         <span class='duration'>{{pretty-duration clip.duration}}</span><br />
-
+         
+        <span class='details'>Details &rarr;</span>
+        
+        {{/link-to}}
         {{#if session.isAuthenticated}}
         {{! this is a little wonky, but we have to pass in the clip and lists model so that the modal will have updated/bound access to both}}
-        <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip lists}}>+ Add to playlist</a>
+        <a class="addTo details" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip lists}}>{{fa-icon 'plus'}} Add to playlist</a>
         {{/if}}
 
-        {{#link-to 'clips.clip' clip class="sub-action"}} Details &rarr; {{/link-to}}
+        
     </div>
 </li>

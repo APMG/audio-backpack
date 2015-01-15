@@ -1,26 +1,26 @@
-<h1>{{title}}</h1>
 
-<a {{action 'play'}} class='play clickable'>{{fa-icon "play"}} Play audio</a><br /><br />
 
-<dl>
-	<dt>Duration</dt>
-	<dd><p>{{pretty-duration duration}}</p></dd>
 
-	<dt>Published</dt>
-	<dd><p>{{ago pub_date}}</p></dd>
+<section class='clip-detail-header'> 
 
-	<dt>Description</dt>
-	<dd><p>{{description}}</p></dd>
+	<a {{action 'play'}} class='item-icon play clickable'> </a> 
 
-	<dt>Notes</dt>
-	<dd><p>{{notes}}</p></dd>
+	<div class='item-info'>
+		<h1>{{title}}</h1>
+        <span class='duration'>{{pretty-duration duration}}</span><br />
+        Published {{ago pub_date}}
+	</div>
 
-	<dt>APM Audio</dt>
-	<dd>{{apm_audio}}</dd>
-</dl>
+</section>
 
-{{#if session.isAuthenticated}}
-     <a class="sub-action" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}>+ Add to playlist</a>
+<section>
+	<p>{{description}}</p>
+
+</section>
+
+<section>
+	{{#if session.isAuthenticated}}
+     <a class="" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}>+ Add to playlist</a>
 {{else}}
-	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
-{{/if}}
+	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add this to a playlist.</strong>
+{{/if}}</section>

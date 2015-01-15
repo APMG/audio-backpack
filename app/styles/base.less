@@ -67,18 +67,40 @@ section{
 	margin: 1em 0;
 }
 .item{
+	margin-bottom: 1em;
+	.clearfix();
+	a{
+		text-decoration: none;
+		color: @text-color;
+		&:hover{
+			h3, .details{ 
+				color: @brand-primary;
+			}
+		}
+	}
+	.details{
+		color: @brand-primary;
+		font-weight: bold;
+	}
 	h3{
 		font-size: 1em;
 		font-weight: bold;
 		margin: 0;
 	}
-	margin-bottom: 10px;
-	.clearfix();
 	.sub-action{
 		font-weight: bold;
 		font-size: .9em;
 		padding-right: .5em;
 	}
+	.addTo{
+		float: left;
+		color: @brand-primary;
+		margin-right: 0.7em;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
 }
 .item-icon{
 	width: 75px;
@@ -87,6 +109,42 @@ section{
 	display: block;
 	border-radius: 10px;
 	float: left;
+	&:hover{
+		text-decoration: none;
+	}
+	&.play{
+		&:before{
+			font-family: 'FontAwesome';
+			content: "\f04b";
+			color: black;
+			font-size: 1em;
+			//there might be a better way to do this, but, eh...
+			position: absolute;
+			top: 37%; 
+			left: 44%;
+
+		}
+		background: @med-blue;
+		background: 
+			radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 32%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 100%),
+			url(../img/clip_bg.png),
+			@med-blue;
+		background-position: center center;
+		background-size: 75px;
+		position: relative;
+		&:hover{
+			background: 
+			radial-gradient(ellipse at center, @dark-blue 0%,@dark-blue 0%, @dark-blue 32%, transparent 34%,transparent 100%),
+			url(../img/clip_bg.png),
+			@med-blue;
+			background-position: center center;
+			background-size: 75px;
+			&:before{
+				color: white;
+			}
+		}
+	}
+	
 }
 .item-info{
 	//float: left;
@@ -101,6 +159,19 @@ section{
 .playlist-index-header{
 	.btn{
 		float: right;
+	}
+}
+
+/**
+ * CLIP DETAIL
+ * e.g. /clips/23094902343op2
+ */
+
+.clip-detail-header{
+	.item-icon{}
+	h1{
+		margin-left: 1em;
+		margin: 0;
 	}
 }
 
