@@ -112,7 +112,7 @@ section{
 	&:hover{
 		text-decoration: none;
 	}
-	&.play{
+	&.clip{
 		&:before{
 			font-family: 'FontAwesome';
 			content: "\f04b";
@@ -144,7 +144,36 @@ section{
 			}
 		}
 	}
-	
+	&.playlist{
+		&:before{
+			font-family: 'FontAwesome';
+			content: "\f04b";
+			color: black;
+			font-size: 1em;
+			//there might be a better way to do this, but, eh...
+			position: absolute;
+			top: 37%; 
+			left: 44%;
+
+		}
+		background: @med-blue;
+		background: 
+			radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 32%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 100%),
+			@med-blue;
+		background-position: center center;
+		background-size: 75px;
+		position: relative;
+		&:hover{
+			background: 
+			radial-gradient(ellipse at center, @dark-blue 0%,@dark-blue 0%, @dark-blue 32%, transparent 34%,transparent 100%),
+			@med-blue;
+			background-position: center center;
+			background-size: 75px;
+			&:before{
+				color: white;
+			}
+		}
+	}
 }
 .item-info{
 	//float: left;

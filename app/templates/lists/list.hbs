@@ -1,9 +1,10 @@
 <li class='item'>    
-      {{#link-to 'lists.list' list class='item-icon clickable'}}  {{/link-to}}
+      <a class='item-icon clickable playlist' href="#" {{action 'playAll'}}> </a>
       <div class='item-info'>
-
+          {{#link-to 'lists.list' list}} 
         <h3>{{title}}</h3>
-        <span class='author'>by {{#link-to 'user' user}}{{user.full_name}}{{/link-to}}</span><br />
+        <span class='author'>by {{!#link-to 'user' user}}{{user.full_name}}{{!/link-to}}</span><br />
         {{clipCount}} clips, {{pretty-duration totalDuration}}
+         {{/link-to}}
     </div>
 </li>

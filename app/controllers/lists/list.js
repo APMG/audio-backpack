@@ -27,5 +27,10 @@ export default Ember.ObjectController.extend({
         return 200000;
     }.property('model.list_items.@each'),
 
-
+    actions: {
+        playAll: function(){
+            alert("Sorry, not done yet");
+            return false;
+        }
+    }
 });

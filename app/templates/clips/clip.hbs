@@ -3,7 +3,7 @@
 
 <section class='clip-detail-header'> 
 
-	<a {{action 'play'}} class='item-icon play clickable'> </a> 
+	<a {{action 'play'}} class='item-icon clip clickable'> </a> 
 
 	<div class='item-info'>
 		<h1>{{title}}</h1>
@@ -20,7 +20,7 @@
 
 <section>
 	{{#if session.isAuthenticated}}
-     <a class="" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}>+ Add to playlist</a>
+     <a class="btn btn-primary" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}>{{fa-icon 'plus'}} Add to playlist</a>
 {{else}}
 	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add this to a playlist.</strong>
 {{/if}}</section>
