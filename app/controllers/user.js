@@ -5,7 +5,8 @@ export default Ember.ObjectController.extend({
     lists: function(){
         // TODO: Presently this does not correctly filter to the user in the route/url
         // That should be fixed
-        return this.model.store.find('list');
+        var userId = parseInt(this.get('model.id'), 10);
+        return this.model.store.find('list',{user:userId});
     }.property('lists'),
 
     /**
