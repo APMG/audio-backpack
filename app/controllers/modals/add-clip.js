@@ -13,6 +13,8 @@ export default Ember.Controller.extend({
         },
         addClip: function(list){
             var aud = this.model;
+
+            console.log('MY AUDIO:', aud.get('apm_audio'));
                 
             //first, create our playlist item
             var list_item = this.store.createRecord('list-item', {

@@ -9,22 +9,23 @@ export default Ember.ObjectController.extend({
 
 
     totalDuration: function(){    
-        return 50000;
+        /**
+         * This is commented out and purposefully disabled until further work
+         * on the playlist api is complete.
+         * While using the localStorage adapter, serialization and 
+         * deserialization of the relationships is not synchronous, and this
+         * causes issues with this not allowing us to compute total durations.
+         * See: https://github.com/kurko/ember-localstorage-adapter/issues/90
+         */
+        // //commented out until work on playlist-items is done
+        // var list_items = this.get('list_items');
+        // //var totalDur = 0;    
+        // list_items.forEach(function(item) {
+        //     console.log('aud',item.get('apm_audio'));
+        //     //more work needed here
+        // });       
+        return 200000;
+    }.property('model.list_items.@each'),
 
-        //commented out until work on playlist-items is done
-
-        // var rel = this.get('clips').filterBy('duration');
-        // // console.log(rel);
-        // var totalDur = 0;
-        // for (var key in rel){
-        //     if (rel.hasOwnProperty(key)){
-        //         var clip = rel[key];
-        //         totalDur += clip.get('duration');
-        //     }
-        // }
-        // return totalDur;
-    }.property('model.clips.@each.duration'),
-
-    //playlist_items: function
 
 });

@@ -11,6 +11,8 @@
 			{{log model.list_items}}
 		{{#each item in model.list_items}}
 			{{item}}
+
+			{{item.apm_audio}}
 	        {{!render 'short-clip' item}}
 		{{else}}
 			<li>No audio clips yet.</li>
