@@ -66,16 +66,42 @@ module.exports = function(environment) {
   }
 
   //Since "development" is the name ember-cli likes for local development,
-  //we're gonna use something else on the server
-  if (environment === 'server-development' || environment === 'stage'){
+  //we're gonna use the APM rails convention of 'common_dev' for dev on shared server
+  if (environment === 'common_dev'){
       accountsHostBase = 'https://accounts.devel.publicradio.org';
-      ENV.baseURL = '/music_education/';
+      //playlistMakerHostBase = 'https://playlist-maker.devel.publicradio.org';
+      ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
       ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
       ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
       ENV['accountsHostBase'] = accountsHostBase;
   }
+
+
+  if (environment === 'stage'){
+      accountsHostBase = 'https://accounts.stage.publicradio.org';
+      //playlistMakerHostBase = 'https://playlist-maker.stage.publicradio.org';
+      ENV.baseURL = '/audio-backpack/';
+      ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
+      ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
+      ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
+      ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
+      ENV['accountsHostBase'] = accountsHostBase;
+  }
+
+
+  if (environment === 'production'){
+      accountsHostBase = 'https://accounts.publicradio.org';
+      //playlistMakerHostBase = 'https://playlist-maker.publicradio.org';
+      ENV.baseURL = '/audio-backpack/';
+      ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
+      ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
+      ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
+      ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
+      ENV['accountsHostBase'] = accountsHostBase;
+  }
+
 
 
   if (environment === 'test') {
