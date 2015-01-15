@@ -3,13 +3,9 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
 
     clipCount: function(){
-        return 0;
-
-        //commented out until work on playlist-items is done
-
-        // var clips = this.get('clips');
-        // return clips.get('length');
-    }.property('model.clips.@each'),
+        var list_items = this.get('list_items');
+        return list_items.get('length');
+    }.property('model.list_items.@each'),
 
 
     totalDuration: function(){    
