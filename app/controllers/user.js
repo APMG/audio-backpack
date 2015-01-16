@@ -3,9 +3,7 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
     
     lists: function(){
-        // TODO: Presently this does not correctly filter to the user in the route/url
-        // That should be fixed
-        var userId = parseInt(this.get('model.id'), 10);
+        var userId = this.get('model.id');
         return this.model.store.find('list',{user:userId});
     }.property('lists'),
 
@@ -16,7 +14,7 @@ export default Ember.ObjectController.extend({
     isLoggedInUser: function(){
         if (this.get('session.isAuthenticated')){
             var loggedInId = this.get('session.user_id');
-            var userId = parseInt(this.get('model.id'), 10);
+            var userId = this.get('model.id');
             if (loggedInId ===  userId){
                 return true;
             }

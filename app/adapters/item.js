@@ -11,11 +11,13 @@ import ENV from '../config/environment';
  */
 
 export default DS.RESTAdapter.extend({
-    host: ENV.accountsHostBase,
+    host: ENV.playlistMakerHostBase,
     namespace: 'api/v1',
 
     buildURL: function(type, id) { //, record
-        
+
+        console.log('BUILD FOR ITEM');
+
         var get = Ember.get;
         var url = [],
             host = get(this, 'host'),
@@ -33,6 +35,8 @@ export default DS.RESTAdapter.extend({
         url = url.join('/');
         if (!host && url) { url = '/' + url; }
 
+        //console.log('url', url+'.json');
+        //return "http://localhost/playlist.php";
         return url+'.json';
     },
 
