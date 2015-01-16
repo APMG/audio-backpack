@@ -10,11 +10,14 @@ import ENV from '../config/environment';
  * need to use the environment flags and figure it out here 
  */
 
-export default DS.RESTAdapter.reopen({
+export default DS.RESTAdapter.extend({
     host: ENV.playlistMakerHostBase,
     namespace: 'api/v1',
 
     buildURL: function(type, id) { //, record
+
+        console.log('BUILD FOR ITEM');
+
         var get = Ember.get;
         var url = [],
             host = get(this, 'host'),
