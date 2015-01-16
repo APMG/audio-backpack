@@ -6,6 +6,7 @@ module.exports = function(environment) {
   var playlistMakerHostBase = 'http://localhost:3001';
 
 
+
   var ENV = {
     contentSecurityPolicy: {
       'object-src': "'self' common.publicradio.org",
@@ -115,6 +116,9 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
+
+  ENV['accountsSignup'] = accountsHostBase + '/users/sign_up';
+
 
 
   return ENV;
