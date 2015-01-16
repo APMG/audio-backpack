@@ -38,9 +38,19 @@ export default Ember.ArrayController.extend({
         if (term.length > 2) {
             var results;
             results = this.model.filter(function(clip) {
-                return clip.get('title').toLowerCase().indexOf(term) !== -1 ||
-                    clip.get('description').toLowerCase().indexOf(term) !== -1 ||
-                    clip.get('notes').toLowerCase().indexOf(term) !== -1;
+
+                //deal with null values by making them ''
+                var title = clip.get('title'),
+                    description = clip.get('description'),
+                    notes = clip.get('notes');
+
+                title = (Ember.isEmpty(title)) ? '' : title;
+                description = (Ember.isEmpty(description)) ? '' : description;
+                notes = (Ember.isEmpty(notes)) ? '' : notes;
+
+                return title.toLowerCase().indexOf(term) !== -1 ||
+                        description.toLowerCase().indexOf(term) !== -1 ||
+                        title.toLowerCase().indexOf(term) !== -1;
             });
             this.set('filteredClips',results);
             this.set('showPaging',false);
