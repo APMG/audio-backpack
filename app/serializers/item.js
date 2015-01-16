@@ -7,7 +7,7 @@ import DS from "ember-data";
 export default DS.RESTSerializer.extend({
 
     normalizePayload: function(payload) {
-        console.log('item-payload',payload);
+        //console.log('item-payload',payload);
         //delete payload.list_item_types;
         // delete payload.status;
         return payload;

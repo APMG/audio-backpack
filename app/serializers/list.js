@@ -34,9 +34,6 @@ export default DS.RESTSerializer.extend({
         return attr;
     },
 
-    extractCreateRecord: function(store, type, payload, id, requestType){
-        console.log('about to create');
-        console.log(store, type, payload, id, requestType);
-    }
+
 
 });

@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
             return this.send('closeModal');
         },
         createList: function(){
-            console.log('Ok/create recieved', this.listTitle, this.listDescription);
+            //console.log('Ok/create recieved', this.listTitle, this.listDescription);
 
             var user = this.get('session.user');
 
@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
                 description: this.listDescription,
                 user: user
             });
-            console.log(list);
+            //console.log(list);
 
             list.save();
             
