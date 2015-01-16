@@ -1,4 +1,6 @@
 import Ember from "ember";
+import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
+
 // import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 // export default Ember.Route.extend(AuthenticatedRouteMixin, {
@@ -8,8 +10,8 @@ import Ember from "ember";
 // });
 
 
-export default Ember.Route.extend({
-  model: function() {
-    return this.store.find('list');
-  }
+export default Ember.Route.extend(RouteMixin, {
+    model: function(params) {
+        return this.findPaged('list',params);
+    }
 });

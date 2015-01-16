@@ -6,9 +6,11 @@
 
 <section>
     <ul class='item-list'>
-    {{#each list in model}}
+    {{#each list in content}} {{!-- some places call this 'model', some places call it 'content' --}}
         {{render 'lists/list' list}}
     {{/each}}
     </ul>
+
+    {{page-numbers content=content}}
 
 </section>
