@@ -29,9 +29,9 @@ export default Base.extend({
 
                     Ember.$.getJSON(userDataEndpoint+'?access_token='+token).then(function(userResp){
 
-                        //console.log(userResp);
-                        if (!Ember.isEmpty(userResp.id)){
-                            response.user_id = userResp.id;
+                        //console.log(userResp, userResp.user.uid);
+                        if (!Ember.isEmpty(userResp.user.uid)){
+                            response.user_id = userResp.user.uid;
                         }
                         //console.log(response);
                         Ember.run(function() {
