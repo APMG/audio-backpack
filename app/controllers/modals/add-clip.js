@@ -22,7 +22,6 @@ export default Ember.Controller.extend({
                 position: null,
                 apm_audio: aud.get('apm_audio'),
                 notes: '',
-                clip: aud,
             });
             //get the playlist we want to add to
             list.get('items').pushObject(list_item);
