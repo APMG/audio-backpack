@@ -1,4 +1,5 @@
 import Ember from "ember";
+import ENV from '../../config/environment';
 
 export default Ember.ObjectController.extend({
 
@@ -94,6 +95,14 @@ export default Ember.ObjectController.extend({
 
             return false;
         },
-        
-    }
+    },
+    /**
+     * Generates the short URL for the playlist
+     * Needs to be kept in sync with the not found route
+     * @return {String} url for playlist
+     */
+    listURL: function(){
+        var shareSlug = (parseInt(this.get('id'), 10) + 10000).toString(36);
+        return window.location.origin + ENV.baseURL + shareSlug;
+    }.property('model')
 });

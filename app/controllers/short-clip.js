@@ -4,7 +4,7 @@ export default Ember.ObjectController.extend({
     actions: {
          play: function(model){
             //console.log(thing, thing.get('apm_audio'));
-            console.log(model.get('apm_audio'));
+            //console.log(model.get('apm_audio'));
             var playable = APMPlayerFactory.getPlayable({
                 title: model.get('title'),
                 identifier: model.get('apm_audio'),

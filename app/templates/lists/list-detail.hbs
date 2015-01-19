@@ -1,18 +1,30 @@
 		<h1>{{model.title}}</h1>
 
-		<p>by {{#link-to 'user' model.user}}{{user.full_name}}{{/link-to}}</p>
+		<p>Created by {{#link-to 'user' model.user}}{{user.full_name}}{{/link-to}}, {{ago created_at}}</p>
+
+	
+
+		{{#if isCurrentUserOwner}}
+     		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}} Delete</a>
+		{{/if}}
+
+		<section>
+		<label for='list-url' class="control-label ">Shareable URL</label>
+	    <div class="input-group input-group-lg">
+	      {{input type="search" value=listURL class='form-control' id='list-url' readonly='readonly'}}
+	      <span class="input-group-btn">
+	        <button class="btn btn-primary" type="button">{{fa-icon "envelope"}}</button>
+	      </span>
+	    </div>
+		</section>
+
+		<section>
+			<p>{{model.description}}</p>
+		</section>
 
 		{{#if clipCount}}
      		<a class="btn btn-primary" {{action 'playAll'}}>{{fa-icon 'play'}} Play All</a>
-		{{/if}}
-
-		{{#if isCurrentUserOwner}}
-     		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}} Delete playlist</a>
-		{{/if}}
-
-		<p>{{model.description}}</p>
-
-		{{clipCount}} clips, {{pretty-duration totalDuration}}
+		{{/if}} &nbsp; {{clipCount}} clips, {{pretty-duration totalDuration}}
 		
 		<ul class='item-list'>
 			{{log clips}}

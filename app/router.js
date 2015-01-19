@@ -18,6 +18,9 @@ Router.map(function() {
     });
     this.resource('login');
     this.resource('user', {path: '/user/:user_id'});
+
+    this.route('not-found', { path: '/*path' }); //fallback / short URL redirecter
+
 });
 
 export default Router;
