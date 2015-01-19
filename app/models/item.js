@@ -8,6 +8,6 @@ export default DS.Model.extend({
     position: DS.attr('number'),
     apm_audio: DS.attr('string'),
     notes: DS.attr('string'),
-    list_item_type_id: DS.attr('number',{defaultValue: 1}),
-    clip: DS.belongsTo('clip', {inverse: null}),
+    //list_item_type_id: DS.attr('number',{defaultValue: 1}),
+    //clip: DS.belongsTo('clip', {inverse: null}),
 });

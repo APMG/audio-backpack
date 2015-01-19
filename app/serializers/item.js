@@ -8,7 +8,8 @@ export default DS.RESTSerializer.extend({
 
     normalizePayload: function(payload) {
         //console.log('item-payload',payload);
-        //delete payload.list_item_types;
+        delete payload.list_item_types;
+        delete payload.clip;
         // delete payload.status;
         return payload;
     },
