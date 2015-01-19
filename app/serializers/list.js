@@ -8,7 +8,7 @@ import Ember from 'ember';
 export default DS.RESTSerializer.extend({
 
     normalizePayload: function(payload) {
-        console.log('list-payload',payload);
+        //console.log('list-payload',payload);
         delete payload.list_item_types;
 
         if (!Ember.isEmpty(payload.items)){

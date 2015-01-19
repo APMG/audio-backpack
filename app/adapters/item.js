@@ -41,7 +41,7 @@ export default DS.RESTAdapter.extend({
         url = url.join('/');
         if (!host && url) { url = '/' + url; }
 
-        console.log('url', url+'.json');
+        //console.log('url', url+'.json');
         //return "http://localhost/playlist.php";
         return url+'.json';
     },
