@@ -18,11 +18,14 @@ export default Ember.Controller.extend({
                 
             //first, create our playlist item
             var list_item = this.store.createRecord('item', {
-                list: list,
+                //list: list,
                 position: null,
                 apm_audio: aud.get('apm_audio'),
                 notes: '',
             });
+
+            console.log('list item', list_item);
+
             //get the playlist we want to add to
             list.get('items').pushObject(list_item);
             //save them sequentially

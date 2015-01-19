@@ -2,6 +2,9 @@ import Ember from "ember";
 
 export default Ember.ObjectController.extend({
 
+
+    clips: [],
+
     clipCount: function(){
         var list_items = this.get('items');
         return list_items.get('length');
@@ -25,7 +28,34 @@ export default Ember.ObjectController.extend({
         //     //more work needed here
         // });       
         return 200000;
-    }.property('model.list_items.@each'),
+    }.property('model.items.@each'),
+
+
+    clipsChanged: function() {
+        var items = this.get('items');
+        console.log('this', this);
+        var that = this;
+        items.forEach(function(item){
+            //console.log('aud',item.get('apm_audio'));
+            var apm_audio = item.get('apm_audio');
+            //console.log('apm_audio', apm_audio);
+            // var clip = that.model.store.find('clip',{'apm_audio':apm_audio});
+            // that.clips.push(clip);
+            //console.log('clip', clip);
+            
+            that.model.store.find('clip',{'apm_audio':apm_audio}).then(function(clip){
+
+
+                var firstClip = clip.get('firstObject');
+
+                console.log('CLIP',firstClip);
+                console.log('title',firstClip.get('apm_audio'));
+                that.clips.push(firstClip);
+            });
+            
+        });
+    }.observes('model.items'), //.on('init'), //.@each
+
 
     actions: {
         playAll: function(){

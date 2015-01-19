@@ -8,12 +8,11 @@
 		{{clipCount}} clips, {{pretty-duration totalDuration}}
 		
 		<ul class='item-list'>
-			{{log model.list_items}}
-		{{#each item in model.items}}
-			{{item}}
+			{{log clips}}
 
-			{{item.apm_audio}}
-	        {{!render 'short-clip' item}}
+		{{#each clip in clips}}
+			{{log clip.title}}
+	        {{render 'short-clip' clip}}
 		{{else}}
 			<li>No audio clips yet.</li>
 		{{/each}}

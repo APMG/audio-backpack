@@ -5,11 +5,11 @@ export default Ember.Route.extend({
   //   return this.store.find('playlist');
   // },
   renderTemplate: function() {
-      console.log('render that guy');
+    //console.log('render that guy');
 
     var controller = this.controllerFor('lists.list');
 
-    console.log('where be it at',controller);
+    //console.log('where be it at',controller);
 
     this.render('lists/list-detail', {
       controller: controller
