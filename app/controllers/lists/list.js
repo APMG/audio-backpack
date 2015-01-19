@@ -62,7 +62,31 @@ export default Ember.ObjectController.extend({
 
     actions: {
         playAll: function(){
-            alert("Sorry, not done yet");
+            //var clipsPlayable = [];
+            var firstClip;
+            var clips = this.get('clips');
+            clips.forEach(function(clip){
+                //console.log(clip.get("apm_audio"));
+                var playable = APMPlayerFactory.getPlayable({
+                    title: clip.get('title'),
+                    identifier: clip.get('apm_audio'),
+                    type: 'audio'
+                });
+                //clipsPlayable.push(playable);
+                Ember.$('#apm_player_container').apmplayer_ui('addPlayable', playable);
+                if (!firstClip){
+                    firstClip = playable;
+                }
+
+            });
+            if (firstClip !== null){
+                Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', firstClip.identifier);
+            }
+
+            // console.log(Ember.$('#apm_player_container').apmplayer_ui('getPlaylist'));
+            // Ember.$('#apm_player_container').apmplayer_ui('addPlayable', playable);
+            // Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', playable.identifier);
+
             return false;
         },
         // deleteList: function() {
