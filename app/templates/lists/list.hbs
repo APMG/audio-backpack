@@ -6,5 +6,9 @@
         <span class='author'>by {{!#link-to 'user' user}}{{user.full_name}}{{!/link-to}}</span><br />
         {{clipCount}} clips, {{pretty-duration totalDuration}}
          {{/link-to}}
+
+        {{#if isCurrentUserOwner}}
+            &nbsp; <a class="clickable" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}}</a>
+        {{/if}}
     </div>
 </li>
