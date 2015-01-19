@@ -4,57 +4,34 @@ export default Ember.ObjectController.extend({
 
 
     clips: [],
+    totalDuration: 0,
 
     clipCount: function(){
         var list_items = this.get('items');
         return list_items.get('length');
     }.property('model.items.@each'),
 
-
-    totalDuration: function(){    
-        /**
-         * This is commented out and purposefully disabled until further work
-         * on the playlist api is complete.
-         * While using the localStorage adapter, serialization and 
-         * deserialization of the relationships is not synchronous, and this
-         * causes issues with this not allowing us to compute total durations.
-         * See: https://github.com/kurko/ember-localstorage-adapter/issues/90
-         */
-        // //commented out until work on playlist-items is done
-        // var list_items = this.get('list_items');
-        // //var totalDur = 0;    
-        // list_items.forEach(function(item) {
-        //     console.log('aud',item.get('apm_audio'));
-        //     //more work needed here
-        // });       
-        return 200000;
-    }.property('model.items.@each'),
+    clipChanger: function(){
+         Ember.run.once(this, 'clipsChanged');
+    }.observes('model.items'), 
 
 
     clipsChanged: function() {
+        this.clips = [];
+        this.totalDuration = 0;
         var items = this.get('items');
-        console.log('this', this);
         var that = this;
         items.forEach(function(item){
-            //console.log('aud',item.get('apm_audio'));
             var apm_audio = item.get('apm_audio');
-            //console.log('apm_audio', apm_audio);
-            // var clip = that.model.store.find('clip',{'apm_audio':apm_audio});
-            // that.clips.push(clip);
-            //console.log('clip', clip);
-            
+
             that.model.store.find('clip',{'apm_audio':apm_audio}).then(function(clip){
-
-
                 var firstClip = clip.get('firstObject');
-
-                console.log('CLIP',firstClip);
-                console.log('title',firstClip.get('apm_audio'));
                 that.clips.push(firstClip);
+                that.totalDuration += firstClip.get('duration');
             });
             
         });
-    }.observes('model.items'), //.on('init'), //.@each
+    }, //.observes('model.items'), //.on('init'), //.@each
 
 
     actions: {
