@@ -14,14 +14,22 @@ export default DS.RESTAdapter.extend({
     host: ENV.playlistMakerHostBase,
     namespace: 'api/v1',
 
-    buildURL: function(type, id) { //, record
+    buildURL: function(type, id, record) { 
 
         var get = Ember.get;
         var url = [],
             host = get(this, 'host'),
             prefix = this.urlPrefix();
+        // We need to include the parent list in the URL
+        // e.g. /api/v1/lists/29.json, so we include "lists" and the list id from the parent record
+        if (record){
+            url.push('lists');
+            url.push( record.get('list.id'));
+        }    
 
         if (type) { url.push(this.pathForType(type)); }
+
+
 
         //We might get passed in an array of ids from findMany
         //in which case we don't want to modify the url, as the
@@ -33,7 +41,7 @@ export default DS.RESTAdapter.extend({
         url = url.join('/');
         if (!host && url) { url = '/' + url; }
 
-        //console.log('url', url+'.json');
+        console.log('url', url+'.json');
         //return "http://localhost/playlist.php";
         return url+'.json';
     },
