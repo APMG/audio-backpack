@@ -14,7 +14,8 @@ export default Ember.Controller.extend({
             return this.send('closeModal');
         },
         createList: function(){
-            //console.log('Ok/create recieved', this.listTitle, this.listDescription);
+
+            var that = this;
 
             var user = this.get('session.user');
 
@@ -27,16 +28,30 @@ export default Ember.Controller.extend({
                 description: this.listDescription,
                 user: user
             });
-            //console.log(list);
+            console.log('list',list);
 
-            list.save();
+            list.save().then(function(){
+                // Success callback
+                that.set('listTitle', '');
+                that.set('listDescription', '');
+                that.send('closeModal');
+                // 
+            }, function(error) {
+                console.log('tried save, ERROR', error);
+                return false;
+            });
+
+
+
+
+            // console.log('tried save');
             
-            //clear out values for next use
-            this.set('listTitle', '');
-            this.set('listDescription', '');
+            // //clear out values for next use
 
 
-            return this.send('closeModal');
+
+
+            return;  //this.send('closeModal');
         }
     }
 

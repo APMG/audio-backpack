@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
             console.log('MY AUDIO:', aud.get('apm_audio'));
                 
             //first, create our playlist item
-            var list_item = this.store.createRecord('list-item', {
+            var list_item = this.store.createRecord('item', {
                 list: list,
                 position: null,
                 apm_audio: aud.get('apm_audio'),
@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
                 clip: aud,
             });
             //get the playlist we want to add to
-            list.get('list_items').pushObject(list_item);
+            list.get('items').pushObject(list_item);
             //save them sequentially
             list.save().then(function(){
                list_item.save();

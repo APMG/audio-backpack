@@ -1,6 +1,9 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
+
+    // needs: "lists",
+    // post: Ember.computed.alias("controllers.lists.index"),
     
     lists: function(){
         var userId = this.get('model.id');
