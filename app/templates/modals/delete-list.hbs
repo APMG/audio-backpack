@@ -1,0 +1,11 @@
+{{#modal-dialog title='Delete playlist' ok='deleteList' close='closeModal' okText="Yes, I'm sure" btnClass='btn-danger' closeText="Cancel"}}
+    
+    {{#if session.isAuthenticated}}
+         <p>Are you sure you want to delete <strong>{{model.title}}</strong>?</p>
+
+         <p>This cannot be undone.</p>
+        
+    {{else}}
+        <strong>You must be {{#link-to 'login'}}logged in{{/link-to}} to delete playlists.</strong>
+    {{/if}}    
+{{/modal-dialog}}

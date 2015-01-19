@@ -48,11 +48,31 @@ export default Ember.ObjectController.extend({
         });
     },
 
+    isCurrentUserOwner: function(){
+        if (this.get('session.isAuthenticated')){
+            var loggedInId = this.get('session.user_id');
+            var userId = this.get('model.user.id');
+            if (loggedInId ===  userId){
+                return true;
+            }
+        }
+        return false;
+    }.property(),
+
 
     actions: {
         playAll: function(){
             alert("Sorry, not done yet");
             return false;
-        }
+        },
+        // deleteList: function() {
+        //     var that = this;
+        //     var list = this.get('model');
+        //     list.deleteRecord();
+        //     list.save().then(function(){
+        //         that.transitionTo('lists');
+        //     });
+        //     return false;
+        // }
     }
 });

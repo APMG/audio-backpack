@@ -2,6 +2,10 @@
 
 		<p>by {{#link-to 'user' model.user}}{{user.full_name}}{{/link-to}}</p>
 
+		{{#if isCurrentUserOwner}}
+     		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}} Delete playlist</a>
+
+		{{/if}}
 
 		<p>{{model.description}}</p>
 
