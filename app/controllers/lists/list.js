@@ -62,11 +62,18 @@ export default Ember.ObjectController.extend({
 
     actions: {
         playAll: function(){
+            /**
+             * This needs to be re-worked
+             * Presently, we're sending each of the playbales to the player, then keeping track of which the first one was. 
+             * THis is bad, because our playlist eventually gets realy long and not correct.
+             * We need to be able to send a new playlist to the player, replacing the existing one, and then starting at the begining of said new playlist.
+             * 
+             */
+            
             //var clipsPlayable = [];
             var firstClip;
             var clips = this.get('clips');
             clips.forEach(function(clip){
-                //console.log(clip.get("apm_audio"));
                 var playable = APMPlayerFactory.getPlayable({
                     title: clip.get('title'),
                     identifier: clip.get('apm_audio'),
@@ -83,20 +90,10 @@ export default Ember.ObjectController.extend({
                 Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', firstClip.identifier);
             }
 
-            // console.log(Ember.$('#apm_player_container').apmplayer_ui('getPlaylist'));
-            // Ember.$('#apm_player_container').apmplayer_ui('addPlayable', playable);
-            // Ember.$('#apm_player_container').apmplayer_ui('gotoPlaylistItem', playable.identifier);
+            //Ideally, would replace existing playlist here. 
 
             return false;
         },
-        // deleteList: function() {
-        //     var that = this;
-        //     var list = this.get('model');
-        //     list.deleteRecord();
-        //     list.save().then(function(){
-        //         that.transitionTo('lists');
-        //     });
-        //     return false;
-        // }
+        
     }
 });
