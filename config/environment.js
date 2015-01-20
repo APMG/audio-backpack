@@ -32,6 +32,7 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    baseDomain: "",
 
     'playlistMakerHostBase' : playlistMakerHostBase,
 
@@ -71,6 +72,7 @@ module.exports = function(environment) {
   if (environment === 'common_dev'){
       accountsHostBase = 'https://accounts-devel.publicradio.org';
       playlistMakerHostBase = 'https://playlist-maker-devel.publicradio.org';
+      ENV.baseDomain = 'http://apps.devel.classicalmpr.org';
       ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
@@ -83,6 +85,7 @@ module.exports = function(environment) {
   if (environment === 'stage'){
       accountsHostBase = 'https://accounts-stage.publicradio.org';
       playlistMakerHostBase = 'https://playlist-maker-stage.publicradio.org';
+      ENV.baseDomain = 'http://apps.stage.classicalmpr.org';
       ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
@@ -95,6 +98,7 @@ module.exports = function(environment) {
   if (environment === 'production'){
       accountsHostBase = 'https://accounts.publicradio.org';
       playlistMakerHostBase = 'https://playlist-maker.publicradio.org';
+      ENV.baseDomain = 'https://apps.classicalmpr.org';
       ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
@@ -117,7 +121,7 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  ENV['accountsSignup'] = accountsHostBase + '/users/sign_up';
+  ENV['accountsSignup'] = accountsHostBase + '/users/sign_up?from='+  encodeURIComponent(ENV['baseDomain'] + ENV['baseURL']);  //window.location.origin +
 
 
 
