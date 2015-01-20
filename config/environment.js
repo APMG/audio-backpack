@@ -69,8 +69,8 @@ module.exports = function(environment) {
   //Since "development" is the name ember-cli likes for local development,
   //we're gonna use the APM rails convention of 'common_dev' for dev on shared server
   if (environment === 'common_dev'){
-      accountsHostBase = 'https://accounts.devel.publicradio.org';
-      //playlistMakerHostBase = 'https://playlist-maker.devel.publicradio.org';
+      accountsHostBase = 'https://accounts-devel.publicradio.org';
+      playlistMakerHostBase = 'https://playlist-maker-devel.publicradio.org';
       ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
@@ -81,8 +81,8 @@ module.exports = function(environment) {
 
 
   if (environment === 'stage'){
-      accountsHostBase = 'https://accounts.stage.publicradio.org';
-      //playlistMakerHostBase = 'https://playlist-maker.stage.publicradio.org';
+      accountsHostBase = 'https://accounts-stage.publicradio.org';
+      playlistMakerHostBase = 'https://playlist-maker-stage.publicradio.org';
       ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
@@ -94,7 +94,7 @@ module.exports = function(environment) {
 
   if (environment === 'production'){
       accountsHostBase = 'https://accounts.publicradio.org';
-      //playlistMakerHostBase = 'https://playlist-maker.publicradio.org';
+      playlistMakerHostBase = 'https://playlist-maker.publicradio.org';
       ENV.baseURL = '/audio-backpack/';
       ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
       ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
