@@ -20,7 +20,6 @@ export default Ember.ObjectController.extend({
     }.property('model.items'),
 
     clipChanger: function(){
-        //console.log('clip changer, yo');
         Ember.run.once(this, 'clipsDidChange');
     }.on('init'), 
 
@@ -33,18 +32,34 @@ export default Ember.ObjectController.extend({
     
 
         var items = this.get('items');
-        // console.log(items);
+        console.log(items);
         var that = this;
         items.forEach(function(item){
             var apm_audio = item.get('apm_audio');
 
+            console.log('item', item.get('position'));
+
             that.model.store.find('clip',{'apm_audio':apm_audio}).then(function(clip){
+
+                console.log(this, this.get('position'));
+
+                var list_item_position = this.get('position'); //item.get('position');
+                //console.log('id', item.id, list_item_position);
                 var firstClip = clip.get('firstObject');
+                
+                firstClip.set('item_id', this.id);
+                firstClip.set('item_position', list_item_position);
+
+                //console.log(firstClip);
+
+                // that.clips.push(firstClip);
                 that.clips.push(firstClip);
+                 //pass the list item id in so we can use it to keep the sort and tracking
+                //update durations
                 var newDur = that.get('totalDuration') + firstClip.get('duration');
                 that.set('totalDuration', newDur); 
                 //console.log(firstClip.get('duration'));
-            });
+            }.bind(item));
             
         });
     },

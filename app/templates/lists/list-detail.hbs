@@ -27,10 +27,24 @@
 		{{/if}} &nbsp; {{clipCount}} clips, {{pretty-duration totalDuration}}
 		
 		<ul class='item-list'>
-			{{log clips}}
+			
+		{{#each item in items}}
+        	{{item.id}} &middot; {{item.position}}<br />
+
+
+
+		{{/each}}
+		<hr />
 
 		{{#each clip in clips}}
-	        {{render 'short-clip' clip}}
+
+	        {{#if clip}} {{!-- sometimes we have empty positions in the array, this helps that --}}
+
+	        	{{clip.item_id}} &middot; {{clip.item_position}}<br />
+
+
+	        {{!-- render 'short-clip' clip --}}
+			{{/if}}
 		{{else}}
 			<li>No audio clips yet.</li>
 		{{/each}}

@@ -20,6 +20,9 @@
         <a class="addTo details" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip lists}}>{{fa-icon 'plus'}} Add to playlist</a>
         {{/if}}
 
+        {{#if clip.item_id}}
+            {{fa-icon 'trash'}} {{clip.item_id}}
+        {{/if}}
         
     </div>
 </li>

@@ -14,6 +14,13 @@ export default Ember.Route.extend({
     this.render('lists/list-detail', {
       controller: controller
     });
-  }
+  },
+
+    // setupController: function (controller, model) {
+    //     // Call _super for default behavior
+    //     this._super(controller, model);
+    //     console.log('controller', this.controllerFor('items'));
+    //     this.controllerFor('items').set('content', model.items);
+    // }
 
 });
