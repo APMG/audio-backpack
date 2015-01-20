@@ -54,6 +54,7 @@ module.exports = function(environment) {
     },
 
     "localStorageNamespace": "mpr-music-education",
+    "name": "Audio Backpack",
 
   };
 
@@ -121,9 +122,8 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  ENV['accountsSignup'] = accountsHostBase + '/users/sign_up?from='+  encodeURIComponent(ENV['baseDomain'] + ENV['baseURL']);  //window.location.origin +
-
-
+  ENV['accountsSignup'] = accountsHostBase + '/users/sign_up?from='+  
+    encodeURIComponent(ENV['baseDomain'] + ENV['baseURL']) + "&name=" + encodeURIComponent(ENV['name']);  
 
   return ENV;
 };
