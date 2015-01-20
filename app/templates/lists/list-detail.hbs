@@ -11,9 +11,9 @@
 		<section>
 		<label for='list-url' class="control-label ">Shareable URL</label>
 	    <div class="input-group input-group-lg">
-	      {{input type="search" value=listURL class='form-control' id='list-url' readonly='readonly'}}
+	      {{focus-input type="search" value=listURL class='form-control' id='list-url' readonly='readonly'}}
 	      <span class="input-group-btn">
-	        <button class="btn btn-primary" type="button">{{fa-icon "envelope"}}</button>
+	        <a class="btn btn-primary" {{bind-attr href='mailto'}}>{{fa-icon "envelope"}}</a>
 	      </span>
 	    </div>
 		</section>

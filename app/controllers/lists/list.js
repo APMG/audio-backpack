@@ -104,5 +104,15 @@ export default Ember.ObjectController.extend({
     listURL: function(){
         var shareSlug = (parseInt(this.get('id'), 10) + 10000).toString(36);
         return window.location.origin + ENV.baseURL + shareSlug;
+    }.property('model'),
+    
+    /**
+     * Gives us a nice mailto link we can use with bind-attr
+     * @return {String} includes a subject and body but no recipient
+     */
+    mailto: function(){
+        var mailString = "mailto:?subject=" + encodeURIComponent('Playlist from Audio Backpack');
+        mailString += '&body=' + encodeURIComponent( this.get('title') + ":\n" + this.get('listURL'));
+        return  mailString;
     }.property('model')
 });
