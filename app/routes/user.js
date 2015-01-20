@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    actions: {
-        invalidateModel: function() {
-            Ember.Logger.log('Route is now refreshing...');
-            this.refresh();
-        }
-    }, 
+    // actions: {
+    //     invalidateModel: function() {
+    //         Ember.Logger.log('Route is now refreshing...');
+    //         this.refresh();
+    //     }
+    // }, 
     model: function(params){
         console.log(params);
         return Ember.RSVP.hash({
