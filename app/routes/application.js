@@ -16,9 +16,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
             //Wipe out the local storage for this before starting import
             //ensures that our clip data is always fresh
             localStorage.removeItem(ENV.localStorageNamespace);
-
-            for (var buid in data) {
-                var item = data[buid];
+            for (var buid in data.data) {
+                var item = data.data[buid];
                 //convert duration from clock (e.g. 00:00:32) to milliseconds (e.g. 32000)
                 item.duration = moment.duration(item.duration).asMilliseconds();
                 item.id = buid;
