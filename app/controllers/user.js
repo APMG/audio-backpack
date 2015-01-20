@@ -23,7 +23,6 @@ export default Ember.ObjectController.extend({
      */
     ownerApos: function(){
         var fname = this.get('model.user.first_name');
-        console.log(fname);
         return fname.trim()+'\'s';
     }.property()
 });
