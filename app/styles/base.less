@@ -208,6 +208,34 @@ section{
 }
 
 /**
+ * Add clip to list modal dialog
+ */
+.add-clip{
+	a{ 
+		font-weight: bold;
+		&.is-saved{
+			color: @brand-primary;
+			background-color: @light-blue;
+			&:after{
+				font-family: 'FontAwesome';
+				content: "\f00c";
+				color: @brand-primary;
+				float: right;
+			}
+		}
+		&.is-doing-save:after{
+			font-family: 'FontAwesome';
+			content: "\f141";
+			float: right;
+			color: @brand-primary;
+		}
+	}
+
+}
+
+
+
+/**
  * USER PAGE
  * e.g. /user/2
  */

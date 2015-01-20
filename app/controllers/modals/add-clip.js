@@ -13,8 +13,9 @@ export default Ember.Controller.extend({
         },
         addClip: function(list){
             var aud = this.model;
-
-            console.log('MY AUDIO:', aud.get('apm_audio'));
+            var that = this;
+            
+            list.toggleProperty('isDoingSave'); //wanted to use isSaving, but is reserved name
                 
             //first, create our playlist item
             var list_item = this.store.createRecord('item', {
@@ -24,19 +25,26 @@ export default Ember.Controller.extend({
                 notes: '',
             });
 
-            console.log('list item', list_item);
-
             //get the playlist we want to add to
             list.get('items').pushObject(list_item);
             //save them sequentially
             list.save().then(function(){
                list_item.save();
+               list.toggleProperty('isDoingSave');
+               list.toggleProperty('isSaved');
+               // Have to use two run laters here so we can pass the list and the parent that
+               // to different contexts for updating after close
+               Ember.run.later(list, function() {
+                   this.toggleProperty('isSaved');
+               }, 500);
+               Ember.run.later(that, function() {
+                   this.send('closeModal');
+               }, 500);
+
             },
             function(err){
                 console.log('something went wrong', err);
             });
-
-            // Need to do some fancy animation stuff here
 
         }
     }

@@ -1,19 +1,19 @@
-{{#modal-dialog title=clip.title close='closeModal'}}
+{{#modal-dialog title="Add to playlist" close='closeModal'}}
     
-
+    
     {{#if session.isAuthenticated}}
 
-        <h5>Choose playlist to add this clip to:</h5>
-        <div class="list-group">
+        <h5>Choose playlist to add <strong>{{clip.title}}</strong> to:</h5>
+        <div class="list-group add-clip">
         {{#each list in secondaryModel}}
-            <a {{action 'addClip' list}} href="#" class='list-group-item'>{{list.title}}  
-                <span class='badge'>{{list.clipCount}} clips</span>
+            <a {{action 'addClip' list}} href="#" {{bind-attr class=':list-group-item list.isSaved list.isDoingSave'}}>{{list.title}}  
+               
             </a>
 
 
         {{/each}}
         </ul>
-        <p><em>Note:</em> Presently there is no feedback to tell you if an item is already in a list or that it has been added to a list.</p>
+       {{!-- <p><em>Note:</em> Presently there is no feedback to tell you if an item is already in a list or that it has been added to a list.</p> --}}
     {{else}}
         <strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
     {{/if}}    
