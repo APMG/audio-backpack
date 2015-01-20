@@ -1,7 +1,7 @@
 
 <section {{bind-attr class=":user-header isLoggedInUser"}}>
     {{gravatar-image hash=model.gravatar size='200' class=''}}  
-    <h1>{{model.full_name}}</h1>
+    <h1>{{model.user.full_name}}</h1>
 
     {{#if isLoggedInUser}}
         {{#if session.isAuthenticated}}     
@@ -24,7 +24,7 @@
 
 <section>
     <ul class='item-list'>
-    {{#each list in lists}} 
+    {{#each list in model.lists}} 
         {{render 'lists/list' list}}
     {{/each}}
     </ul>
