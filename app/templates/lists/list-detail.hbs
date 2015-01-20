@@ -29,6 +29,11 @@
 		<ul class='item-list'>
 			
 		{{#each item in items itemController="item"}}
+
+			{{#if isCurrentUserOwner}}
+            	<button {{action 'removeItem'}}>{{fa-icon 'trash'}}</button>
+        	{{/if}}
+
         	item id: <em>{{item.id}}</em> &middot; position: <em>{{item.position}}</em>
         	{{!-- 
 			We have a nested each here -- it seems that if we do that, we can resolve the promise OK
@@ -38,6 +43,8 @@
  			{{#each clip in item.clip}}
  				{{render 'short-clip' clip}}
  			{{/each}}
+
+ 			
 		{{/each}}
 		
 		</ul>

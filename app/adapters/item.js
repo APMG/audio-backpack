@@ -16,6 +16,8 @@ export default DS.RESTAdapter.extend({
 
     buildURL: function(type, id, record) { 
 
+       // console.log('record', record, record.get('list'));
+
         var get = Ember.get;
         var url = [],
             host = get(this, 'host'),
