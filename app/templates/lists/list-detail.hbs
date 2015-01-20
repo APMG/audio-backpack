@@ -28,24 +28,16 @@
 		
 		<ul class='item-list'>
 			
-		{{#each item in items}}
-        	{{item.id}} &middot; {{item.position}}<br />
-
-
-
+		{{#each item in items itemController="item"}}
+        	item id: <em>{{item.id}}</em> &middot; position: <em>{{item.position}}</em>
+        	{{!-- 
+			We have a nested each here -- it seems that if we do that, we can resolve the promise OK
+			If we try to resolve it in the controller, it freaks out badly. 
+			Oh well, this isn't too terrible.
+        	--}}
+ 			{{#each clip in item.clip}}
+ 				{{render 'short-clip' clip}}
+ 			{{/each}}
 		{{/each}}
-		<hr />
-
-		{{#each clip in clips}}
-
-	        {{#if clip}} {{!-- sometimes we have empty positions in the array, this helps that --}}
-
-	        	{{clip.item_id}} &middot; {{clip.item_position}}<br />
-
-
-	        {{!-- render 'short-clip' clip --}}
-			{{/if}}
-		{{else}}
-			<li>No audio clips yet.</li>
-		{{/each}}
+		
 		</ul>
