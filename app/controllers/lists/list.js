@@ -104,7 +104,11 @@ export default Ember.ObjectController.extend({
      */
     listURL: function(){
         var shareSlug = (parseInt(this.get('id'), 10) + 10000).toString(36);
-        return window.location.origin + ENV.baseURL + shareSlug;
+        var baseDomain = ENV.baseDomain; //gracefully deal with local development
+        if (baseDomain === ''){
+            baseDomain = window.location.origin;
+        }
+        return baseDomain + ENV.baseURL + shareSlug;
     }.property('model'),
     
     /**
