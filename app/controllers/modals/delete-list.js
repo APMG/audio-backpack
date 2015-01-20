@@ -9,12 +9,10 @@ export default Ember.Controller.extend({
 
             var that = this;
             var list = this.get('model');
-            list.deleteRecord();
-
-            list.save().then(function(){
+            list.destroyRecord().then(function(){
                 // Success callback
                 that.send('closeModal');
-                that.transitionToRoute('lists');
+                //that.transitionToRoute('lists');
             }, function(error) {
                 console.log('tried save, ERROR', error);
                 return false;

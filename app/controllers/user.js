@@ -2,14 +2,6 @@ import Ember from "ember";
 
 export default Ember.ObjectController.extend({
 
-    // needs: "lists",
-    // post: Ember.computed.alias("controllers.lists.index"),
-    
-    lists: function(){
-        var userId = this.get('model.id');
-        return this.model.store.find('list',{user:userId});
-    }.property('lists'),
-
     /**
      * Tells us if we're looking at the logged in users
      * @return {Boolean} [description]
@@ -17,7 +9,7 @@ export default Ember.ObjectController.extend({
     isLoggedInUser: function(){
         if (this.get('session.isAuthenticated')){
             var loggedInId = this.get('session.user_id');
-            var userId = this.get('model.id');
+            var userId = this.get('model.user.id');
             if (loggedInId ===  userId){
                 return true;
             }
@@ -30,7 +22,8 @@ export default Ember.ObjectController.extend({
      * cleans out annloying spaces that we do not want there 
      */
     ownerApos: function(){
-        var fname = this.get('model.first_name');
+        var fname = this.get('model.user.first_name');
+        console.log(fname);
         return fname.trim()+'\'s';
-    }.property('model.first_name')
+    }.property()
 });

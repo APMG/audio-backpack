@@ -1,6 +1,7 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
+
     listTitle: '',
     listDescription: '',
 
@@ -10,11 +11,9 @@ export default Ember.Controller.extend({
     
     actions: {
         close: function() {
-            console.log('sending close!');
             return this.send('closeModal');
         },
         createList: function(){
-
             var that = this;
 
             var user = this.get('session.user');
@@ -28,30 +27,21 @@ export default Ember.Controller.extend({
                 description: this.listDescription,
                 user: user
             });
-            console.log('list',list);
 
             list.save().then(function(){
                 // Success callback
                 that.set('listTitle', '');
                 that.set('listDescription', '');
                 that.send('closeModal');
-                // 
+                
+                that.transitionToRoute('user', user);
+
             }, function(error) {
                 console.log('tried save, ERROR', error);
                 return false;
             });
 
-
-
-
-            // console.log('tried save');
-            
-            // //clear out values for next use
-
-
-
-
-            return;  //this.send('closeModal');
+            return; 
         }
     }
 
