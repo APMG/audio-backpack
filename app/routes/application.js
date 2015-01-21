@@ -41,6 +41,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         
         closeModal: function() {
             //console.log('close recieved!');
+            Ember.$('.modal').modal('hide');  // close that sucker
             return this.disconnectOutlet({
                 outlet: 'modal',
                 parentView: 'application'
