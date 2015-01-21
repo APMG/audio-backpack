@@ -1,4 +1,17 @@
-		<h1>{{model.title}}</h1>
+		<section>
+		{{#if isCurrentUserOwner}}
+			{{!-- <label for='list-url' class="control-label ">Tap to edit title</label> --}}
+			{{#if isTitleEditing}}
+				<div class="input-group input-group-lg">
+				{{focus-input class="edit title form-control" value=model.title focus-out="acceptTitleChanges" insert-newline="acceptTitleChanges" id="edit-title"}}
+				</div>
+			{{else}}
+				<h1 {{action "editTitle" on="doubleClick"}} id="edit-title">{{model.title}}</h1>
+
+			{{/if}}
+		{{else}}
+			<h1>{{model.title}}</h1>
+		{{/if}}
 
 		<p>Created by {{#link-to 'user' model.user}}{{user.full_name}}{{/link-to}}, {{ago created_at}}</p>
 
@@ -7,6 +20,8 @@
 		{{#if isCurrentUserOwner}}
      		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}} Delete</a>
 		{{/if}}
+		</section>
+		
 
 		<section>
 		<label for='list-url' class="control-label ">Shareable URL</label>
@@ -19,7 +34,26 @@
 		</section>
 
 		<section>
-			<p>{{model.description}}</p>
+			{{#if isCurrentUserOwner}}
+				{{#if isDescEditing}}
+					<div class="input-group input-group-lg">
+					{{focus-input class="edit desc form-control" value=model.description focus-out="acceptDescChanges" insert-newline="acceptDescChanges" id="edit-desc"}}
+					</div>
+				{{else}}
+					<p {{action "editDesc" on="doubleClick"}} id="edit-title">
+						{{#if model.description}}
+							{{model.description}}
+						{{else}}
+							<em>No description.</em>
+						{{/if}}
+					</p>
+
+				{{/if}}
+			{{else}}
+				<p>{{model.description}}</p>
+
+			{{/if}}
+
 		</section>
 
 		{{#if clipCount}}

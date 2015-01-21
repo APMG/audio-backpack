@@ -42,6 +42,9 @@ export default Ember.ObjectController.extend({
         });
     },
 
+    isTitleEditing: false,
+    isDescEditing: false,
+
     items: (function() {
         return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
             sortProperties: ['position'],
@@ -78,6 +81,27 @@ export default Ember.ObjectController.extend({
             apmplayer_ui.playlist.replacePlayables(clipsPlayable);
             return false;
         },
+        editTitle: function() {
+            //console.log('did an edit');
+            this.set('isTitleEditing', true);
+        },
+        acceptTitleChanges: function() {
+            this.set('isTitleEditing', false);
+            if (!Ember.isEmpty(this.get('model.title'))) {
+                this.get('model').save();
+            }
+        },
+        editDesc: function() {
+            //console.log('did an edit');
+            this.set('isDescEditing', true);
+        },
+        acceptDescChanges: function() {
+            this.set('isDescEditing', false);
+            //if (!Ember.isEmpty(this.get('model.description'))) {
+            this.get('model').save();
+            //}
+        },
+
     },
     /**
      * Generates the short URL for the playlist
