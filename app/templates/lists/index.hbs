@@ -1,7 +1,13 @@
 <section class='playlist-index-header'>
         <h2>All playlists</h2>
 
-         <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>
+         {{#if session.isAuthenticated}}
+         <div class="btn-group" role="group" aria-label="">
+             {{#link-to 'user' session.user.id class="btn btn-default"}}My playlists{{/link-to}}
+             <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>
+         </div>
+
+         {{/if}}
 </section>
 
 <section>
