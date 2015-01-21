@@ -1,0 +1,209 @@
+{
+    "data": {
+        "21f9e4a29c928d94043edcaa95f89cf4": {
+            "title": "Villa-Lobos -- Five Preludes for Guitar No. 2 in E major",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:33",
+            "apm_audio": "apm-audio:/classical_music_education/strings_guitar_10_128.mp3"
+        },
+        "76108704f7b2f0a4ee9ce5e6f5d836fb": {
+            "title": "Largo",
+            "pub_date": "2014-12-04",
+            "description": "Piano Sonata No. 4 Op. 7 II. Largo con gran espressione",
+            "notes": "New-style encode",
+            "duration": "00:00:48",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/largo_20141204_128.mp3"
+        },
+        "457216981801990a67df28eefec565b1": {
+            "title": "Presto",
+            "pub_date": "2014-12-04",
+            "description": "Piano Sonata No. 14 \"Moonlight\" Op. 27 No. 2 III.Presto",
+            "notes": "New-style encode",
+            "duration": "00:00:36",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/presto_20141204_128.mp3"
+        },
+        "e468c9daf93fd974ade67544b1b76022": {
+            "title": "Piano Sonata No. 12 Op. 26 IV. Allegro",
+            "pub_date": "2014-12-04",
+            "description": "Beethoven",
+            "notes": "New-style encode",
+            "duration": "00:00:35",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/allegro_20141204_128.mp3"
+        },
+        "64547fb9a69fe21a9b0206f73df1fea6": {
+            "title": "Moderato",
+            "pub_date": "2014-12-04",
+            "description": "Piano Sonata No. 31 Op. 110 I. Moderato cantabile molto espressivo",
+            "notes": "New-style encode",
+            "duration": "00:00:30",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/moderato_20141204_128.mp3"
+        },
+        "7ad145fa655b7166712c91bd33384150": {
+            "title": "Piano Sonata No. 11 Op. 22 II. Adagio con molta espressione",
+            "pub_date": "2014-12-04",
+            "description": "Beethoven",
+            "notes": "New-style encode",
+            "duration": "00:00:30",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/adagio_20141204_128.mp3"
+        },
+        "692df16999bc8b3e71c1c5cd9376dbeb": {
+            "title": "Andante",
+            "pub_date": "2014-12-04",
+            "description": "Piano Sonata No. 19 Op. 49 No. 1 I. Andante",
+            "notes": "New-style encode",
+            "duration": "00:00:29",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/andante_20141204_128.mp3"
+        },
+        "1194fe7989ad70b57243b30c240a2df5": {
+            "title": "Vivace",
+            "pub_date": "2014-12-04",
+            "description": "Piano Sonata No. 25 Op. 79 III. Vivace",
+            "notes": "New-style encode",
+            "duration": "00:00:37",
+            "apm_audio": "apm-audio:/minnesota/classical/features/2014/12/04/vivace_20141204_128.mp3"
+        },
+        "dd2ce9e7974c7c8c2566520af400e8e3": {
+            "title": "Bottesini -- Concerto No. 2 in B Minor, III. Allegro",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:38",
+            "apm_audio": "apm-audio:/classical_music_education/strings_double_bass_4_128.mp3"
+        },
+        "0fd3eec2073ebb76cb9e4a87b37ee2ee": {
+            "title": "Haydn -- Quartet in E-flat major, Op. 33, No. 2",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:35",
+            "apm_audio": "apm-audio:/classical_music_education/strings_quartet_5_128.mp3"
+        },
+        "02860e301c05b24ed913e41a976c0106": {
+            "title": "Saint-Saens -- Fantaisie for Harp, Op.95",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:29",
+            "apm_audio": "apm-audio:/classical_music_education/strings_harp_9_128.mp3"
+        },
+        "90d46d2abc04ecc51210c17387d6c369": {
+            "title": "Mozart -- Divertimento in B-flat Major, K. 287, I. Allegro",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:35",
+            "apm_audio": "apm-audio:/classical_music_education/strings_ensemble_6_128.mp3"
+        },
+        "fe957c9a26e551eac6aada28b023f7ab": {
+            "title": "Tchaikovsky -- Symphony No. 4 in F minor, Op. 36 III. Scherzo",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:31",
+            "apm_audio": "apm-audio:/classical_music_education/strings_pizzicato_7_128.mp3"
+        },
+        "bf76cafbd3195b73f12b5575b66beb8a": {
+            "title": "Bach -- Suite No. 1 in G major, BWV 1007, I. Prelude",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:31",
+            "apm_audio": "apm-audio:/classical_music_education/strings_cello_3_128.mp3"
+        },
+        "a5bff4788a3ef6df98d51e1f25ac2798": {
+            "title": "Penderecki -- Threnody for the Victims of Hiroshima",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:27",
+            "apm_audio": "apm-audio:/classical_music_education/strings_non_traditional_8_128.mp3"
+        },
+        "81644216d4f5486055c64f261b41c625": {
+            "title": "Hoffmeister -- Viola Concerto in D major I. Allegro",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:34",
+            "apm_audio": "apm-audio:/classical_music_education/strings_viola_2_128.mp3"
+        },
+        "2e4bdd82f8e3432fadcadfb0832b7d49": {
+            "title": "Paganini -- 24 Caprices for Solo Violin, Op. 1, No. 5 in A minor",
+            "pub_date": "2015-01-16",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:31",
+            "apm_audio": "apm-audio:/classical_music_education/strings_violin_1_128.mp3"
+        },
+        "21ddac9211ad06cd92dbd75ca6e8796f": {
+            "title": "Piano Sonata No. 14 \"Moonlight\" Op. 27 No. 2 III.Presto",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:36",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_presto_7_128.mp3"
+        },
+        "06d91e22b4f0cc7f4244f9b21420a56d": {
+            "title": "Piano Sonata No. 31 Op. 110 I. Moderato cantabile molto espressivo",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:30",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_moderato_4_128.mp3"
+        },
+        "9ef860257dfc3294eb93bf068ac995ba": {
+            "title": "Piano Sonata No. 12 Op. 26 IV. Allegro",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:35",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_allegro_5_128.mp3"
+        },
+        "4bf535052d173dad436f37174f55ca02": {
+            "title": "Piano Sonata No. 25 Op. 79 III. Vivace",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:37",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_vivace_6_128.mp3"
+        },
+        "df94c6d34af0a8347cf379235d5a92cc": {
+            "title": "Piano Sonata No. 11 Op. 22 II. Adagio con molta espressione",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:30",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_adagio_2_128.mp3"
+        },
+        "fefd7a927db7cd8fc01830457eb61dc3": {
+            "title": "Piano Sonata No. 19 Op. 49 No. 1 I. Andante",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:29",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_andante_3_128.mp3"
+        },
+        "2b02b3b1a47da2aa11529cbce95d231f": {
+            "title": "Piano Sonata No. 4 Op. 7 II. Largo con gran espressione",
+            "pub_date": "2015-01-15",
+            "description": null,
+            "notes": null,
+            "duration": "00:00:48",
+            "apm_audio": "apm-audio:/classical_music_education/tempo_largo_1_128.mp3"
+        },
+        "5f21a27341f0949bb875c5c445e55ec8": {
+            "title": "Ubi Caritas",
+            "pub_date": "2015-01-05",
+            "description": null,
+            "notes": "New-style encode",
+            "duration": "00:02:57",
+            "apm_audio": "apm-audio:/classical_music_education/ubi_caritas_128.mp3"
+        }
+    },
+    "meta": {
+        "source": "http://meeker.devel.publicradio.org/classicalmpr/classical-music-education-app.json",
+        "delta-hash": "eb1beab5f31dd4ffaedc86803e697649",
+        "last-build-time": "2015-01-20T16:56:16-06:00"
+    }
+}

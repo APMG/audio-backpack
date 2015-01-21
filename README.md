@@ -19,6 +19,8 @@ You may need to install [watchman](https://facebook.github.io/watchman/) for emb
 * `npm install`
 * `bower install`
 
+You will also need to set up the default data for the audio catalog. Duplicate `public/data/catalog-dev.json` to `public/data/catalog.json`. This latter file is ignored by git and is updated by cron jobs on dev/prod/stage servers, but this file is necessary for local development work.
+
 ## Running / Development
 
 * `ember server`
