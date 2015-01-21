@@ -53,7 +53,21 @@ export default Ember.ObjectController.extend({
         });
     }).property('content.items'),
 
-
+    /**
+     * Even though this is set on the route, we need to update it here, too, because we also use this controller
+     * as an item controller when listing playlists
+     * @return {Boolean} 
+     */
+    isCurrentUserOwner: function(){
+        if (this.get('session.isAuthenticated')){
+            var loggedInId = this.get('session.user_id');
+            var userId = this.get('model.user.id');
+            if (loggedInId ===  userId){
+                return true;
+            }
+        }
+        return false;
+    }.property(),
 
 
     actions: {
