@@ -38,7 +38,6 @@ module.exports = function(environment) {
      session: 'session:withCurrentUser',
 
     "simple-auth": {
-      crossOriginWhitelist: [accountsHostBase],
       serverTokenEndpoint: accountsHostBase + '/oauth/token',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
       session: 'session:withCurrentUser'
@@ -57,10 +56,10 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    //ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    //ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     //ENV.baseURL = '/music_education/';
   }
@@ -112,7 +111,7 @@ module.exports = function(environment) {
   ENV['accountsHostBase'] = accountsHostBase;
   ENV['playlistMakerHostBase'] = playlistMakerHostBase;
 
-  ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
+  ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase, playlistMakerHostBase];  //makes sure bearer tokens are passed
   ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
   ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
   ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
