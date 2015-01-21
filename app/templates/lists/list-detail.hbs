@@ -1,17 +1,20 @@
 		<section>
 		{{#if isCurrentUserOwner}}
-			{{!-- <label for='list-url' class="control-label ">Tap to edit title</label> --}}
+		<div class='editable-in-place'>
+			<span class="control-label not-real-label">&darr; Tap to edit title</span>
 			{{#if isTitleEditing}}
 				<div class="input-group input-group-lg">
 				{{focus-input class="edit title form-control" value=model.title focus-out="acceptTitleChanges" insert-newline="acceptTitleChanges" id="edit-title"}}
 				</div>
 			{{else}}
-				<h1 {{action "editTitle" on="doubleClick"}} id="edit-title">{{model.title}}</h1>
+				<h1 {{action "editTitle" on="click"}} id="edit-title">{{model.title}}</h1>
 
 			{{/if}}
+		</div>
 		{{else}}
 			<h1>{{model.title}}</h1>
 		{{/if}}
+
 
 		<p>Created by {{#link-to 'user' model.user}}{{user.full_name}}{{/link-to}}, {{ago created_at}}</p>
 
@@ -33,12 +36,12 @@
 	    </div>
 		</section>
 
-		<section>
+		<section class="playlist-desc">
 			{{#if isCurrentUserOwner}}
+			<div class='editable-in-place'>
+				<span class="control-label not-real-label">&darr; Tap to edit description</span>
 				{{#if isDescEditing}}
-					<div class="input-group input-group-lg">
-					{{focus-input class="edit desc form-control" value=model.description focus-out="acceptDescChanges" insert-newline="acceptDescChanges" id="edit-desc"}}
-					</div>
+					{{focus-textarea class="edit desc form-control" value=model.description focus-out="acceptDescChanges" insert-newline="acceptDescChanges" id="edit-desc" rows='4'}}
 				{{else}}
 					<p {{action "editDesc" on="doubleClick"}} id="edit-title">
 						{{#if model.description}}
@@ -49,6 +52,7 @@
 					</p>
 
 				{{/if}}
+			</div>
 			{{else}}
 				<p>{{model.description}}</p>
 

@@ -57,9 +57,33 @@ section{
 .form-control[readonly]{
 	cursor: auto;
 }
-.input-group{
-	width: 100% !important;
+
+.editable-in-place{
+	.input-group{
+		width: 100% !important;
+	}
+	.not-real-label{
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: 0px;
+		font-weight: bold;
+	}
+	h1{
+		margin-top: 11px;
+		margin-bottom: 15px;
+		min-height: 27px;
+	}
+	input{
+		margin-bottom: 4px !important;
+		padding: 7px 16px;
+		font-weight: bold;
+	}
+	textarea{
+		margin-bottom: 1em;
+	}
 }
+
+
 
 @import "base_nav";
 
@@ -196,8 +220,8 @@ section{
 	> .btn{
 		float: right;
 	}
-
 }
+.playlist-desc p { margin-bottom: 1.5em; }
 
 /**
  * CLIP DETAIL

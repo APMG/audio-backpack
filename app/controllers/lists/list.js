@@ -54,16 +54,6 @@ export default Ember.ObjectController.extend({
     }).property('content.items'),
 
 
-    isCurrentUserOwner: function(){
-        if (this.get('session.isAuthenticated')){
-            var loggedInId = this.get('session.user_id');
-            var userId = this.get('model.user.id');
-            if (loggedInId ===  userId){
-                return true;
-            }
-        }
-        return false;
-    }.property(),
 
 
     actions: {
