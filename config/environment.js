@@ -2,8 +2,8 @@
 
 module.exports = function(environment) {
 
-  var accountsHostBase = 'http://192.168.1.1:3000';
-  var playlistMakerHostBase = 'http://192.168.1.1:3001';
+  var accountsHostBase = 'http://localhost:3000';
+  var playlistMakerHostBase = 'http://localhost:3001';
 
   var ENV = {
     contentSecurityPolicy: {
@@ -32,7 +32,6 @@ module.exports = function(environment) {
     },
     baseDomain: "",
 
-    'playlistMakerHostBase' : playlistMakerHostBase,
 
     'accountsHostBase': accountsHostBase,
 
@@ -73,11 +72,6 @@ module.exports = function(environment) {
       playlistMakerHostBase = 'https://playlist-maker-devel.publicradio.org';
       ENV.baseDomain = 'http://apps.devel.classicalmpr.org';
       ENV.baseURL = '/audio-backpack/';
-      ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
-      ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
-      ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
-      ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
-      ENV['accountsHostBase'] = accountsHostBase;
   }
 
 
@@ -86,11 +80,6 @@ module.exports = function(environment) {
       playlistMakerHostBase = 'https://playlist-maker-stage.publicradio.org';
       ENV.baseDomain = 'http://apps.stage.classicalmpr.org';
       ENV.baseURL = '/audio-backpack/';
-      ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
-      ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
-      ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
-      ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
-      ENV['accountsHostBase'] = accountsHostBase;
   }
 
 
@@ -99,11 +88,7 @@ module.exports = function(environment) {
       playlistMakerHostBase = 'https://playlist-maker.publicradio.org';
       ENV.baseDomain = 'https://apps.classicalmpr.org';
       ENV.baseURL = '/audio-backpack/';
-      ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
-      ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
-      ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
-      ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
-      ENV['accountsHostBase'] = accountsHostBase;
+
   }
 
 
@@ -120,8 +105,18 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  //ENV vars that are based on vars defined above
   ENV['accountsSignup'] = accountsHostBase + '/users/sign_up?from='+  
     encodeURIComponent(ENV['baseDomain'] + ENV['baseURL']) + "&name=" + encodeURIComponent(ENV['name']);  
+
+  ENV['accountsHostBase'] = accountsHostBase;
+  ENV['playlistMakerHostBase'] = playlistMakerHostBase;
+
+  ENV["simple-auth"].crossOriginWhitelist = [accountsHostBase];
+  ENV["simple-auth"].serverTokenEndpoint = accountsHostBase + '/oauth/token';
+  ENV['simple-auth-oauth2'].serverTokenEndpoint =  accountsHostBase + '/oauth/token';
+  ENV['simple-auth-oauth2'].serverUserDataEndpoint =  accountsHostBase + '/api/v1/me.json';
+
 
   return ENV;
 };
