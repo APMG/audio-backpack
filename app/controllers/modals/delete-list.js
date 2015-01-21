@@ -12,11 +12,11 @@ export default Ember.Controller.extend({
             if (loggedInId && (loggedInId === ownerId)){
                 var that = this;
                 var list = this.get('model');
-                var user = this.get('model.user');
                 list.destroyRecord().then(function(){
                     // Success callback
                     that.send('closeModal');
-                    that.transitionToRoute('user',user);
+                    //pass the loggedInId rather than the full user, because else the model hook on route doesn't run
+                    that.transitionToRoute('user',loggedInId);
                 }, function(error) {
                     console.log('tried save, ERROR', error);
                     return false;
