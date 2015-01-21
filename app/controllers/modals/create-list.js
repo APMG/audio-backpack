@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
             var that = this;
 
             var user = this.get('session.user');
+            var loggedInId = this.get('session.user_id');
 
             var cleanTitle = this.get('listTitle');
 
@@ -34,7 +35,7 @@ export default Ember.Controller.extend({
                 that.set('listDescription', '');
                 that.send('closeModal');
                 
-                that.transitionToRoute('user', user);
+                that.transitionToRoute('user', loggedInId);
 
             }, function(error) {
                 console.log('tried save, ERROR', error);
