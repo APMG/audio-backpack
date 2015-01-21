@@ -6,7 +6,8 @@
     "APMPlayer",
     "SoundManager",
     "APMPlayerFactory",
-    "moment"
+    "moment",
+    "apmplayer_ui"
   ],
   "browser": true,
   "boss": true,

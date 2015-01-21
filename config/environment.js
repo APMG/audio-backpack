@@ -8,7 +8,7 @@ module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
       'object-src': "'self' common.publicradio.org",
-      'script-src': "script-src 'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 common.publicradio.org accounts.publicradio.org accounts-stage.publicradio.org accounts-devel.publicradio.org  playlist-maker.publicradio.org playlist-maker-stage.publicradio.org playlist-maker-devel.publicradio.org",
+      'script-src': "script-src 'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 common.publicradio.org api.mpr.org accounts.publicradio.org accounts-stage.publicradio.org accounts-devel.publicradio.org  playlist-maker.publicradio.org playlist-maker-stage.publicradio.org playlist-maker-devel.publicradio.org",
       'img-src': "'self' common.publicradio.org www.gravatar.com",
       'style-src': "'self' 'unsafe-inline' common.publicradio.org fast.fonts.net",
       'connect-src': "'self' *",
