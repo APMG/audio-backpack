@@ -1,13 +1,27 @@
-<section>
+<section class='index'>
     <h2>Featured Playlists</h2>
-    <br />
 
-    <p>Sorry{{#if session.user.first_name}}, {{session.user.first_name}}{{/if}}, we don't have any featured playlists yet. </p>
+    <ul class='item-list'>
+        {{#each list in trimmedLists}}
+            {{render 'lists/list' list}}
+        {{/each}}
+    </ul>
 
+    <div class='btn-wrap'>
+        {{#link-to 'lists'}}<span>All Playlists</span> &rarr;{{/link-to}} {{!  class="btn btn-primary"  }}
+    </div>
 </section>
 
-<section>
+<section class='index'>
     <h2>Latest Clips</h2>
 
-    {{render 'latest-clips' latestClips}}
+    <ul class='item-list'>
+        {{#each clip in trimmedClips}}
+            {{render 'short-clip' clip}}
+        {{/each}}
+    </ul>
+
+    <div class='btn-wrap'>
+        {{#link-to 'clips' }}<span>Browse all clips</span> &rarr;{{/link-to}} {{! class="btn btn-primary" }}
+    </div>
 </section>
