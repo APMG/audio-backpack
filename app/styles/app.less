@@ -79,7 +79,7 @@
 }
 
 
-@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=f1cf99e6-a362-4941-95cc-a036f440196d");
+@import url("https://fast.fonts.net/t/1.css?apiType=css&projectid=f1cf99e6-a362-4941-95cc-a036f440196d");
 @font-face{
     font-family:"Futura";
     src:url("../fonts/f0052336-792e-4fcf-8750-fe6d7d5dccba.eot?#iefix");
@@ -99,11 +99,9 @@
     font-weight: bold;
 }
 
+// bring in jquery ui slider css as less so it's directly compiled
+@import (less) "bower_components/APMPlayer-Internal/skin/jquery-ui-slider.custom.css";
 
-
-
-//@import url("http://common.publicradio.org/media_player/1.4.0/skin/apmplayer_base.css");
-@import url("http://common.publicradio.org/media_player/1.4.0/skin/jquery-ui-slider.custom.css");
 @import 'player';
 
 @import 'base';
