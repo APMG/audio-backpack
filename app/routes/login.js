@@ -4,5 +4,8 @@ import ENV from '../config/environment';
 export default Ember.Route.extend({
     afterModel: function(){
         Ember.$(document).attr('title', "Log in • " + ENV.name);
+    },
+    setupController: function(controller, model) {
+        controller.set('errorMessage', null);
     }
 });

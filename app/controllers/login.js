@@ -8,4 +8,17 @@ export default Ember.Controller.extend(LoginControllerMixin, {
     //pre-fill form to help make debugging faster
     identification : "user@mpr.org",
     password: 'topsecret',
+
+    actions: {
+        // display an error when authentication fails
+        authenticate: function() {
+            var that = this;
+            this._super().then(null, function(error) {
+                if (error.error === 'invalid_grant')  {
+                    that.set('errorMessage', "Username or password invalid. Try again.");
+                }
+            });
+        }
+    }
+
 });
