@@ -13,7 +13,7 @@
 </section>
 
 <section class='playlist-index-header'>
-           <h2>{{ownerApos}} Playlists</h2>
+           <h2>{{model.user.first_name}}&apos;s playlists</h2>
 
       {{#if isLoggedInUser}}
         <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>

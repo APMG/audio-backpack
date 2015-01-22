@@ -18,11 +18,4 @@ export default Ember.ObjectController.extend({
        
     }.property(),
 
-    /*
-     * cleans out annloying spaces that we do not want there 
-     */
-    ownerApos: function(){
-        var fname = this.get('model.user.first_name');
-        return fname.trim()+'\'s';
-    }.property()
 });
