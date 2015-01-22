@@ -162,19 +162,10 @@ footer{
 
 		}
 		background: @med-blue;
-		background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 32%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 100%),
-			url(../img/clip_bg.png),
-			@med-blue;
-		background-position: center center, center center;
-		background-size: auto, 75px;
+		background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 32%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 100%) center center, url(../img/clip_bg.png) center center/75px, @med-blue;
 		position: relative;
 		&:hover{
-			background: 
-			radial-gradient(ellipse at center, @dark-blue 0%,@dark-blue 0%, @dark-blue 32%, transparent 34%,transparent 100%),
-			url(../img/clip_bg.png),
-			@med-blue;
-			background-position: center center, center center;
-			background-size: auto, 75px;
+			background: radial-gradient(ellipse at center, @dark-blue 0%, @dark-blue  0%, @dark-blue 32%, transparent 34%, transparent 100%) center center, url(../img/clip_bg.png) center center/75px, @med-blue;
 			&:before{
 				color: white;
 			}
