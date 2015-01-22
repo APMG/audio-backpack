@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 
 export default Ember.Route.extend({
     model: function(){
@@ -7,5 +8,8 @@ export default Ember.Route.extend({
             //dan nass, primary guy for MPR
             lists: this.store.find('list',{user:'ab5e79b332f1fee7b06a52a866028a6a9ac96dd3'})
         });
+    },
+    afterModel: function(){
+        Ember.$(document).attr('title', ENV.name + " • Classical Minnesota Public Radio");
     }
 });
