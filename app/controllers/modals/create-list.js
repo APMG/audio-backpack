@@ -35,6 +35,7 @@ export default Ember.Controller.extend({
                 that.set('listDescription', '');
                 that.send('closeModal');
                 
+                that.send('invalidateModel'); //user route listens for this action and refreshes model on it
                 that.transitionToRoute('user', loggedInId);
 
             }, function(error) {
