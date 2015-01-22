@@ -14,8 +14,14 @@ export default Ember.Controller.extend(LoginControllerMixin, {
         authenticate: function() {
             var that = this;
             this._super().then(null, function(error) {
+                if (typeof error === 'undefined'){
+                    that.set('errorMessage', "Sorry, the login server appears to be missing.");
+                    return;
+                }
                 if (error.error === 'invalid_grant')  {
                     that.set('errorMessage', "Username or password invalid. Try again.");
+                } else if (error) {
+                    that.set('errorMessage', "An unknown login error occurred.");
                 }
             });
         }
