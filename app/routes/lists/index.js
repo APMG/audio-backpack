@@ -15,7 +15,7 @@ export default Ember.Route.extend(RouteMixin, {
     model: function(params) {
         return this.findPaged('list',params);
     },
-    afterModel: function(model){
+    afterModel: function(){
         Ember.$(document).attr('title', "Playlists • "+ ENV.name);
     }
 });
