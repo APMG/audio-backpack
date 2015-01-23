@@ -15,9 +15,8 @@ var App = Ember.Application.extend({
   LOG_TRANSITIONS: true,
   Resolver: Resolver,
   ready: function(){
-
         //take out the loading note
-        Ember.$("#loading-note, svg").remove();
+        Ember.$(".loading-note, svg").remove();
         var soundManager = new SoundManager();
         window.soundManager = soundManager;
         var settings = {
