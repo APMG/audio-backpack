@@ -1,9 +1,119 @@
 .mpr-header{
-    .classical{}
-    min-height: 40px;
+    &.classical{
+        .brand-logo{
+            display: block;
+            width: 180px;
+            height: 40px;
+            background: data-uri('bgs/cmpr_logo.png');
+            background-size: 170px;
+            background-repeat: no-repeat;
+            padding: 10px;
+            float: left;
+            margin-top: 2px;
+        }
+        .listen{
+            border: 2px solid #95d757;
+            font-weight: bold;
+            color: #fff;
+            background-color: #95d757;
+            padding: 0 0 0 0;
+            text-transform: uppercase;
+            font-size: .9em;
+            display: inline-block;
+            //margin-top: 4px;
+            float: right;
+            span{
+                padding: 2px 4px 0;
+                display: inline-block;
+            }
+            &:before{
+                content: " ";
+                background: #fff data-uri('bgs/headphones.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                width:30px;
+                background-size: 20px;
+                display: block;
+                height: 29px;
+                float: left;
+                margin: -2px 0 -2px -2px;
+                border: 2px solid #ccddbc;
+                border-right: 0;
+            }
+        }
+    }
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 10px;
+    min-height: 50px;
     border-bottom: 2px solid #ccc;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
     nav{
         margin: 0 auto;
         max-width: 980px;
+    }
+
+   
+    i{
+        visibility: hidden;
+    }
+    .mpr-link,
+    .give-now{ 
+        display: none;
+    }
+}
+
+@media (min-width: 768px){
+    .mpr-header{
+        height: 60px;
+        &.classical{
+            .brand-logo{
+                width: 240px;
+                background-size: 220px;
+                margin-top: 4px;
+            }
+            .listen{
+                float: left;
+                margin-top: 6px;
+            }
+        }
+        .mpr-link{
+            display: block;
+            float: right;
+            width:120px;
+            height: 40px;
+            background: data-uri('bgs/mpr_logo.png');
+            background-size: 120px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin-right: 1.5em;
+        }
+        .give-now{
+            display: inline-block;
+            font-weight: bold;
+            text-transform: uppercase;
+            float: right;
+            background-color: #fff4f4;
+            color: #9a272a;
+            padding: 8px;
+            margin: 2px 0 0 0;
+            &:before{
+                content: " ";
+                background: data-uri('bgs/heart.png');
+                background-repeat: no-repeat;
+                width:15px;
+                background-size: 15px;
+                display: block;
+                height: 14px;
+                float: left;
+                margin: 4px 4px 0 0 ;
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px){
+    .mpr-header{
+        padding-left: 10%;
+        padding-right: 10%; 
     }
 }
