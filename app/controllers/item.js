@@ -13,6 +13,15 @@ export default Ember.ObjectController.extend({
 
     }.property('clip'),
 
-    
+    actions: {
+         play: function(){
+            var playable = APMPlayerFactory.getPlayable({
+                //title: this.model.get('title'),
+                identifier: this.model.get('apm_audio'),
+                type: 'audio'
+            });
+            apmplayer_ui.playlist.replacePlayables([playable]);
+        } 
+    },
 
 });

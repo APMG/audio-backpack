@@ -304,3 +304,30 @@ footer{
 	}
 }
 
+
+
+/** 
+ * PLAYLIST LISTING STUFF
+ * e.g. /playlists/34
+ */
+.playlist-items{
+	margin-top: 2em;
+	> ul{
+		list-style-type: none;
+		padding: 0;
+	}
+	&.orderable{
+		.ui-sortable{
+			list-style-type: none;
+			padding: 0;
+			ul{
+				padding: 0;
+				list-style-type: none;
+			}
+			.remove-item{
+				float: right;
+			}
+		}
+	}
+
+}
