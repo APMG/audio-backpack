@@ -66,25 +66,34 @@
      		<a class="btn btn-primary" {{action 'playAll'}}>{{fa-icon 'play'}} Play All</a>
 		{{/if}} &nbsp; {{clipCount}} clips, {{pretty-duration totalDuration}}
 		
-		<ul class='item-list'>
-			
-		{{#each item in items itemController="item"}}
 
-			{{#if isCurrentUserOwner}}
-            	<button {{action 'removeItem'}}>{{fa-icon 'trash'}}</button>
-        	{{/if}}
+		{{#if isCurrentUserOwner}}
+		<div class="orderable-items">		
 
-        	item id: <em>{{item.id}}</em> &middot; position: <em>{{item.position}}</em>
+		{{#ivy-sortable items moved="movedItem"}}  {{!-- in items itemController="item" --}} 
+        	item id: <em>{{this.id}}</em> &middot; position: <em>{{position}}</em> 
+        	<button {{action 'removeItem' this}}>{{fa-icon 'trash'}}</button>
         	{{!-- 
 			We have a nested each here -- it seems that if we do that, we can resolve the promise OK
 			If we try to resolve it in the controller, it freaks out badly. 
 			Oh well, this isn't too terrible.
         	--}}
- 			{{#each clip in item.clip}}
- 				{{render 'short-clip' clip}}
- 			{{/each}}
+
+        	{{render 'item' this}}
+ 	
 
  			
-		{{/each}}
-		
-		</ul>
+		{{/ivy-sortable}}
+
+
+
+		</div>
+		{{else}}
+			<ul class='item-list'>
+			{{#each item in items itemController="item"}}
+	 			{{#each clip in item.clip}}
+					<ul class='inline-clip'>{{render 'short-clip' clip}}</ul>
+	 			{{/each}} 			
+			{{/each}}
+			</ul>
+		{{/if}}

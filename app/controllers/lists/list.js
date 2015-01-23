@@ -45,13 +45,13 @@ export default Ember.ObjectController.extend({
     isTitleEditing: false,
     isDescEditing: false,
 
-    items: (function() {
-        return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
-            sortProperties: ['position'],
-            sortAscending: true,
-            content: this.get('content.items')
-        });
-    }).property('content.items'),
+    // items: (function() {
+    //     return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+    //         sortProperties: ['position'],
+    //         sortAscending: true,
+    //         content: this.get('content.items')
+    //     });
+    // }).property('content.items'),
 
     /**
      * Even though this is set on the route, we need to update it here, too, because we also use this controller
@@ -105,6 +105,19 @@ export default Ember.ObjectController.extend({
             this.get('model').save();
             //}
         },
+
+        movedItem: function(item, oldIndex, newIndex){
+            console.log('POS CHANGE!', item, oldIndex, newIndex);
+
+        },
+        
+        removeItem: function(item){
+            // Helpful information on how to do this...
+            // https://github.com/kurko/ember-localstorage-adapter/issues/40
+            // but my simple method below seems to work fine from the client side, I think
+            item.deleteRecord();
+            item.save(); 
+        }
 
     },
     /**
