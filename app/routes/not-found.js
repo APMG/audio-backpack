@@ -4,6 +4,7 @@ export default Ember.Route.extend({
     model: function(params){
         if (params.path === 'not-found'){
             //this.router.location.formatURL('/not-found');
+            Ember.$('head').append('<meta name="prerender-status-code" content="404">');
             this.transitionTo('/not-found');
             return;
         }
@@ -21,11 +22,10 @@ export default Ember.Route.extend({
                 that.router.location.formatURL('/not-found');
                 that.transitionTo('/not-found');
             });
-            
-
         } else {
             var url = this.router.location.formatURL('/not-found');
             if (window.location.pathname !== url) {
+                Ember.$('head').append('<meta name="prerender-status-code" content="404">');
                 this.transitionTo('/not-found');
             }
         }
