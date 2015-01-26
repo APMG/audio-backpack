@@ -8,7 +8,7 @@
     "APMPlayerFactory",
     "moment",
     "apmplayer_ui",
-    "ga",
+    "ga"
   ],
   "browser": true,
   "boss": true,

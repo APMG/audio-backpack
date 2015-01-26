@@ -6,6 +6,20 @@ export default Ember.Controller.extend(LoginControllerMixin, {
     authenticator: 'authenticator:custom',
     identification : "",
     password: '',
+
+    //probably not the best variable name, kinda used elsewhere in ember
+    queryParams: ['action'],
+    action: 'action',
+
+    flashMessage: function(){
+       if (this.get('action') === 'after-account-create' ){
+           this.set('flashMessage', "Log in with your newly created MPR account information.");
+       } else {
+           this.set('flashMessage', false);
+       }
+    }.observes('action'),
+    
+
     actions: {
         // display an error when authentication fails
         authenticate: function() {
