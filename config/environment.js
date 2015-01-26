@@ -8,8 +8,8 @@ module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
       'object-src': "'self' common.publicradio.org",
-      'script-src': "script-src 'self' 'unsafe-eval' common.publicradio.org api.mpr.org",
-      'img-src': "'self' common.publicradio.org www.gravatar.com data:",
+      'script-src': "script-src 'self' 'unsafe-eval' 'unsafe-inline' common.publicradio.org api.mpr.org www.google-analytics.com",
+      'img-src': "'self' common.publicradio.org www.gravatar.com www.google-analytics.com data:",
       'style-src': "'self' 'unsafe-inline' common.publicradio.org fast.fonts.net",
       'connect-src': "'self' *",
       'media-src': "'self' *" //common.publicradio.org ondemand.publicradio.org
