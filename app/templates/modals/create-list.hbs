@@ -2,7 +2,7 @@
     
     {{#if session.isAuthenticated}}
         <form>
-          <div class="form-group">
+          <div class="form-group" >
             <label for="new-playlist-title" class="control-label">Title</label>
             {{input type="text" id="new-list-title" placeholder="My awesome playlist" value=listTitle class='form-control'}}
 
@@ -11,6 +11,12 @@
             <label for="new-playlist-description" class="control-label">Description</label>
             {{textarea id="new-playlist-description" value=listDescription class='form-control'}}
           </div>
+          {{!--
+           this is a work around for a bug in bootstrap.. 
+          if you hit enter on a input field and there is only one input field it reloads everything 
+          adding another input solves this 
+          --}}
+           <input type="text" style="display: none;" />
         </form>
         
     {{else}}
