@@ -5,5 +5,11 @@
 
 <section>
     <p>We're very sorry about this, but it looks like there has been some sort of error. The thing you're looking for cannot be found.</p>
+
+    {{#if badPath}}
+        <div style="display:none;" id="badPath">
+            {{badPath}}
+        </div>
+    {{/if}}
 </section>
 
