@@ -8,7 +8,7 @@ module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
       'object-src': "'self' common.publicradio.org",
-      'script-src': "script-src 'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 common.publicradio.org api.mpr.org accounts.publicradio.org accounts-stage.publicradio.org accounts-devel.publicradio.org  playlist-maker.publicradio.org playlist-maker-stage.publicradio.org playlist-maker-devel.publicradio.org",
+      'script-src': "script-src 'self' 'unsafe-eval' common.publicradio.org api.mpr.org",
       'img-src': "'self' common.publicradio.org www.gravatar.com data:",
       'style-src': "'self' 'unsafe-inline' common.publicradio.org fast.fonts.net",
       'connect-src': "'self' *",
@@ -55,6 +55,9 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+
+    ENV.contentSecurityPolicy['script-src'] +=  " localhost:35729 0.0.0.0:35729";
+
     // ENV.APP.LOG_RESOLVER = true;
     //ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -67,6 +70,7 @@ module.exports = function(environment) {
   //Since "development" is the name ember-cli likes for local development,
   //we're gonna use the APM rails convention of 'common_dev' for dev on shared server
   if (environment === 'common_dev'){
+      ENV.contentSecurityPolicy['script-src'] +=  " accounts-devel.publicradio.org playlist-maker-devel.publicradio.org ";
       accountsHostBase = 'https://accounts-devel.publicradio.org';
       playlistMakerHostBase = 'https://playlist-maker-devel.publicradio.org';
       ENV.baseDomain = 'http://apps.devel.classicalmpr.org';
@@ -75,6 +79,7 @@ module.exports = function(environment) {
 
 
   if (environment === 'stage'){
+      ENV.contentSecurityPolicy['script-src'] +=  " accounts-stage.publicradio.org playlist-maker-stage.publicradio.org ";
       accountsHostBase = 'https://accounts-stage.publicradio.org';
       playlistMakerHostBase = 'https://playlist-maker-stage.publicradio.org';
       ENV.baseDomain = 'http://apps.stage.classicalmpr.org';
@@ -83,6 +88,7 @@ module.exports = function(environment) {
 
 
   if (environment === 'production'){
+      ENV.contentSecurityPolicy['script-src'] +=  " accounts.publicradio.org playlist-maker.publicradio.org ";
       accountsHostBase = 'https://accounts.publicradio.org';
       playlistMakerHostBase = 'https://playlist-maker.publicradio.org';
       ENV.baseDomain = 'https://apps.classicalmpr.org';
