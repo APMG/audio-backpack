@@ -31,6 +31,9 @@ app.import('bower_components/jquery-ui/ui/widget.js');
 app.import('bower_components/jquery-ui/ui/mouse.js');
 app.import('bower_components/jquery-ui/ui/slider.js');
 
+//helps the drag & drop on touch devices
+app.import('bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.js');
+
 //The Un-minified versions of APMPlayer
 //app.import('bower_components/APMPlayer-Internal/script/apmplayer-all.min.js');
 app.import('bower_components/APMPlayer-Internal/script/src/apmplayer_ui.jquery.js');

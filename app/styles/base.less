@@ -43,7 +43,7 @@ section{
 footer{
 	p.copy{
 		text-align: center;
-		color: @gray-lighter;
+		color: #ccc;
 	}
 	margin: 2em 0;
 }
@@ -70,12 +70,7 @@ footer{
 	.input-group{
 		width: 100% !important;
 	}
-	.not-real-label{
-		display: inline-block;
-		max-width: 100%;
-		margin-bottom: 0px;
-		font-weight: bold;
-	}
+	
 	h1{
 		margin-top: 11px;
 		margin-bottom: 15px;
@@ -90,7 +85,12 @@ footer{
 		margin-bottom: 1em;
 	}
 }
-
+.not-real-label{
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 0px;
+	font-weight: bold;
+}
 
 
 @import "base_nav";
@@ -317,16 +317,36 @@ footer{
 		padding: 0;
 	}
 	&.orderable{
+		.not-real-label{
+			padding: 0 0 .5em .55em;
+		}
 		.ui-sortable{
 			list-style-type: none;
 			padding: 0;
 			ul{
 				padding: 0;
 				list-style-type: none;
+
 			}
 			.remove-item{
 				float: right;
+				margin: 0.5em 0 0 0.5em;
 			}
+			li.ui-sortable-handle{
+				cursor: move;
+				&:before{
+					font-family: 'FontAwesome';
+					font-size: 2em;
+					float: left;
+					color: #ccc;
+					content: "\f07d";
+					padding: .5em .25em 0;
+				}
+				.item-info{
+					padding-left: 115px;
+				}
+			}
+
 		}
 	}
 

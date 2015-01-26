@@ -107,7 +107,12 @@ export default Ember.ObjectController.extend({
         },
 
         movedItem: function(item, oldIndex, newIndex){
-            console.log('POS CHANGE!', item, oldIndex, newIndex);
+            //server position starts counting at 1, not 0 like jquery ui 
+            oldIndex++;
+            newIndex++;
+            item.set('position', newIndex);
+            item.save();
+            
 
         },
         
