@@ -9,6 +9,10 @@ export default Ember.Route.extend({
         });
     },
     afterModel: function(model){
-       Ember.$(document).attr('title', model.user.get('full_name') + " • "+ ENV.name);
+        this.metaTags.setTags({
+            title: model.user.get('full_name') + " • "+ ENV.name,
+            description: ENV.description,
+            url: this.get('router.url')
+        });
     }
 });

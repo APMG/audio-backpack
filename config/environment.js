@@ -29,6 +29,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      //FACEBOOK_APP_ID: 616451545151646
     },
     baseDomain: "",
 
@@ -51,6 +52,7 @@ module.exports = function(environment) {
 
     "localStorageNamespace": "mpr-music-education",
     "name": "Audio Backpack",
+    "description": "Classical MPR's Audio Backpack lets you easily create shareable playlists of music clips for educational purposes.",
 
   };
 

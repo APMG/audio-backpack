@@ -19,6 +19,10 @@ export default Ember.Route.extend({
         });
     },
     afterModel: function(){
-        Ember.$(document).attr('title', ENV.name + " • Classical Minnesota Public Radio");
+        this.metaTags.setTags({
+            title: ENV.name + " • Classical MPR",
+            description: ENV.description,
+            url: this.get('router.url')
+        });
     }
 });

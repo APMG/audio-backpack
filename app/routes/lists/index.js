@@ -16,6 +16,10 @@ export default Ember.Route.extend(RouteMixin, {
         return this.findPaged('list',params);
     },
     afterModel: function(){
-        Ember.$(document).attr('title', "Playlists • "+ ENV.name);
+        this.metaTags.setTags({
+            title: "Playlists • " + ENV.name, 
+            description: ENV.description,
+            url: this.get('router.url')
+        });
     }
 });

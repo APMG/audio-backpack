@@ -6,6 +6,10 @@ export default Ember.Route.extend({
         return this.store.find('clip');
     },
     afterModel: function(){
-        Ember.$(document).attr('title', "Clips • "+ ENV.name);
+        this.metaTags.setTags({
+            title: "Clips • " + ENV.name, 
+            description: ENV.description,
+            url: this.get('router.url')
+        });
     }
 });
