@@ -5,8 +5,9 @@ export default Ember.Route.extend({
 
     // hack to deal with flash messages from account creation
     beforeModel: function(){
-        if (window.location.search.indexOf('?action=after-account-create') !== -1){
-            this.transitionTo('/login?action=after-account-create');
+        if (window.location.search.indexOf('?activity=after-account-create') !== -1){
+            this.controllerFor('login').set('flashMessage', 'Log in with your newly created MPR account information.');
+            this.transitionTo('/login'); //?activity=after-account-create
         }
     },
 
