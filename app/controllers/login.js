@@ -13,6 +13,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
         // display an error when authentication fails
         authenticate: function() {
             this.set('flashMessage','Attempting login...');
+            that.set('errorMessage','');
             var that = this;
             this._super().then(null, function(error) {
                 if (typeof error === 'undefined'){
