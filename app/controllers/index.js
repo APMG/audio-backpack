@@ -4,7 +4,7 @@ export default Ember.ObjectController.extend({
 
     sortedClips: function() {
         return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
-            sortProperties: ['pub_date'],
+            sortProperties: ['pub_date','title'],
             sortAscending: false,
             content: this.model.clips.get('arrangedContent')
         });
@@ -17,7 +17,7 @@ export default Ember.ObjectController.extend({
 
     sortedLists: function() {
         return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
-            sortProperties: ['updated_at'],
+            sortProperties: ['updated_at','title'],
             sortAscending: false,
             content: this.model.lists.get('arrangedContent')
         });
