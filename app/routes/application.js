@@ -57,6 +57,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         //Makes sure we reload to correct URL after logout
         sessionInvalidationSucceeded: function() {
             window.location.replace(ENV.baseURL);
+        },
+        //When we add a new playlist, we send this action and need it to be acted on globally
+        invalidateModel: function() {
+            Ember.Logger.log('Route is now refreshing...');
+            this.refresh();
         }
     }
 });

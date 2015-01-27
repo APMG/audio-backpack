@@ -2,12 +2,6 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 export default Ember.Route.extend({
-    actions: {
-        invalidateModel: function() {
-            Ember.Logger.log('Route is now refreshing...');
-            this.refresh();
-        }
-    }, 
     model: function(params){
         return Ember.RSVP.hash({
             user: this.store.find('user', params.user_id),

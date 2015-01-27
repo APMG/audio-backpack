@@ -3,8 +3,10 @@
     
     {{#if session.isAuthenticated}}
 
+        {{#if secondaryModel}}
         <h5>Choose playlist to add <strong>{{clip.title}}</strong> to:</h5>
         <div class="list-group add-clip">
+
         {{#each list in secondaryModel}}
             <a {{action 'addClip' list}} href="#" {{bind-attr class=':list-group-item list.isSaved list.isDoingSave'}}>{{list.title}}  
                
@@ -13,6 +15,13 @@
 
         {{/each}}
         </ul>
+        {{else}}
+            <p>You do not have any playlists yet.</p>
+
+            <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>
+
+        {{/if}}
+
        {{!-- <p><em>Note:</em> Presently there is no feedback to tell you if an item is already in a list or that it has been added to a list.</p> --}}
     {{else}}
         <strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
