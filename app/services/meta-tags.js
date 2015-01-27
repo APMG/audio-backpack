@@ -72,11 +72,10 @@ export default Ember.Object.extend({
 
     urlChanged: function() {
         var baseDomain = ENV.baseDomain; //gracefully deal with local development
-        console.log(baseDomain);
         if (baseDomain === ''){
             baseDomain = window.location.origin;
         }
-        var url = baseDomain + this.get('url');
+        var url = baseDomain + ENV.baseURL + this.get('url');
         this.get('_ogUrl').setAttribute('content', url);
         this.notifyPropertyChange('_ogUrl');
     }.observes('url'),
