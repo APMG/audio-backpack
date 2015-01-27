@@ -75,7 +75,12 @@ export default Ember.Object.extend({
         if (baseDomain === ''){
             baseDomain = window.location.origin;
         }
-        var url = baseDomain + ENV.baseURL + this.get('url');
+        //clean up dupe slashes that occur if we dont
+        var curUrl = this.get('url');
+        if (curUrl.substr(0,1) === '/'){
+            curUrl = curUrl.substr(1,curUrl.length);
+        }
+        var url = baseDomain + ENV.baseURL + curUrl;
         this.get('_ogUrl').setAttribute('content', url);
         this.notifyPropertyChange('_ogUrl');
     }.observes('url'),
