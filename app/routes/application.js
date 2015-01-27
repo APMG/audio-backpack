@@ -13,6 +13,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         var store = this.store;
         return Ember.$.getJSON( ENV.baseURL + 'data/catalog.json').then(function(data) {
 
+            //deal with timezone bullshit
+            var tzOffset = 'T00:00-06:00';
+            if (moment().isDST()){
+                tzOffset = 'T00:00-05:00';
+            }
+
             //Wipe out the local storage for this before starting import
             //ensures that our clip data is always fresh
             localStorage.removeItem(ENV.localStorageNamespace);
@@ -21,7 +27,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
                 //convert duration from clock (e.g. 00:00:32) to milliseconds (e.g. 32000)
                 item.duration = moment.duration(item.duration).asMilliseconds();
                 item.id = buid;
-                item.pub_date = new Date(item.pub_date);
+                item.pub_date = new Date(item.pub_date+tzOffset);  //make always at daybreak
                 store.push('clip',item).save();
             }
         });
