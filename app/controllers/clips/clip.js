@@ -9,7 +9,8 @@ export default Ember.ObjectController.extend({
                 type: 'audio'
             });
             apmplayer_ui.playlist.replacePlayables([playable]);
-        }
+        },
+
     },
     /**
      * Gets the list of playlists to pass to the modal component

@@ -122,6 +122,12 @@ export default Ember.ObjectController.extend({
             // but my simple method below seems to work fine from the client side, I think
             item.deleteRecord();
             item.save(); 
+        },
+
+        // a click on the whole list container li sends you to clip itself
+        goToList: function(){
+            this.transitionToRoute('lists.list',this);
+            return false;
         }
 
     },

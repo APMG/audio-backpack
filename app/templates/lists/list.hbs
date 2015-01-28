@@ -1,6 +1,6 @@
 <li class='item'>    
       <a class='item-icon clickable playlist' href="#" {{action 'playAll'}}> </a>
-      <div class='item-info'>
+      <div class='item-info' {{action 'goToList' list on='click' bubbles=false}}>
           {{#link-to 'lists.list' list}} 
         <h3>{{title}}</h3>
         <span class='author'>by {{!#link-to 'user' user}}{{user.full_name}}{{!/link-to}}</span><br />
@@ -8,7 +8,7 @@
          {{/link-to}}
 
         {{#if isCurrentUserOwner}}
-            &nbsp; <a class="clickable" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}}</a>
+            &nbsp; <a class="clickable remove-list" data-toggle="modal" {{action 'openModal' 'modals/delete-list' mode bubbles=false}}>{{fa-icon 'trash'}}</a>
         {{/if}}
     </div>
 </li>

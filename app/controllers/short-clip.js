@@ -9,7 +9,13 @@ export default Ember.ObjectController.extend({
                 type: 'audio'
             });
             apmplayer_ui.playlist.replacePlayables([playable]);
-        } 
+        },
+        
+        // a click on the whole clip container li sends you to clip itself
+        goToClip: function(){
+            this.transitionToRoute('clips.clip',this);
+            //console.log('clicked',this);
+        }
     },
     
     /**

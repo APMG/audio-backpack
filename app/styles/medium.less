@@ -9,3 +9,30 @@
         margin-bottom: 0.2em;
     }
 }
+
+
+.item{
+    background-color: @gray-lighter;
+    border-radius: 10px;
+    .item-info{
+        margin-top: .5em;
+        cursor: pointer;
+        &:hover{
+            h3{
+                color: @brand-primary;
+            }
+        }
+    }
+}
+//indents the trash icon correctly
+.playlist-items.orderable .ui-sortable .remove-item{
+    margin:1.4em 0.6em 0 0.5em;
+    border: none;
+    background-color: transparent;
+    &:hover{
+        color: @brand-danger;
+    }
+}
+.ui-sortable .item{
+    //background: none;
+}
