@@ -5,7 +5,9 @@
 
     {{#if isLoggedInUser}}
         {{#if session.isAuthenticated}}     
-          <a {{ action 'invalidateSession' }} class='btn btn-primary'>Sign out</a>
+        <div class="btn-group" role="group" aria-label="">
+          <a {{ action 'invalidateSession' }} class='btn btn-default'>Sign out</a> <a {{bind-attr href='config.env.accountsHostBase'}} class='btn btn-default'>Update profile</a>
+        </div>
         {{/if}}
     {{/if}}
   
