@@ -370,5 +370,61 @@ footer{
 
 		}
 	}
+}
 
+/**
+ * LOADING ANIMATIONS
+ */
+
+h3.loading-note{
+    color: #00aab8;
+    text-align: center;
+}
+svg{
+    margin: 20px auto;
+    display: block;
+}
+path{
+    fill:  #c7e8e9;
+    -webkit-animation: LoadingAnim 3s ease infinite;
+    -moz-animation: LoadingAnim 3s ease infinite;
+    animation: LoadingAnim 3s ease infinite;
+}
+@-webkit-keyframes LoadingAnim {
+    0%{fill: #c7e8e9;}
+    50%{fill: #0980b8;}
+    100%{fill: #c7e8e9;}
+} 
+@-moz-keyframes LoadingAnim {
+    0%{fill: #c7e8e9;}
+    50%{fill: #0980b8;}
+    100%{fill: #c7e8e9;}
+}
+@keyframes LoadingAnim { 
+    0%{fill: #c7e8e9;}
+    50%{fill: #0980b8;}
+    100%{fill: #c7e8e9;}
+} 
+
+span.loading{
+    background: transparent;
+    background: -webkit-gradient(linear,left top,right top,
+      color-stop(0, #00aab8),
+      color-stop(0.3, #00aab8),
+      color-stop(0.5, #c7e8e9),
+      color-stop(0.7, #00aab8),
+      color-stop(1, #00aab8)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  -webkit-animation: explore 5s linear;
+  -webkit-animation-iteration-count: infinite;
+  background-position: -100px 0; 
+}
+@-webkit-keyframes explore {
+    0% {
+      background-position: -100px 0;
+    }
+    100%{
+      background-position: 100px 0;
+    }
 }
