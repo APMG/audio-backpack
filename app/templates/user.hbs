@@ -26,8 +26,10 @@
 
 <section>
     <ul class='item-list'>
-    {{#each list in model.lists}} 
+    {{#each list in model.lists.content}} 
         {{render 'lists/list' list}}
     {{/each}}
     </ul>
+    
+    {{page-numbers content=model.lists}}
 </section>
