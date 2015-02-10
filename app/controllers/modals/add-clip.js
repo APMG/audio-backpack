@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     
     actions: {
         close: function() {
-            console.log('sending close!');
+            //console.log('sending close!');
             return this.send('closeModal');
         },
         addClip: function(list){

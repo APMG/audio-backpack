@@ -31,5 +31,7 @@
     {{/each}}
     </ul>
     
-    {{page-numbers content=model.lists}}
+    {{#if needsPagination}}
+        {{page-numbers content=model.lists}}
+    {{/if}}
 </section>

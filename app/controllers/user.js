@@ -11,6 +11,13 @@ export default Ember.ObjectController.extend({
     perPageBinding: "model.lists.perPage",
     totalPagesBinding: "model.lists.totalPages",
 
+    needsPagination: function(){
+        if (this.get('model.lists.totalPages') > 1){
+            return true;
+        } 
+        return false;
+    }.property('model.lists'),
+
     // set default values, can cause problems if left out
     // if value matches default, it won't display in the URL
     page: 1,
