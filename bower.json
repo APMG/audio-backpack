@@ -1,7 +1,7 @@
 {
   "name": "mpr-music-education",
   "dependencies": {
-    "ember-data": "beta",
+    "ember-data": "1.0.0-beta.14.1",
     "ember": "~1.9.x",
     "jquery": "~2.1.1",
     "handlebars": "2.0.0",
@@ -21,8 +21,7 @@
     "jquery-ui": "~1.11.2"
   },
   "resolutions": {
-    "handlebars": "2.0.0",
-    "ember-data": "~1.0.0-beta.7"
+    "handlebars": "2.0.0"
   },
   "devDependencies": {
     "ember-localstorage-adapter": "~0.5.0",

@@ -14,14 +14,14 @@
 
 
         {{/each}}
-        </ul>
+        </div>
+
         {{else}}
             <p>You do not have any playlists yet.</p>
 
             <a class="btn btn-primary" data-toggle="modal" {{action 'openModal' 'modals/create-list'}}>Create new playlist</a>
 
         {{/if}}
-
        {{!-- <p><em>Note:</em> Presently there is no feedback to tell you if an item is already in a list or that it has been added to a list.</p> --}}
     {{else}}
         <strong>Please {{#link-to 'login'}}log in{{/link-to}} to add to a list</strong>
