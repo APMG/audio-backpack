@@ -8,7 +8,6 @@ export default Ember.Route.extend(RouteMixin, {
             params.user = params.user_id;
             delete params.user_id;
         }
-        console.log(this.findPaged('list',params));
         return Ember.RSVP.hash({
             user: this.store.find('user', params.user),
             //lists: this.store.find('list', {user: params.user_id})

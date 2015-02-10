@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
                     //pass the loggedInId rather than the full user, because else the model hook on route doesn't run
                     that.transitionToRoute('user',loggedInId);
                 }, function(error) {
-                    console.log('tried save, ERROR', error);
+                    console.error('tried save, ERROR', error);
                     return false;
                 });
             }

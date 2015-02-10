@@ -8,7 +8,7 @@
          {{/link-to}}
 
         {{#if isCurrentUserOwner}}
-            &nbsp; <a class="clickable remove-list" data-toggle="modal" {{action 'openModal' 'modals/delete-list' mode bubbles=false}}>{{fa-icon 'trash'}}</a>
+            &nbsp; <a class="clickable remove-list" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model bubbles=false}}>{{fa-icon 'trash'}}</a>
         {{/if}}
     </div>
 </li>
