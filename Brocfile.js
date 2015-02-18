@@ -2,7 +2,11 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+    vendorFiles: {
+      'handlebars.js': null
+    }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -32,7 +36,7 @@ app.import('bower_components/jquery-ui/ui/mouse.js');
 app.import('bower_components/jquery-ui/ui/slider.js');
 
 //helps the drag & drop on touch devices
-app.import('bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.js');
+app.import('bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js');
 
 //The Un-minified versions of APMPlayer
 //app.import('bower_components/APMPlayer-Internal/script/apmplayer-all.min.js');

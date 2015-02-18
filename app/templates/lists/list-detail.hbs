@@ -72,13 +72,15 @@
 		<div class="playlist-items orderable">		
 		<span class="control-label not-real-label">&darr; Drag to reorder</span>
 
-		{{#ivy-sortable items moved="movedItem" axis='y' opacity="0.7"}}
+
+		{{#collection "ivy-sortable" content=items moved="movedItem" axis='y' opacity="0.7"}}
+		
         	{{!-- item id: <em>{{this.id}}</em> &middot; position: <em>{{position}}</em>  --}}
         	
         	<a {{action 'removeItem' this}} class='remove-item btn btn-default'><i class="icon-trash" aria-hidden="true"></i></a>
 
         	{{render 'item' this}}
-		{{/ivy-sortable}}
+		{{/collection}}
 
 
 

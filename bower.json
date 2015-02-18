@@ -1,10 +1,9 @@
 {
   "name": "mpr-music-education",
   "dependencies": {
-    "ember-data": "1.0.0-beta.14.1",
-    "ember": "~1.9.x",
+    "ember-data": "1.0.0-beta.15",
+    "ember": "1.10.0",
     "jquery": "~2.1.1",
-    "handlebars": "2.0.0",
     "ember-resolver": "~0.1.10",
     "loader.js": "stefanpenner/loader.js#1.0.1",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.3",
@@ -18,13 +17,11 @@
     "ember-simple-auth": "0.7.2",
     "bootstrap": "~3.3.1",
     "ember-cli-moment-shim": "~0.0.2",
-    "jquery-ui": "~1.11.2"
+    "jquery-ui": "~1.11.2",
+    "ember-localstorage-adapter": "~0.5.0",
+    "jquery-ui-touch-punch": "*"
   },
   "resolutions": {
-    "handlebars": "2.0.0"
-  },
-  "devDependencies": {
-    "ember-localstorage-adapter": "~0.5.0",
-    "jqueryui-touch-punch": "*"
+    "jquery-ui": "~1.11.2"
   }
 }
