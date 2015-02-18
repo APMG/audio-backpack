@@ -1,7 +1,7 @@
 {
   "name": "mpr-music-education",
   "dependencies": {
-    "ember-data": "1.0.0-beta.14.1",
+    "ember-data": "1.0.0-beta.15",
     "ember": "1.10.0",
     "jquery": "~2.1.1",
     "ember-resolver": "~0.1.10",
