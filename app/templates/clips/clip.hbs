@@ -19,7 +19,7 @@
 
 <section>
 	{{#if session.isAuthenticated}}
-     <a class="btn btn-primary" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}>{{fa-icon 'plus'}} Add to playlist</a>
+     <a class="btn btn-primary" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' model lists}}><i class="icon-plus" aria-hidden="true"></i> Add to playlist</a>
 {{else}}
 	<strong>Please {{#link-to 'login'}}log in{{/link-to}} to add this to a playlist.</strong>
 {{/if}}</section>

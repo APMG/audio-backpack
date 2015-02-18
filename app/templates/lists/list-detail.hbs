@@ -22,7 +22,7 @@
 	
 
 		{{#if isCurrentUserOwner}}
-     		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}>{{fa-icon 'trash'}} Delete</a>
+     		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}><i class="icon-trash" aria-hidden="true"></i> Delete</a>
 		{{/if}}
 		</section>
 		
@@ -32,7 +32,7 @@
 	    <div class="input-group input-group-lg">
 	      {{focus-input type="search" value=listURL class='form-control' id='list-url' readonly='readonly'}}
 	      <span class="input-group-btn">
-	        <a class="btn btn-primary" {{bind-attr href='mailto'}}>{{fa-icon "envelope"}}</a>
+	        <a class="btn btn-primary" {{bind-attr href='mailto'}}><i class="icon-envelope" aria-hidden="true"></i></a>
 	      </span>
 	    </div>
 		</section>
@@ -63,7 +63,7 @@
 		</section>
 
 		{{#if clipCount}}
-     		<a class="btn btn-primary" {{action 'playAll'}}>{{fa-icon 'play'}} Play All</a>
+     		<a class="btn btn-primary" {{action 'playAll'}}><i class="icon-play" aria-hidden="true"></i> Play All</a>
 		{{/if}} &nbsp; {{clipCount}} clips, {{pretty-duration totalDuration}}
 		
 
@@ -75,7 +75,7 @@
 		{{#ivy-sortable items moved="movedItem" axis='y' opacity="0.7"}}
         	{{!-- item id: <em>{{this.id}}</em> &middot; position: <em>{{position}}</em>  --}}
         	
-        	<a {{action 'removeItem' this}} class='remove-item btn btn-default'>{{fa-icon 'trash'}}</a>
+        	<a {{action 'removeItem' this}} class='remove-item btn btn-default'><i class="icon-trash" aria-hidden="true"></i></a>
 
         	{{render 'item' this}}
 		{{/ivy-sortable}}
