@@ -1,6 +1,6 @@
 # MPR Music Education
 
-This is an application for managing playlists of classical music for educational purposes. It is built using [Ember](http://www.emherjs.com) and [Ember-Cli](http://www.ember-cli.com/) along with several other dependicies, as defined in `bower.json` and `package.json`. This app also depends on the [MPR-User](https://gitlab.mpr.org/swag/mpr-user) rails app for handling oAuth. 
+This is an application for managing playlists of classical music for educational purposes. It is built using [Ember](http://www.emherjs.com) and [Ember-Cli](http://www.ember-cli.com/) along with several other dependicies, as defined in `bower.json` and `package.json`. This app also depends on the [MPR-User](https://gitlab.mpr.org/swag/mpr-user) rails app for handling oAuth and the [Playlist Maker API](https://gitlab.mpr.org/swag/playlist-maker-api) for persisting saved playlists, both of which we have not made open source (yet).
 
 
 ## Prerequisites
@@ -42,7 +42,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+At MPR, we use a seperate internal capistrano task to deploy the app and build the app. Internal users should please see that git package for details.
+
 
 ## Further Reading / Useful Links
 
