@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# always go to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# send all traffic not to real file to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond $1 !^(data/)  
+RewriteRule ^(.*)$ index.html [QSA,L]
