@@ -1,10 +1,11 @@
 import Ember from 'ember';
-import { initialize } from 'mpr-music-education/initializers/register-environment';
+import { initialize } from '../../../initializers/register-environment';
+import { module, test } from 'qunit';
 
 var container, application;
 
 module('RegisterEnvironmentInitializer', {
-  setup: function() {
+  beforeEach: function() {
     Ember.run(function() {
       application = Ember.Application.create();
       container = application.__container__;
@@ -14,10 +15,9 @@ module('RegisterEnvironmentInitializer', {
 });
 
 // Replace this with your real tests.
-test('it works', function() {
+test('it works', function(assert) {
   initialize(container, application);
 
   // you would normally confirm the results of the initializer here
-  ok(true);
+  assert.ok(true);
 });
-
