@@ -1,8 +1,8 @@
 {
   "name": "mpr-music-education",
   "dependencies": {
-    "ember-data": "1.0.0-beta.19.2",
-    "ember": "1.13.0",
+    "ember-data": "1.13.2",
+    "ember": "1.13.2",
     "jquery": "~2.1.4",
     "ember-resolver": "~0.1.15",
     "loader.js": "ember-cli/loader.js#1.0.1",
@@ -13,11 +13,11 @@
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
     "APMPlayer-Internal": "git@gitlab.mpr.org:js-libraries/apmplayer.git#9941fc5987923ea058360ef94f0b7f0550bfae47",
-    "ember-simple-auth": "0.7.3",
+    "ember-simple-auth": "0.8.0",
     "bootstrap": "~3.3.1",
     "ember-cli-moment-shim": "~0.0.2",
     "jquery-ui": "~1.11.3",
-    "ember-localstorage-adapter": "~0.5.0",
+    "ember-localstorage-adapter": "~0.5.4",
     "jquery-ui-touch-punch": "furf/jquery-ui-touch-punch#",
     "soundmanager": "scottschiller/SoundManager2#V2.97a.20140901"
 

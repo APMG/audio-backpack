@@ -21,11 +21,11 @@
 <ul class='item-list'>
 
 {{#if filteredClips}}
-    {{#each clip in filteredClips}}
+    {{#each filteredClips as |clip|}}
         {{render 'short-clip' clip}}
     {{/each}}
 {{ else }}
-    {{#each clip in pagedContent}}
+    {{#each pagedContent as |clip|}}
         {{render 'short-clip' clip}}
     {{/each}}
 {{/if}}

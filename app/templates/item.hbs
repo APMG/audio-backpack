@@ -3,6 +3,6 @@ We have a nested each here -- it seems that if we do that, we can resolve the pr
 If we try to resolve it in the controller, it freaks out badly. 
 Oh well, this isn't too terrible.
 --}}
-{{#each clip in clip}}
+{{#each clip as |clip|}}
     <ul class='inline-clip'>{{partial 'short-clip'}}</ul>
 {{/each}}

@@ -11,7 +11,7 @@
       {{#if ok}}
        <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" {{action 'close'}}>{{#if closeText}}{{closeText}}{{else}}Close{{/if}}</button>
-        <button type="button" {{bind-attr class=":btn :btn-primary btnClass"}} {{action 'ok'}}>{{okText}}</button>
+        <button type="button" class='btn btn-primary {{btnClass}}' {{action 'ok'}}>{{okText}}</button>
       </div>
 
       {{/if}}

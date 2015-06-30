@@ -23,12 +23,15 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
             //ensures that our clip data is always fresh
             localStorage.removeItem(ENV.localStorageNamespace);
             for (var buid in data.data) {
-                var item = data.data[buid];
-                //convert duration from clock (e.g. 00:00:32) to milliseconds (e.g. 32000)
-                item.duration = moment.duration(item.duration).asMilliseconds();
-                item.id = buid;
-                item.pub_date = new Date(item.pub_date+tzOffset);  //make always at daybreak
-                store.push('clip',item).save();
+                var item = {data: {
+                    id: buid,
+                    type: 'clip',
+                    attributes: {}
+                }};
+                item.data.attributes = data.data[buid];
+                item.data.attributes.duration = moment.duration(data.data[buid].duration).asMilliseconds();
+                item.data.attributes.pub_date = new Date(data.data[buid].pub_date+tzOffset);  //make always at daybreak
+                store.push(item).save();
             }
         });
     },

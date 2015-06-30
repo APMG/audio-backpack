@@ -1,12 +1,12 @@
 
-<section {{bind-attr class=":user-header isLoggedInUser"}}>
+<section class="user-header {{isLoggedInUser}}">
     {{gravatar-image hash=model.gravatar size='200' class=''}}  
     <h1>{{model.user.full_name}}</h1>
 
     {{#if isLoggedInUser}}
         {{#if session.isAuthenticated}}     
         <div class="btn-group" role="group" aria-label="">
-          <a {{ action 'invalidateSession' }} class='btn btn-default'>Sign out</a> <a {{bind-attr href='config.env.accountsHostBase'}} class='btn btn-default'>Update profile</a>
+          <a {{ action 'invalidateSession' }} class='btn btn-default'>Sign out</a> <a href={{config.env.accountsHostBase}} class='btn btn-default'>Update profile</a>
         </div>
         {{/if}}
     {{/if}}
@@ -26,7 +26,7 @@
 
 <section>
     <ul class='item-list'>
-    {{#each list in model.lists.content}} 
+    {{#each model.lists.content as |list|}} 
         {{render 'lists/list' list}}
     {{/each}}
     </ul>

@@ -12,7 +12,7 @@
 
 <section>
     <ul class='item-list'>
-    {{#each list in content}} {{!-- some places call this 'model', some places call it 'content' --}}
+    {{#each content as |list|}}  {{!-- some places call this 'model', some places call it 'content' --}}
         {{render 'lists/list' list}}
     {{/each}}
     </ul>

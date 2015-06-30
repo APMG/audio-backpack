@@ -7,8 +7,9 @@
         <h5>Choose playlist to add <strong>{{clip.title}}</strong> to:</h5>
         <div class="list-group add-clip">
 
-        {{#each list in secondaryModel}}
-            <a {{action 'addClip' list}} href="#" {{bind-attr class=':list-group-item list.isSaved list.isDoingSave'}}>{{list.title}}  
+        {{#each secondaryModel  as |list|}}
+        {{! bind-attr class=':list-group-item list.isSaved list.isDoingSave'!}}
+            <a {{action 'addClip' list}} href="#"  class='list-group-item {{list.isSaved}} {{list.isDoingSave}}'>{{list.title}}  
                
             </a>
 

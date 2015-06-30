@@ -6,7 +6,7 @@
     <h2>Featured Playlists</h2>
 
     <ul class='item-list'>
-        {{#each list in trimmedLists}}
+        {{#each trimmedLists as |list|}}
             {{render 'lists/list' list}}
         {{/each}}
     </ul>
@@ -20,7 +20,7 @@
     <h2>Latest Clips</h2>
 
     <ul class='item-list'>
-        {{#each clip in trimmedClips}}
+        {{#each trimmedClips as |clip|}}
             {{render 'short-clip' clip}}
         {{/each}}
     </ul>
