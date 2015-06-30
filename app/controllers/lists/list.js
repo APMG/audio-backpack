@@ -13,8 +13,7 @@ export default Ember.Controller.extend({
     },
 
     clipCount: Ember.computed('model.items', function(){
-        var list_items = this.get('items');
-        console.log(list_items);
+        var list_items = this.get('model.items');
         return list_items.get('length');
     }),
 
@@ -29,7 +28,7 @@ export default Ember.Controller.extend({
         this.set('totalDuration',0);
     
 
-        var items = this.get('items');
+        var items = this.get('model.items');
         var that = this;
         items.forEach(function(item){
             var apm_audio = item.get('apm_audio');
