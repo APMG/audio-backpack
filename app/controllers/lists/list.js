@@ -73,7 +73,7 @@ export default Ember.Controller.extend({
     actions: {
         playAll: function(){
             var clipsPlayable = [];
-            var items = this.get('items');
+            var items = this.get('model.items');
             items.forEach(function(item){
                 var playable = APMPlayerFactory.getPlayable({
                     identifier: item.get('apm_audio'),
@@ -137,7 +137,7 @@ export default Ember.Controller.extend({
      * @return {String} url for playlist
      */
     listURL: Ember.computed('model', function(){
-        var shareSlug = (parseInt(this.get('id'), 10) + 10000).toString(36);
+        var shareSlug = (parseInt(this.get('model.id'), 10) + 10000).toString(36);
         var baseDomain = ENV.baseDomain; //gracefully deal with local development
         if (baseDomain === ''){
             baseDomain = window.location.origin;
