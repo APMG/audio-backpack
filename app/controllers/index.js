@@ -6,13 +6,24 @@ export default Ember.Controller.extend({
         return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
             sortProperties: ['pub_date','title'],
             sortAscending: false,
-            content: this.model.clips.get('arrangedContent')
+            content: this.get('model.clips')
         });
     }),
+
+    // sortedClips: Ember.computed('model.clips', function() {
+    //     console.log(this.get('model.clips'));
+    //     return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+    //         sortProperties: ['pub_date','title'],
+    //         sortAscending: false,
+    //         //content: this.model.clips.get('arrangedContent')
+    //         content: this.get('model.clips.arrangedContent')
+    //     });
+    // }),
     
-    trimmedClips: Ember.computed('model.clips', function(){
+   trimmedClips: Ember.computed('model.clips', function(){
         return this.get('sortedClips.arrangedContent').splice(0,4);
     }),
+
 
 
     sortedLists: Ember.computed('model.lists', function() {

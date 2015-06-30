@@ -13,9 +13,11 @@ export default Ember.Route.extend({
 
     model: function(){
         return Ember.RSVP.hash({
-            clips: this.store.peekAll('clip'),
+            clips: this.store.all('clip'),
+            //clips: this.store.peekAll('clip'),
             //dan nass, primary guy for MPR
-            lists: this.store.query('list',{user:'ab5e79b332f1fee7b06a52a866028a6a9ac96dd3'})
+            lists: this.store.find('list',{user:'ab5e79b332f1fee7b06a52a866028a6a9ac96dd3'})
+            // lists: this.store.query('list',{user:'ab5e79b332f1fee7b06a52a866028a6a9ac96dd3'})
         });
     },
     afterModel: function(){

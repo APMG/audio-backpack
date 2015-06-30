@@ -37,7 +37,7 @@
     "ember-cli-simple-auth": "^0.8.0",
     "ember-cli-simple-auth-oauth2": "^0.8.0",
     "ember-cli-uglify": "1.0.1",
-    "ember-data": "1.13.4",
+    "ember-data": "v1.0.0-beta.19.2",
     "ember-export-application-global": "^1.0.2",
     "ember-localstorage-adapter": "^0.5.4",
     "ember-watson": "^0.5.6",
