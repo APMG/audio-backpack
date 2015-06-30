@@ -2,8 +2,8 @@
       <a class='item-icon clickable playlist' href="#" {{action 'playAll'}}> </a>
       <div class='item-info' {{action 'goToList' list on='click' bubbles=false}}>
           {{#link-to 'lists.list' list}} 
-        <h3>{{title}}</h3>
-        <span class='author'>by {{!#link-to 'user' user}}{{user.full_name}}{{!/link-to}}</span><br />
+        <h3>{{list.title}}</h3>
+        <span class='author'>by {{!#link-to 'user' user}}{{list.user.full_name}}{{!/link-to}}</span><br />
         {{clipCount}} clips, {{pretty-duration totalDuration}}
          {{/link-to}}
 
