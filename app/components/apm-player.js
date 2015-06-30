@@ -3,7 +3,6 @@ import Ember from "ember";
 export default Ember.Component.extend({
     //templateName: "apmplayer",
     didInsertElement: function(){
-
         Ember.$('#apm_player_container').apmplayer_ui({
             playables : [],
             onMetadata : function (playable) {
