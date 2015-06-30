@@ -87,7 +87,7 @@
 		</div>
 		{{else}}
 		<div class="playlist-items">		
-			{{#each items itemController="item" as |items|}}  {{!#each item in items itemController="item"!}}
+			{{#each items as |item|}}  {{!#each item in items itemController="item"!}}
 	        	{{!-- 
 				We have a nested each here -- it seems that if we do that, we can resolve the promise OK
 				If we try to resolve it in the controller, it freaks out badly. 

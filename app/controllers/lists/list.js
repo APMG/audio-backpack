@@ -1,7 +1,7 @@
 import Ember from "ember";
 import ENV from '../../config/environment';
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
 
     init: function(){
         this._super();
@@ -14,6 +14,7 @@ export default Ember.ObjectController.extend({
 
     clipCount: function(){
         var list_items = this.get('items');
+        console.log(list_items);
         return list_items.get('length');
     }.property('model.items'),
 
