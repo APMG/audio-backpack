@@ -13,8 +13,7 @@ export default Ember.Controller.extend({
         
         // a click on the whole clip container li sends you to clip itself
         goToClip: function(){
-            this.transitionToRoute('clips.clip',this);
-            //console.log('clicked',this);
+            this.transitionToRoute('clips.clip',this.get('model.id'));
         }
     },
     
