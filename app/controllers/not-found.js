@@ -2,8 +2,8 @@ import Ember from "ember";
 
 export default Ember.Controller.extend({
 
-    badPath: function(){
+    badPath: Ember.computed(function(){
         return window.location.href;
-    }.property()
+    })
     
 });

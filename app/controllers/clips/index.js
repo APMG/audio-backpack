@@ -32,7 +32,7 @@ export default Ember.ArrayController.extend({
      * Deals with changing the results list when the seachTerm changes
      * Uses the model.filter class to filter the results on the three fields we care about
      */
-    onSearchTermChange: function(val){ 
+    onSearchTermChange: Ember.observer("searchTerm", function(val){ 
         var term = val.searchTerm.toLowerCase();
 
         if (term.length > 2) {
@@ -59,7 +59,7 @@ export default Ember.ArrayController.extend({
             this.set('showPaging',true);
 
        }
-    }.observes("searchTerm"),
+    }),
 
     // actions: {
     //     openModal: function(someArg){

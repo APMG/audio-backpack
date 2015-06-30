@@ -11,12 +11,12 @@ export default Ember.Controller.extend({
     perPageBinding: "model.lists.perPage",
     totalPagesBinding: "model.lists.totalPages",
 
-    needsPagination: function(){
+    needsPagination: Ember.computed('model.lists', function(){
         if (this.get('model.lists.totalPages') > 1){
             return true;
         } 
         return false;
-    }.property('model.lists'),
+    }),
 
     // set default values, can cause problems if left out
     // if value matches default, it won't display in the URL
@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
      * Tells us if we're looking at the logged in users
      * @return {Boolean} [description]
      */
-    isLoggedInUser: function(){
+    isLoggedInUser: Ember.computed(function(){
         if (this.get('session.isAuthenticated')){
             var loggedInId = this.get('session.user_id');
             var userId = this.get('model.user.id');
@@ -37,6 +37,6 @@ export default Ember.Controller.extend({
         }
         return false;
        
-    }.property(),
+    }),
 
 });

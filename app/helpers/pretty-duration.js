@@ -6,7 +6,7 @@ import Ember from "ember";
  * like "1min 32sec"
  */
 export default Ember.Handlebars.makeBoundHelper(function(value) {
-	var dur = moment.duration(value);
+    var dur = moment.duration(value);
     var ret;
     if (dur.hours() !== 0){
         ret = dur.hours()+"hour " + dur.minutes()+"min " + dur.seconds() + "sec";

@@ -5,9 +5,9 @@ import Ember from "ember";
  * @return {void}
  */
 export default Ember.TextArea.extend({
-    becomeFocused: function() {
+    becomeFocused: Ember.on('didInsertElement', function() {
         this.$().focus( function(){ 
             Ember.$(this).select();
         });
-    }.on('didInsertElement')
+    })
 });

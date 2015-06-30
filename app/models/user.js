@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from "ember-data";
 
 export default DS.Model.extend({
@@ -6,7 +7,7 @@ export default DS.Model.extend({
     gravatar: DS.attr(),
     lists: DS.hasMany('list'),
 
-    full_name: function() {
+    full_name: Ember.computed('first_name', 'first_name', function() {
         return this.get('first_name') + ' ' + this.get('last_name');
-    }.property('first_name', 'first_name')
+    })
 });

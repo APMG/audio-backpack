@@ -14,7 +14,7 @@ import Ember from 'ember';
 // https://github.com/simplabs/ember-simple-auth/blob/master/examples/4-authenticated-account.html
 
 var SessionWithCurrentUser = Session.extend({
-    user: function() {
+    user: Ember.computed('user_id', function() {
         //console.log('session user func run');
         var userId = this.get('user_id');
         //console.log('userId:', userId);
@@ -24,7 +24,7 @@ var SessionWithCurrentUser = Session.extend({
         } else {
             //console.log('sadly empty');
         }
-    }.property('user_id')
+    })
 
 });
 

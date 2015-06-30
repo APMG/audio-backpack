@@ -2,9 +2,9 @@ import Ember from "ember";
 
 export default Ember.Controller.extend({
 
-    clip: function(){
+    clip: Ember.computed('clip', function(){
         return this.model;
-    }.property('clip'),
+    }),
     
     actions: {
         close: function() {

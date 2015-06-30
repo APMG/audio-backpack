@@ -7,9 +7,9 @@ export default Ember.Component.extend({
     tagName: '',
     hash: '',
     size: 200,
-    gravatarUrl: function(){
+    gravatarUrl: Ember.computed('email', 'size', function(){
         var hash = this.get('hash');
         var size = this.get('size');
         return "https://www.gravatar.com/avatar/"+hash+".jpg?d=mm&r=pg&s="+size;
-    }.property('email', 'size')
+    })
 });

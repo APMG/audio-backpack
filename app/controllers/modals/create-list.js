@@ -5,9 +5,9 @@ export default Ember.Controller.extend({
     listTitle: '',
     listDescription: '',
 
-    list: function(){
+    list: Ember.computed('list', function(){
         return this.model;
-    }.property('list'),
+    }),
     
     actions: {
         close: function() {

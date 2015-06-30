@@ -14,9 +14,9 @@ export default Ember.Component.extend({
             this.sendAction('close'); //console.log('got me some close action');
         }
     },
-    show: function() {
+    show: Ember.on('didInsertElement', function() {
         this.$('.modal').modal().on('hidden.bs.modal', function() {
         this.sendAction('close');  //so we get the close action in the future
         }.bind(this));
-    }.on('didInsertElement')
+    })
 });

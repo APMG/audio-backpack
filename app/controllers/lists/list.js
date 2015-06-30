@@ -12,15 +12,15 @@ export default Ember.Controller.extend({
         }, 500);
     },
 
-    clipCount: function(){
+    clipCount: Ember.computed('model.items', function(){
         var list_items = this.get('items');
         console.log(list_items);
         return list_items.get('length');
-    }.property('model.items'),
+    }),
 
-    clipChanger: function(){
+    clipChanger: Ember.on('init', function(){
         Ember.run.once(this, 'clipsDidChange');
-    }.on('init'), 
+    }), 
 
 
 
@@ -59,7 +59,7 @@ export default Ember.Controller.extend({
      * as an item controller when listing playlists
      * @return {Boolean} 
      */
-    isCurrentUserOwner: function(){
+    isCurrentUserOwner: Ember.computed(function(){
         if (this.get('session.isAuthenticated')){
             var loggedInId = this.get('session.user_id');
             var userId = this.get('model.user.id');
@@ -68,7 +68,7 @@ export default Ember.Controller.extend({
             }
         }
         return false;
-    }.property(),
+    }),
 
 
     actions: {
@@ -137,22 +137,22 @@ export default Ember.Controller.extend({
      * Needs to be kept in sync with the not found route
      * @return {String} url for playlist
      */
-    listURL: function(){
+    listURL: Ember.computed('model', function(){
         var shareSlug = (parseInt(this.get('id'), 10) + 10000).toString(36);
         var baseDomain = ENV.baseDomain; //gracefully deal with local development
         if (baseDomain === ''){
             baseDomain = window.location.origin;
         }
         return baseDomain + ENV.baseURL + shareSlug;
-    }.property('model'),
+    }),
     
     /**
      * Gives us a nice mailto link we can use with bind-attr
      * @return {String} includes a subject and body but no recipient
      */
-    mailto: function(){
+    mailto: Ember.computed('model', function(){
         var mailString = "mailto:?subject=" + encodeURIComponent('Playlist from Audio Backpack');
         mailString += '&body=' + encodeURIComponent( this.get('title') + ":\n" + this.get('listURL'));
         return  mailString;
-    }.property('model')
+    })
 });

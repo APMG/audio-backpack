@@ -7,12 +7,12 @@ var Router = Ember.Router.extend({
 
 Router.reopen({
   location: 'history',
-  notifyGoogleAnalytics: function() {
+  notifyGoogleAnalytics: Ember.on('didTransition', function() {
     return ga('send', 'pageview', {
         'page': '/audio-backpack' + this.get('url'),
         'title':'/audio-backpack' +  this.get('url')
       });
-  }.on('didTransition')
+  })
 });
 
 Router.map(function() {

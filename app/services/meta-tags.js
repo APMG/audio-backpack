@@ -56,21 +56,21 @@ export default Ember.Object.extend({
     //     this.notifyPropertyChange('_ogSiteName');
     // }.observes('site_name'),
 
-    titleChanged: function() {
+    titleChanged: Ember.observer('title', function() {
         document.title = this.get('title');
         this.get('_ogTitle').setAttribute('content', this.get('title'));
         this.notifyPropertyChange('_ogTitle');
-    }.observes('title'),
+    }),
 
-    descriptionChanged: function() {
+    descriptionChanged: Ember.observer('description', function() {
         this.get('_description').setAttribute('content', this.get('description'));
         this.get('_ogDescription').setAttribute('content', this.get('description'));
         this.notifyPropertyChange('_ogDescription');
-    }.observes('description'),
+    }),
 
 
 
-    urlChanged: function() {
+    urlChanged: Ember.observer('url', function() {
         var baseDomain = ENV.baseDomain; //gracefully deal with local development
         if (baseDomain === ''){
             baseDomain = window.location.origin;
@@ -83,9 +83,9 @@ export default Ember.Object.extend({
         var url = baseDomain + ENV.baseURL + curUrl;
         this.get('_ogUrl').setAttribute('content', url);
         this.notifyPropertyChange('_ogUrl');
-    }.observes('url'),
+    }),
 
-    setUpMetaTags: function() {
+    setUpMetaTags: Ember.on('init', function() {
 
 
         // ogTitle
@@ -122,7 +122,7 @@ export default Ember.Object.extend({
         this.set('_ogUrl', _ogUrl);
 
       
-    }.on('init'),
+    }),
 
     setTags: function(tags) {
         this.setProperties(tags);

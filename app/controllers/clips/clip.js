@@ -16,9 +16,9 @@ export default Ember.Controller.extend({
      * Gets the list of playlists to pass to the modal component
      * components dont seem to bind to updates, so this works around that.
      */
-    lists: function(){
+    lists: Ember.computed('lists', function(){
         var userID = this.get('session.user.id');
         return this.model.store.find('list', {user:userID});
-    }.property('lists'),
+    }),
 
 });
