@@ -5,7 +5,9 @@ export default DS.Model.extend({
     first_name: DS.attr(),
     last_name:  DS.attr(),
     gravatar: DS.attr(),
-    lists: DS.hasMany('list'),
+    lists: DS.hasMany('list', {
+      async: false
+    }),
 
     full_name: Ember.computed('first_name', 'first_name', function() {
         return this.get('first_name') + ' ' + this.get('last_name');

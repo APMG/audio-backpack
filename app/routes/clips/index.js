@@ -3,7 +3,7 @@ import ENV from '../../config/environment';
 
 export default Ember.Route.extend({
     model: function() {
-        return this.store.find('clip');
+        return this.store.findAll('clip');
     },
     afterModel: function(){
         this.metaTags.setTags({

@@ -7,7 +7,9 @@ import DS from "ember-data";
     description: DS.attr('string',{defaultValue: ''}),
     user: DS.belongsTo('user',{async: true}),
     //clips: DS.hasMany('clip', {inverse: null, async: true}),
-    items: DS.hasMany('item'),
+    items: DS.hasMany('item', {
+      async: false
+    }),
     created_at: DS.attr('date'),
     updated_at: DS.attr('date'), 
     uid: DS.attr(),

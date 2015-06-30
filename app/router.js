@@ -16,14 +16,14 @@ Router.reopen({
 });
 
 Router.map(function() {
-    this.resource('clips', function() {
+    this.route('clips', function() {
         this.route('clip', { path: ':clip_id' });
     });    
-    this.resource('lists', { path: '/playlists' }, function() {
+    this.route('lists', { path: '/playlists' }, function() {
         this.route('list', { path: ':list_id' });
     });
-    this.resource('login');
-    this.resource('user', {path: '/user/:user_id'});
+    this.route('login');
+    this.route('user', {path: '/user/:user_id'});
 
     this.route('not-found', { path: '/*path' }); //fallback / short URL redirecter
 
