@@ -37,7 +37,7 @@ export default Ember.ArrayController.extend({
 
         if (term.length > 2) {
             var results;
-            results = this.model.filter(function(clip) {
+            results = this.store.filter('clip', function(clip) {
 
                 //deal with null values by making them ''
                 var title = clip.get('title'),
