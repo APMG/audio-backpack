@@ -21,7 +21,7 @@ var App = Ember.Application.extend({
         window.soundManager = soundManager;
         var settings = {
             preferFlash: true,
-            swf: config.baseURL+'assets/swf/soundmanager2.swf'
+            swf: config.baseURL+'soundmanager/swf/soundmanager2.swf'
         };
         var APMPlayer = APMPlayerFactory.getPlayer();
         window.APMPlayer = APMPlayer;
