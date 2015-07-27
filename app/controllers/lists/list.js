@@ -27,18 +27,20 @@ export default Ember.Controller.extend({
         // console.log('clipsDidChange ran');
         this.set('totalDuration',0);
     
-
         var items = this.get('model.items');
         var that = this;
         items.forEach(function(item){
             var apm_audio = item.get('apm_audio');
-            that.model.store.find('clip',{'apm_audio':apm_audio}).then(function(clip){
-                var firstClip = clip.get('firstObject');
-                //update durations
-                var newDur = that.get('totalDuration') + firstClip.get('duration');
-                that.set('totalDuration', newDur); 
-            }.bind(item));
-            
+                 
+            that.model.store.filter('clip',function(clip){
+                //console.log(clip.get('apm_audio'));
+                if (clip.get('apm_audio') === apm_audio){
+                    var newDur = that.get('totalDuration') + clip.get('duration');
+                    that.set('totalDuration', newDur); 
+                    //return clip;
+                }
+                
+            }); 
         });
     },
 
