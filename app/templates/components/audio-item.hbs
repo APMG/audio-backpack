@@ -1,0 +1,17 @@
+<li class='item'>
+    <a {{action 'play' clip}} class='item-icon clip clickable'> </a>
+    <div class='item-info' {{action 'goToClip' clip on='click'}}>
+        {{#link-to 'clips.clip' clip}}<h3>{{clip.title}}</h3>
+        <span class='duration'>{{pretty-duration clip.duration}}</span><br />
+         
+        <span class='details'>Details &rarr;</span>
+        
+        {{/link-to}}
+
+        {{#if session.isAuthenticated}}
+        {{! this is a little wonky, but we have to pass in the clip and lists model so that the modal will have updated/bound access to both}}
+        <a class="addTo details" data-toggle="modal"  {{action 'openModal' 'modals/add-clip' clip lists bubbles=false}}><i class="icon-plus" aria-hidden="true"></i> Add to playlist</a>
+        {{/if}}
+        
+    </div>
+</li>

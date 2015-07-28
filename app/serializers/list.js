@@ -19,7 +19,7 @@ export default DS.RESTSerializer.extend({
 
             }
         }
-
+        console.log(payload);
         // delete payload.status;
         return payload;
     },

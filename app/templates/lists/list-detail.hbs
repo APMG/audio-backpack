@@ -17,9 +17,7 @@
 		{{/if}}
 
 
-		<p>Created by {{#link-to 'user' model.user.id}}{{model.user.full_name}}{{/link-to}}, {{ago created_at}}</p>
-
-	
+		<p>Created by {{#link-to 'user' model.user.id}}{{model.user.full_name}}{{/link-to}}, {{ago model.created_at}}</p>
 
 		{{#if isCurrentUserOwner}}
      		<a class="btn btn-danger" data-toggle="modal" {{action 'openModal' 'modals/delete-list' model}}><i class="icon-trash" aria-hidden="true"></i> Delete</a>
@@ -86,16 +84,12 @@
 
 		</div>
 		{{else}}
+
 		<div class="playlist-items">		
-			{{#each model.items itemController="item" as |item|}}
-	        	{{!-- 
-				We have a nested each here -- it seems that if we do that, we can resolve the promise OK
-				If we try to resolve it in the controller, it freaks out badly. 
-				Oh well, this isn't too terrible.
-	        	--}}
-	 			{{#each item.clip as |clip|}}
-					<ul class='inline-clip'>{{render 'short-clip' clip}}</ul>
-	 			{{/each}} 			
+			{{#each model.items as |item|}} {{! itemController="item"  !}}
+				{{!-- {{log item.apm_audio}} --}}
+
+				<ul class='inline-clip'>{{audio-item clip=item.clip}}</ul>		
 			{{/each}}
 		</div>
 		{{/if}}

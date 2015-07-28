@@ -22,6 +22,12 @@ export default Ember.Controller.extend({
     }), 
 
 
+    // lists: Ember.computed('lists', function(){
+    //     var userID = this.get('session.user.id');
+    //     return this.model.store.find('list', { user:userID, per_page:1000 });
+    // }),
+
+
 
     clipsDidChange: function() {
         // console.log('clipsDidChange ran');
