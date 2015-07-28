@@ -134,7 +134,7 @@ export default Ember.Controller.extend({
 
         // a click on the whole list container li sends you to clip itself
         goToList: function(){
-            this.transitionToRoute('lists.list',this.get('id'));  //transition using ID so model hook is triggered
+            this.transitionToRoute('lists.list',this.get('model.id'));  //transition using ID so model hook is triggered
             return false;
         }
 
