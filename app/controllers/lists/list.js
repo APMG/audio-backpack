@@ -136,6 +136,11 @@ export default Ember.Controller.extend({
         goToList: function(){
             this.transitionToRoute('lists.list',this.get('model.id'));  //transition using ID so model hook is triggered
             return false;
+        },
+
+        goToClipper: function(clipID){        
+            console.log('got clip', clipID);
+            this.transitionToRoute('clips.clip',clipID);
         }
 
     },

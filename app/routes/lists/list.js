@@ -15,9 +15,6 @@ export default Ember.Route.extend({
 
         var loggedInId = this.get('session.user_id');
         var userId = model.get('user.id');
-
-        console.log(loggedInId,userId);
-
         if (loggedInId === userId){
             controller.set('isCurrentUserOwner', true);
         } else {
@@ -30,5 +27,12 @@ export default Ember.Route.extend({
             description: model.get('description') ? model.get('description') : ENV.description,
             url: this.get('router.url')
         });
-    }
+    },
+    // actions: {
+
+    //     goToClipper: function(clipID){        
+    //         console.log('got clip', clipID);
+    //         this.transitionToRoute('clips.clip',clipID);
+    //     }
+    // }
 });

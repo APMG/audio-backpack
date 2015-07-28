@@ -1,6 +1,6 @@
 <li class='item'>
     <a {{action 'play' clip}} class='item-icon clip clickable'> </a>
-    <div class='item-info' {{action 'goToClip' clip on='click'}}>
+    <div class='item-info' onclick={{action "goToClip"}}>
         {{#link-to 'clips.clip' clip}}<h3>{{clip.title}}</h3>
         <span class='duration'>{{pretty-duration clip.duration}}</span><br />
          

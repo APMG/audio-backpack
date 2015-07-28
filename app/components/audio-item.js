@@ -1,20 +1,13 @@
 import Ember from "ember";
 
-/**
- * 
- */
-
 export default Ember.Component.extend({
-
-
-
     actions: {
         play: function(){
-            console.log(this.get('title'), this.get('model.apm_audio'));
+            console.log(this.get('clip.title'), this.get('clip.apm_audio'));
 
             var playable = APMPlayerFactory.getPlayable({
-                title: this.get('model.title'),
-                identifier: this.get('model.apm_audio'),
+                title: this.get('clip.title'),
+                identifier: this.get('clip.apm_audio'),
                 type: 'audio'
             });
             console.log(playable);
@@ -22,8 +15,13 @@ export default Ember.Component.extend({
         },
         
         // a click on the whole clip container li sends you to clip itself
+        // TODO: This doesn't seem to work -- action is not bubbling to controller or route
+        // need to read this more: http://emberjs.com/api/classes/Ember.Templates.helpers.html#method_action
         goToClip: function(){
-            this.transitionToRoute('clips.clip',this.get('model.id'));
+            console.log(this.get('clip.id'), this.get('parentView'));
+            this.send('goToClipper', this.get('clip.id'));
+            //return;
+            //this.transitionToRoute('clips.clip',this.get('clip.id'));
         }
     },
     
@@ -36,8 +34,4 @@ export default Ember.Component.extend({
     //     return this.model.store.find('list', { user:userID, per_page:1000 });
     // }),
    
-
-
-
-
 });
