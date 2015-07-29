@@ -93,11 +93,7 @@ export default Ember.Controller.extend({
             apmplayer_ui.playlist.replacePlayables(clipsPlayable);
             return false;
         },
-        // editTitle: function() {
-        //     //console.log('did an edit');
-        //     //this.set('isTitleEditing', true);
-        // },
-        acceptTitleChanges: function(arg) {
+        acceptTitleChanges: function() {
             if (!Ember.isEmpty(this.get('model.title'))) {
                 this.get('model').save();
             }

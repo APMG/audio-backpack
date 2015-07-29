@@ -1,0 +1,14 @@
+{{#if isEditing}}
+    <div class="" {{action "toggleEditing" on="submit"}}> 
+      {{focus-textarea class="edit desc form-control" value=value focus-out="acceptDescChanges" insert-newline="acceptDescChanges" id="edit-desc" rows='4'}}
+    </div>
+  {{else}}
+
+    <p {{action "toggleEditing"}}>
+    {{#if value}}
+        {{value}}
+    {{else}}
+        <em>No description.</em>
+    {{/if}}
+    </p>
+{{/if}}

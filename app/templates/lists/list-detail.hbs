@@ -1,12 +1,12 @@
 		<section>
-		{{!-- #if isCurrentUserOwner --}}
+		{{#if isCurrentUserOwner}}
 		<div class='editable-in-place'>
 			<span class="control-label not-real-label">&darr; Tap to edit title</span>
-  			  {{edit-title-inline value=model.title acceptTitleChanges='acceptTitleChanges'}}
+			  {{edit-title-inline value=model.title acceptTitleChanges='acceptTitleChanges'}}
 		</div>
-		{{!--else}}
+		{{else}}
 			<h1>{{model.title}}</h1>
-		{{/if --}}
+		{{/if}}
 
 
 
@@ -33,23 +33,10 @@
 			{{#if isCurrentUserOwner}}
 			<div class='editable-in-place'>
 				<span class="control-label not-real-label">&darr; Tap to edit description</span>
-				{{#if isDescEditing}}
-					{{focus-textarea class="edit desc form-control" value=model.description focus-out="acceptDescChanges" insert-newline="acceptDescChanges" id="edit-desc" rows='4'}}
-				{{else}}
-					{{!--#view "edit-in-place" targetAction='editDesc'}}
-					<p id="edit-title">
-						{{#if model.description}}
-							{{model.description}}
-						{{else}}
-							<em>No description.</em>
-						{{/if}}
-					</p>
-					{{/view --}}
-				{{/if}}
+					{{edit-desc-inline value=model.description acceptDescChanges='acceptDescChanges'}}
 			</div>
 			{{else}}
 				<p>{{model.description}}</p>
-
 			{{/if}}
 
 		</section>
