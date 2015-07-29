@@ -50,7 +50,7 @@ export default Ember.Controller.extend({
         });
     },
 
-    isTitleEditing: false,
+    //isTitleEditing: false,
     isDescEditing: false,
 
     // items: (function() {
@@ -93,12 +93,11 @@ export default Ember.Controller.extend({
             apmplayer_ui.playlist.replacePlayables(clipsPlayable);
             return false;
         },
-        editTitle: function() {
-            //console.log('did an edit');
-            this.set('isTitleEditing', true);
-        },
-        acceptTitleChanges: function() {
-            this.set('isTitleEditing', false);
+        // editTitle: function() {
+        //     //console.log('did an edit');
+        //     //this.set('isTitleEditing', true);
+        // },
+        acceptTitleChanges: function(arg) {
             if (!Ember.isEmpty(this.get('model.title'))) {
                 this.get('model').save();
             }

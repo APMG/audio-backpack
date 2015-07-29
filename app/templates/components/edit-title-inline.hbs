@@ -1,0 +1,9 @@
+{{#if isEditing}}
+    <div class="input-group input-group-lg" {{action "toggleEditing" on="submit"}}> 
+      {{focus-input class="edit title form-control" value=value focus-out="acceptTitleChanges"             insert-newline="acceptTitleChanges" id="edit-title"}}
+    </div>
+  {{else}}
+    <h1 {{action "toggleEditing"}}>
+      {{value}}
+    </h1>
+{{/if}}

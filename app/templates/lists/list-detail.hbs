@@ -1,20 +1,14 @@
 		<section>
-		{{#if isCurrentUserOwner}}
+		{{!-- #if isCurrentUserOwner --}}
 		<div class='editable-in-place'>
 			<span class="control-label not-real-label">&darr; Tap to edit title</span>
-			{{#if isTitleEditing}}
-				<div class="input-group input-group-lg">
-				{{focus-input class="edit title form-control" value=model.title focus-out="acceptTitleChanges" insert-newline="acceptTitleChanges" id="edit-title"}}
-				</div>
-			{{else}}
-				{{#view "edit-in-place" targetAction='editTitle'}}
-				<h1 id="edit-title">{{model.title}}</h1>
-				{{/view}}
-			{{/if}}
+  			  {{edit-title-inline value=model.title acceptTitleChanges='acceptTitleChanges'}}
 		</div>
-		{{else}}
+		{{!--else}}
 			<h1>{{model.title}}</h1>
-		{{/if}}
+		{{/if --}}
+
+
 
 
 		<p>Created by {{#link-to 'user' model.user.id}}{{model.user.full_name}}{{/link-to}}, {{ago model.created_at}}</p>
@@ -42,7 +36,7 @@
 				{{#if isDescEditing}}
 					{{focus-textarea class="edit desc form-control" value=model.description focus-out="acceptDescChanges" insert-newline="acceptDescChanges" id="edit-desc" rows='4'}}
 				{{else}}
-					{{#view "edit-in-place" targetAction='editDesc'}}
+					{{!--#view "edit-in-place" targetAction='editDesc'}}
 					<p id="edit-title">
 						{{#if model.description}}
 							{{model.description}}
@@ -50,7 +44,7 @@
 							<em>No description.</em>
 						{{/if}}
 					</p>
-					{{/view}}
+					{{/view --}}
 				{{/if}}
 			</div>
 			{{else}}
