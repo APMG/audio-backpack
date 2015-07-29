@@ -15,13 +15,9 @@ export default Ember.Component.extend({
         },
         
         // a click on the whole clip container li sends you to clip itself
-        // TODO: This doesn't seem to work -- action is not bubbling to controller or route
-        // need to read this more: http://emberjs.com/api/classes/Ember.Templates.helpers.html#method_action
+        // Helpful info on component action bubbling: http://coryforsyth.com/2014/09/24/communicating-with-ember-js-components-using-sendaction/
         goToClip: function(){
-            console.log(this.get('clip.id'), this.get('parentView'));
-            this.send('goToClipper', this.get('clip.id'));
-            //return;
-            //this.transitionToRoute('clips.clip',this.get('clip.id'));
+            this.sendAction('goToClip', this.get('clip.id'));
         }
     },
     

@@ -138,8 +138,8 @@ export default Ember.Controller.extend({
             return false;
         },
 
-        goToClipper: function(clipID){        
-            console.log('got clip', clipID);
+        goToClip: function(clipID){        
+            //console.log('got clip', clipID);
             this.transitionToRoute('clips.clip',clipID);
         }
 

@@ -87,9 +87,7 @@
 
 		<div class="playlist-items">		
 			{{#each model.items as |item|}} {{! itemController="item"  !}}
-				{{!-- {{log item.apm_audio}} --}}
-
-				<ul class='inline-clip'>{{audio-item clip=item.clip}}</ul>		
+				<ul class='inline-clip'>{{audio-item clip=item.clip goToClip='goToClip'}}</ul>		
 			{{/each}}
 		</div>
 		{{/if}}
